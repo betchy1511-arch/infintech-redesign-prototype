@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infintech Designs — Homepage Redesign Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   BRAND TOKENS — pulled from live infintechdesigns.com 2026-08-12
+   #EA4517 (42 uses, dominant) / #ED9924 / #273A47 / #121212 /
+   #EEEADD · Raleway body, Montserrat display · WordPress + WP Rocket
+   All three directions share these. They diverge on layout,
+   density, colour temperature and motion — never on brand.
+   ============================================================ */
+:root{
+  --flame:#EA4517; --flame-dk:#C4380F; --amber:#ED9924;
+  --slate:#273A47; --slate-dk:#16222B; --ink:#121212; --ink-deep:#0A0C0E;
+  --cream:#EEEADD;
+  --sans:'Raleway',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --display:'Montserrat','Raleway',-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);-webkit-font-smoothing:antialiased;background:#0A0C0E}
+img{max-width:100%}
+#stage{min-height:100vh}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+a{text-decoration:none}
+button{font-family:inherit}
+
+/* ============================================================
+   ============  DIRECTION 1 — MOMENTUM  ======================
+   Dark, cinematic, motion-led. The only variant with animation:
+   a flow-field canvas behind the hero plus scroll reveals.
+   ============================================================ */
+.p-momentum{background:var(--ink-deep);color:var(--cream);font-size:16px}
+.p-momentum .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
+.p-momentum .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(90% 70% at 22% 78%, rgba(122,31,9,.5) 0%, rgba(122,31,9,0) 60%),
+             radial-gradient(80% 60% at 82% 14%, rgba(46,92,122,.42) 0%, rgba(46,92,122,0) 62%),
+             linear-gradient(160deg,#12181E 0%,#0A0C0E 55%,#140C08 100%);}
+.p-momentum .hero-bg canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.p-momentum .hero-bg .vig{position:absolute;inset:0;
+  background:radial-gradient(120% 100% at 50% 42%,rgba(0,0,0,0) 40%,rgba(0,0,0,.5) 100%)}
+.p-momentum .hero-bg .grain{position:absolute;inset:0;opacity:.2;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+/* Scope this to .wrap only. A bare `.hero > *` also matches .hero-bg and
+   overrides its position:absolute, collapsing it to zero height — which
+   silently kills both the gradient and the canvas. */
+.p-momentum .hero>.wrap{position:relative;z-index:1}
+
+.p-momentum .nav{display:flex;align-items:center;gap:30px;padding:24px 0}
+.p-momentum .mark{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--cream)}
+.p-momentum .mark b{color:var(--flame)}
+.p-momentum .nav .links{display:flex;gap:26px;margin-left:auto}
+.p-momentum .nav .links a{color:rgba(238,234,221,.72);font-size:13.5px;font-weight:600;transition:color .15s ease-out}
+.p-momentum .nav .links a:hover{color:#fff}
+.p-momentum .nav .tel{padding:11px 20px;border-radius:999px;background:var(--flame);color:#fff;
+  font-size:13.5px;font-weight:700;box-shadow:0 6px 20px rgba(234,69,23,.34);transition:transform .15s ease-out}
+.p-momentum .nav .tel:hover{transform:translateY(-1px)}
+
+.p-momentum .hero-in{flex:1;display:flex;flex-direction:column;justify-content:center;padding:40px 0 90px;max-width:990px}
+.p-momentum .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin:0 0 22px}
+.p-momentum .eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--flame);
+  box-shadow:0 0 0 4px rgba(234,69,23,.18)}
+.p-momentum h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,5.4vw,66px);
+  line-height:1.05;letter-spacing:-.022em;margin:0 0 24px;color:#fff;text-wrap:balance;
+  text-shadow:0 2px 40px rgba(0,0,0,.45)}
+.p-momentum h1 em{font-style:normal;background:linear-gradient(96deg,var(--flame),var(--amber) 60%,#F6C36B);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.p-momentum .lede{font-size:clamp(15px,1.3vw,18.5px);line-height:1.62;color:rgba(238,234,221,.8);
+  max-width:56ch;margin:0 0 34px}
+.p-momentum .cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px}
+.p-momentum .b1{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;
+  background:linear-gradient(96deg,var(--flame),#F2701C);color:#fff;font-size:15px;font-weight:700;
+  box-shadow:0 10px 30px rgba(234,69,23,.38);transition:transform .16s cubic-bezier(.23,1,.32,1)}
+.p-momentum .b1:hover{transform:translateY(-2px)}
+.p-momentum .b2{display:inline-flex;align-items:center;padding:15px 26px;border-radius:999px;
+  border:1px solid rgba(238,234,221,.26);background:rgba(238,234,221,.04);color:var(--cream);
+  font-size:15px;font-weight:600;transition:border-color .16s ease-out,transform .16s ease-out}
+.p-momentum .b2:hover{border-color:rgba(238,234,221,.5);transform:translateY(-2px)}
+.p-momentum .chips{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+.p-momentum .chips span.l{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(238,234,221,.4);margin-right:6px}
+.p-momentum .chips a{padding:7px 14px;border-radius:999px;border:1px solid rgba(238,234,221,.16);
+  background:rgba(18,18,18,.34);font-size:12.5px;font-weight:600;color:rgba(238,234,221,.78);
+  transition:border-color .15s ease-out,color .15s ease-out}
+.p-momentum .chips a:hover{border-color:rgba(234,69,23,.6);color:#fff}
+
+.p-momentum section{padding:clamp(64px,8vw,110px) 0}
+.p-momentum .kicker{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--flame);margin:0 0 14px}
+.p-momentum h2{font-family:var(--display);font-weight:800;font-size:clamp(26px,3.4vw,42px);
+  line-height:1.14;letter-spacing:-.018em;margin:0 0 18px;color:#fff;text-wrap:balance}
+.p-momentum .sec-lede{font-size:16.5px;line-height:1.62;color:rgba(238,234,221,.66);max-width:60ch;margin:0 0 44px}
+
+.p-momentum .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(238,234,221,.1);
+  border:1px solid rgba(238,234,221,.1);border-radius:14px;overflow:hidden}
+.p-momentum .stats div{background:var(--ink-deep);padding:26px 22px}
+.p-momentum .stats b{display:block;font-family:var(--display);font-size:34px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.p-momentum .stats span{display:block;margin-top:6px;font-size:12.5px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;color:rgba(238,234,221,.5)}
+
+.p-momentum .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.p-momentum .card{padding:28px;border-radius:16px;border:1px solid rgba(238,234,221,.12);
+  background:linear-gradient(180deg,rgba(238,234,221,.05),rgba(238,234,221,.02));
+  transition:border-color .2s ease-out,transform .2s cubic-bezier(.23,1,.32,1)}
+.p-momentum .card:hover{border-color:rgba(234,69,23,.5);transform:translateY(-3px)}
+.p-momentum .card h3{font-family:var(--display);font-size:18.5px;font-weight:700;margin:0 0 10px;color:#fff}
+.p-momentum .card p{font-size:14.5px;line-height:1.6;color:rgba(238,234,221,.62);margin:0 0 16px}
+.p-momentum .card .go{font-size:13.5px;font-weight:700;color:var(--flame)}
+.p-momentum .num{font-family:var(--display);font-size:12px;font-weight:800;color:var(--flame);
+  letter-spacing:.14em;display:block;margin-bottom:14px}
+
+.p-momentum .markets{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.p-momentum .markets a{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:18px 20px;border-radius:12px;border:1px solid rgba(238,234,221,.12);
+  background:rgba(238,234,221,.03);color:var(--cream);font-size:15px;font-weight:600;
+  transition:border-color .18s ease-out,background .18s ease-out}
+.p-momentum .markets a:hover{border-color:rgba(234,69,23,.55);background:rgba(234,69,23,.08)}
+.p-momentum .markets a i{font-style:normal;color:rgba(238,234,221,.35);font-size:13px}
+
+.p-momentum .faq{border-top:1px solid rgba(238,234,221,.12)}
+.p-momentum .faq details{border-bottom:1px solid rgba(238,234,221,.12)}
+.p-momentum .faq summary{list-style:none;cursor:pointer;padding:22px 0;display:flex;gap:18px;
+  align-items:center;font-family:var(--display);font-size:17.5px;font-weight:700;color:#fff}
+.p-momentum .faq summary::-webkit-details-marker{display:none}
+.p-momentum .faq summary::after{content:'+';margin-left:auto;font-size:22px;font-weight:400;
+  color:var(--flame);transition:transform .2s ease-out}
+.p-momentum .faq details[open] summary::after{transform:rotate(45deg)}
+.p-momentum .faq p{margin:0 0 24px;font-size:15.5px;line-height:1.7;color:rgba(238,234,221,.68);max-width:74ch}
+
+.p-momentum .band{background:linear-gradient(100deg,#1A0B05,#2A1710 60%,#12181E);
+  border-top:1px solid rgba(238,234,221,.1);border-bottom:1px solid rgba(238,234,221,.1)}
+.p-momentum footer{padding:44px 0;border-top:1px solid rgba(238,234,221,.1);
+  color:rgba(238,234,221,.45);font-size:13.5px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.p-momentum footer a{color:rgba(238,234,221,.6)}
+
+/* scroll reveal — transform + opacity only, 420ms ease-out */
+.p-momentum .rev{opacity:0;transform:translateY(16px);
+  transition:opacity .42s cubic-bezier(.16,1,.3,1),transform .42s cubic-bezier(.16,1,.3,1)}
+.p-momentum .rev.in{opacity:1;transform:none}
+
+/* ============================================================
+   ============  DIRECTION 2 — LEDGER  ========================
+   Light, editorial, evidence-led. Hairline rules, numbered
+   sections, high information density. No motion at all.
+   ============================================================ */
+.p-ledger{background:#F7F5EF;color:#1A1A1A;font-size:16px}
+.p-ledger .nav{display:flex;align-items:center;gap:30px;padding:22px 0;border-bottom:1px solid #DED9CB}
+.p-ledger .mark{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink)}
+.p-ledger .mark b{color:var(--flame)}
+.p-ledger .nav .links{display:flex;gap:24px;margin-left:auto}
+.p-ledger .nav .links a{color:#4A4A4A;font-size:13.5px;font-weight:600}
+.p-ledger .nav .links a:hover{color:var(--flame)}
+.p-ledger .nav .tel{font-family:var(--display);font-size:14px;font-weight:800;color:var(--ink);
+  border-bottom:2px solid var(--flame);padding-bottom:2px}
+
+.p-ledger .hero{padding:clamp(56px,8vw,96px) 0 clamp(40px,5vw,64px);
+  display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(30px,5vw,64px);align-items:end;
+  border-bottom:1px solid #DED9CB}
+.p-ledger .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:#8A8375;margin:0 0 20px;display:flex;align-items:center;gap:10px}
+.p-ledger .eyebrow s{width:26px;height:1px;background:var(--flame);text-decoration:none}
+.p-ledger h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,60px);
+  line-height:1.05;letter-spacing:-.026em;margin:0 0 22px;color:var(--ink);text-wrap:balance}
+.p-ledger h1 em{font-style:normal;color:var(--flame)}
+.p-ledger .lede{font-size:17px;line-height:1.65;color:#4A4A4A;max-width:52ch;margin:0}
+.p-ledger .heroside{border-left:1px solid #DED9CB;padding-left:clamp(20px,3vw,34px)}
+.p-ledger .heroside .row{display:flex;justify-content:space-between;gap:14px;padding:13px 0;
+  border-bottom:1px solid #E7E2D6;font-size:14px}
+.p-ledger .heroside .row:last-of-type{border-bottom:0}
+.p-ledger .heroside .row span{color:#79736A}
+.p-ledger .heroside .row b{font-family:var(--display);font-weight:800;color:var(--ink)}
+.p-ledger .heroside .b1{display:block;margin-top:20px;text-align:center;padding:14px 22px;
+  background:var(--ink);color:#fff;font-size:14.5px;font-weight:700;border-radius:4px;
+  transition:background .16s ease-out}
+.p-ledger .heroside .b1:hover{background:var(--flame)}
+
+.p-ledger section{padding:clamp(54px,6.5vw,88px) 0;border-bottom:1px solid #DED9CB}
+.p-ledger .sechead{display:grid;grid-template-columns:120px 1fr;gap:24px;margin-bottom:40px;align-items:start}
+.p-ledger .secnum{font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:.16em;
+  color:var(--flame);padding-top:8px}
+.p-ledger h2{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.1vw,36px);
+  line-height:1.16;letter-spacing:-.02em;margin:0 0 12px;color:var(--ink);text-wrap:balance}
+.p-ledger .sec-lede{font-size:16px;line-height:1.62;color:#5A5449;max-width:62ch;margin:0}
+
+.p-ledger .svc{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(24px,4vw,54px)}
+.p-ledger .svc a{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:baseline;
+  padding:19px 0;border-top:1px solid #E7E2D6;color:var(--ink);transition:padding-left .18s ease-out}
+.p-ledger .svc a:hover{padding-left:8px}
+.p-ledger .svc a:hover .nm{color:var(--flame)}
+.p-ledger .svc .ix{font-family:var(--display);font-size:11.5px;font-weight:800;color:#B3AC9C}
+.p-ledger .svc .nm{font-family:var(--display);font-size:17px;font-weight:700;transition:color .16s ease-out}
+.p-ledger .svc .ds{display:block;font-family:var(--sans);font-size:13.5px;font-weight:500;
+  color:#79736A;margin-top:4px;line-height:1.5}
+.p-ledger .svc .ar{color:#B3AC9C;font-size:15px}
+
+.p-ledger .mk{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#DED9CB;
+  border:1px solid #DED9CB}
+.p-ledger .mk a{background:#F7F5EF;padding:20px;color:var(--ink);transition:background .16s ease-out}
+.p-ledger .mk a:hover{background:#fff}
+.p-ledger .mk b{display:block;font-family:var(--display);font-size:16px;font-weight:800}
+.p-ledger .mk span{display:block;margin-top:5px;font-size:12.5px;color:#79736A}
+
+.p-ledger .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,3vw,30px)}
+.p-ledger .cases article{background:#fff;border:1px solid #E7E2D6;padding:30px}
+.p-ledger .cases .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--flame);margin:0 0 12px}
+.p-ledger .cases h3{font-family:var(--display);font-size:21px;font-weight:800;margin:0 0 12px;
+  letter-spacing:-.015em;line-height:1.22}
+.p-ledger .cases p{font-size:14.5px;line-height:1.62;color:#5A5449;margin:0 0 18px}
+.p-ledger .cases .go{font-size:13.5px;font-weight:700;color:var(--ink);border-bottom:2px solid var(--flame);padding-bottom:2px}
+
+.p-ledger .faq details{border-top:1px solid #E7E2D6}
+.p-ledger .faq details:last-of-type{border-bottom:1px solid #E7E2D6}
+.p-ledger .faq summary{list-style:none;cursor:pointer;padding:20px 0;display:grid;
+  grid-template-columns:34px 1fr auto;gap:14px;font-family:var(--display);font-size:16.5px;
+  font-weight:700;color:var(--ink)}
+.p-ledger .faq summary::-webkit-details-marker{display:none}
+.p-ledger .faq summary i{font-style:normal;font-size:11.5px;font-weight:800;color:#B3AC9C;padding-top:4px}
+.p-ledger .faq summary::after{content:'+';color:var(--flame);font-size:20px;font-weight:400}
+.p-ledger .faq details[open] summary::after{content:'\2212'}
+.p-ledger .faq p{margin:0 0 22px 48px;font-size:15px;line-height:1.7;color:#5A5449;max-width:72ch}
+
+.p-ledger .endcta{background:var(--ink);color:#fff;padding:clamp(44px,6vw,72px);
+  display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.p-ledger .endcta h2{color:#fff;margin:0}
+.p-ledger .endcta p{margin:10px 0 0;color:rgba(255,255,255,.62);font-size:15.5px;max-width:52ch}
+.p-ledger .endcta a{background:var(--flame);color:#fff;padding:16px 30px;font-weight:700;
+  font-size:15px;border-radius:4px;white-space:nowrap}
+.p-ledger footer{padding:38px 0;color:#79736A;font-size:13.5px;display:flex;flex-wrap:wrap;gap:14px}
+.p-ledger footer a{color:#4A4A4A}
+
+/* ============================================================
+   ============  DIRECTION 3 — BEACON  ========================
+   High-contrast, conversion-first. Big flame blocks, chunky
+   cards, phone everywhere, sticky action bar. No motion.
+   ============================================================ */
+.p-beacon{background:#fff;color:var(--ink);font-size:16px}
+.p-beacon .topbar{background:var(--slate-dk);color:rgba(255,255,255,.8);font-size:13px;font-weight:600}
+.p-beacon .topbar .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding-top:10px;padding-bottom:10px}
+.p-beacon .topbar b{color:#fff}
+.p-beacon .topbar .r{margin-left:auto;color:var(--amber)}
+.p-beacon .nav{display:flex;align-items:center;gap:28px;padding:18px 0}
+.p-beacon .mark{font-family:var(--display);font-weight:900;font-size:19px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink)}
+.p-beacon .mark b{color:var(--flame)}
+.p-beacon .nav .links{display:flex;gap:24px;margin-left:auto}
+.p-beacon .nav .links a{color:#3C3C3C;font-size:14px;font-weight:700}
+.p-beacon .nav .links a:hover{color:var(--flame)}
+.p-beacon .nav .tel{background:var(--flame);color:#fff;padding:13px 24px;border-radius:6px;
+  font-size:14.5px;font-weight:800;box-shadow:0 4px 0 var(--flame-dk)}
+.p-beacon .nav .tel:active{transform:translateY(2px);box-shadow:0 2px 0 var(--flame-dk)}
+
+.p-beacon .hero{background:linear-gradient(115deg,var(--slate-dk) 0%,var(--slate) 58%,#31485A 100%);
+  color:#fff;padding:clamp(48px,6.5vw,86px) 0}
+.p-beacon .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,4vw,54px);align-items:center}
+.p-beacon .flag{display:inline-block;background:var(--flame);color:#fff;font-size:12px;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:4px;margin-bottom:20px}
+.p-beacon h1{font-family:var(--display);font-weight:900;font-size:clamp(32px,4.9vw,58px);
+  line-height:1.04;letter-spacing:-.022em;margin:0 0 20px;text-wrap:balance}
+.p-beacon h1 em{font-style:normal;color:var(--amber)}
+.p-beacon .lede{font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);max-width:50ch;margin:0 0 26px}
+.p-beacon .ticks{display:grid;gap:11px;margin:0 0 30px;padding:0;list-style:none}
+.p-beacon .ticks li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;font-weight:600;color:rgba(255,255,255,.9)}
+.p-beacon .ticks i{font-style:normal;color:var(--amber);font-weight:900}
+.p-beacon .herobtns{display:flex;flex-wrap:wrap;gap:13px}
+.p-beacon .b1{background:var(--flame);color:#fff;padding:17px 32px;border-radius:6px;font-size:16px;
+  font-weight:800;box-shadow:0 5px 0 var(--flame-dk)}
+.p-beacon .b1:active{transform:translateY(2px);box-shadow:0 3px 0 var(--flame-dk)}
+.p-beacon .b2{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff;padding:15px 28px;
+  border-radius:6px;font-size:16px;font-weight:700}
+.p-beacon .b2:hover{border-color:#fff}
+.p-beacon .quote{background:#fff;color:var(--ink);border-radius:10px;padding:30px;
+  box-shadow:0 18px 50px rgba(0,0,0,.28)}
+.p-beacon .quote h3{font-family:var(--display);font-size:20px;font-weight:800;margin:0 0 6px}
+.p-beacon .quote p{font-size:14px;color:#5A5A5A;margin:0 0 18px;line-height:1.55}
+.p-beacon .quote label{display:block;font-size:12px;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:#8A8A8A;margin:0 0 6px}
+.p-beacon .quote input,.p-beacon .quote select{width:100%;padding:13px 14px;border:2px solid #E2E2E2;
+  border-radius:6px;font-size:15px;font-family:var(--sans);margin-bottom:14px;background:#fff;color:var(--ink)}
+.p-beacon .quote input:focus,.p-beacon .quote select:focus{outline:none;border-color:var(--flame)}
+.p-beacon .quote button{width:100%;background:var(--flame);color:#fff;border:0;padding:16px;
+  border-radius:6px;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 0 var(--flame-dk)}
+.p-beacon .quote button:active{transform:translateY(2px);box-shadow:0 2px 0 var(--flame-dk)}
+.p-beacon .quote small{display:block;margin-top:11px;font-size:12.5px;color:#8A8A8A;text-align:center}
+
+.p-beacon section{padding:clamp(50px,6vw,82px) 0}
+.p-beacon .alt{background:#F4F5F6}
+.p-beacon .kicker{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--flame);margin:0 0 12px;text-align:center}
+.p-beacon h2{font-family:var(--display);font-weight:900;font-size:clamp(26px,3.5vw,42px);
+  line-height:1.12;letter-spacing:-.02em;margin:0 auto 14px;color:var(--ink);text-align:center;
+  max-width:20ch;text-wrap:balance}
+.p-beacon .sec-lede{font-size:16.5px;line-height:1.6;color:#5A5A5A;max-width:62ch;margin:0 auto 42px;text-align:center}
+
+.p-beacon .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.p-beacon .svc a{border:2px solid #E8E8E8;border-radius:10px;padding:26px;color:var(--ink);
+  transition:border-color .18s ease-out,box-shadow .18s ease-out,transform .18s ease-out;background:#fff}
+.p-beacon .svc a:hover{border-color:var(--flame);box-shadow:0 12px 30px rgba(0,0,0,.1);transform:translateY(-3px)}
+.p-beacon .svc .ic{width:46px;height:46px;border-radius:9px;background:rgba(234,69,23,.1);
+  display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;
+  color:var(--flame);font-size:16px;margin-bottom:16px}
+.p-beacon .svc h3{font-family:var(--display);font-size:19px;font-weight:800;margin:0 0 9px}
+.p-beacon .svc p{font-size:14.5px;line-height:1.58;color:#5A5A5A;margin:0 0 14px}
+.p-beacon .svc .go{font-size:13.5px;font-weight:800;color:var(--flame)}
+
+.p-beacon .mk{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.p-beacon .mk a{border:2px solid #E8E8E8;border-radius:8px;padding:18px;color:var(--ink);background:#fff;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  transition:border-color .16s ease-out,background .16s ease-out}
+.p-beacon .mk a:hover{border-color:var(--flame);background:rgba(234,69,23,.04)}
+.p-beacon .mk b{font-family:var(--display);font-size:15.5px;font-weight:800}
+.p-beacon .mk i{font-style:normal;color:var(--flame);font-weight:900}
+
+.p-beacon .strip{background:var(--flame);color:#fff;padding:clamp(34px,4.5vw,56px) 0}
+.p-beacon .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.p-beacon .strip b{display:block;font-family:var(--display);font-size:clamp(28px,3.4vw,40px);font-weight:900;letter-spacing:-.02em}
+.p-beacon .strip span{display:block;margin-top:6px;font-size:13px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+
+.p-beacon .faq details{border:2px solid #E8E8E8;border-radius:10px;margin-bottom:12px;background:#fff}
+.p-beacon .faq summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;gap:16px;
+  align-items:center;font-family:var(--display);font-size:17px;font-weight:800}
+.p-beacon .faq summary::-webkit-details-marker{display:none}
+.p-beacon .faq summary::after{content:'+';margin-left:auto;color:var(--flame);font-size:24px;font-weight:400;line-height:1}
+.p-beacon .faq details[open]{border-color:var(--flame)}
+.p-beacon .faq details[open] summary::after{content:'\2212'}
+.p-beacon .faq p{margin:0;padding:0 22px 22px;font-size:15.5px;line-height:1.68;color:#5A5A5A;max-width:76ch}
+
+.p-beacon footer{background:var(--slate-dk);color:rgba(255,255,255,.62);padding:40px 0;font-size:13.5px}
+.p-beacon footer .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.p-beacon footer a{color:rgba(255,255,255,.8)}
+/* Static band, not position:fixed. As a sticky bar it owned bottom-centre
+   and forced the picker to the top, where it covered the site nav on all
+   three directions. Ships as sticky if Beacon wins — see delivery note. */
+.p-beacon .sticky{background:var(--ink);
+  display:flex;gap:10px;align-items:center;padding:16px clamp(14px,4vw,28px);
+  border-top:2px solid var(--flame)}
+.p-beacon .sticky p{margin:0;color:#fff;font-size:14.5px;font-weight:700}
+.p-beacon .sticky p span{display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,.55)}
+.p-beacon .sticky a{margin-left:auto;background:var(--flame);color:#fff;padding:12px 22px;
+  border-radius:6px;font-size:14.5px;font-weight:800;white-space:nowrap}
+
+/* ---------- responsive, all three ---------- */
+@media (max-width:980px){
+  .p-momentum .grid3,.p-ledger .svc,.p-ledger .cases,.p-beacon .svc{grid-template-columns:1fr 1fr}
+  .p-momentum .markets,.p-ledger .mk,.p-beacon .mk{grid-template-columns:repeat(2,1fr)}
+  .p-ledger .hero,.p-beacon .hero .wrap{grid-template-columns:1fr}
+  .p-ledger .heroside{border-left:0;padding-left:0;border-top:1px solid #DED9CB;padding-top:24px}
+  .p-ledger .endcta{grid-template-columns:1fr}
+  .p-beacon .strip .wrap{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:720px){
+  .p-momentum .nav .links,.p-ledger .nav .links,.p-beacon .nav .links,.p-beacon .topbar .r{display:none}
+  .p-momentum .nav .tel,.p-ledger .nav .tel,.p-beacon .nav .tel{margin-left:auto}
+  .p-momentum .stats{grid-template-columns:1fr 1fr}
+  .p-momentum .grid3,.p-ledger .svc,.p-ledger .cases,.p-beacon .svc{grid-template-columns:1fr}
+  /* city + state sit side by side, so min-content exceeds a 2-col track
+     at 390px and pushes the page 11px wide. One column, and min-width:0
+     so a grid item can never be forced wider than its track again. */
+  .p-momentum .markets,.p-ledger .mk,.p-beacon .mk{grid-template-columns:1fr}
+  .p-momentum .markets a,.p-ledger .mk a,.p-beacon .mk a{min-width:0}
+  .p-ledger .sechead{grid-template-columns:1fr;gap:8px}
+  .p-momentum .hero-in{padding-bottom:120px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .p-momentum .rev{opacity:1;transform:none;transition:none}
+  .p-momentum .card,.p-momentum .b1,.p-momentum .b2{transition:none}
+}
+
+/* ============================================================
+   THE PICKER — verbatim from ~/.claude/skills/prototype/PICKER.md
+   Harness chrome. Never restyled, never themed to the project.
+   data-position="top" because Beacon owns the bottom of the
+   screen with a sticky action bar.
+   ============================================================ */
+.proto-picker{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  z-index:2147483647;display:flex;align-items:center;gap:2px;padding:4px;
+  border-radius:999px;background:rgba(10,10,10,.82);
+  -webkit-backdrop-filter:blur(12px) saturate(1.4);backdrop-filter:blur(12px) saturate(1.4);
+  box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 8px 24px rgba(0,0,0,.24),0 2px 6px rgba(0,0,0,.12);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13px;line-height:1;-webkit-font-smoothing:antialiased;
+  user-select:none;-webkit-user-select:none;
+}
+.proto-picker-highlight{position:absolute;top:4px;left:0;height:28px;border-radius:999px;
+  background:rgba(255,255,255,.12);will-change:transform}
+.proto-picker[data-ready] .proto-picker-highlight{
+  transition:transform 250ms cubic-bezier(.23,1,.32,1),width 250ms cubic-bezier(.23,1,.32,1)}
+@media (prefers-reduced-motion:reduce){
+  .proto-picker[data-ready] .proto-picker-highlight{transition:none}}
+.proto-picker-item{position:relative;display:flex;align-items:center;height:28px;padding:0 12px;
+  border:0;border-radius:999px;background:transparent;color:rgba(255,255,255,.55);
+  font:inherit;cursor:pointer;transition:color 150ms ease-out}
+.proto-picker-item:hover{color:rgba(255,255,255,.85)}
+.proto-picker-item:active{transform:scale(.97)}
+.proto-picker-item:focus-visible{outline:2px solid rgba(255,255,255,.4);outline-offset:2px}
+.proto-picker-item[data-active]{color:#fff}
+.proto-picker-divider{width:1px;height:16px;margin:0 4px;background:rgba(255,255,255,.12)}
+.proto-picker-replay{padding:0 10px;font-size:14px}
+.proto-picker[data-position="top"]{bottom:auto;top:24px}
+</style>
+</head>
+<body>
+
+<div id="stage"></div>
+
+<nav class="proto-picker" aria-label="Prototype variants">
+  <span class="proto-picker-highlight" aria-hidden="true"></span>
+  <button class="proto-picker-item" data-active aria-current="true">Momentum</button>
+  <button class="proto-picker-item">Ledger</button>
+  <button class="proto-picker-item">Beacon</button>
+  <span class="proto-picker-divider" aria-hidden="true"></span>
+  <button class="proto-picker-item proto-picker-replay" aria-label="Replay animation (R)">&#8635;</button>
+</nav>
+
+<script>
+(function(){
+'use strict';
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* =============================================================
+   SHARED CONTENT
+   Identical across all three directions on purpose: the picker
+   should isolate the design decision, not confound it with copy.
+   Every figure below is verifiable from the live site — no
+   invented performance metrics anywhere.
+   ============================================================= */
+const TEL = '(504) 777-3296', TELH = 'tel:5047773296';
+
+const SERVICES = [
+  {n:'Search Engine Optimization', s:'SEO',          d:'Technical, on-page and off-page work that compounds. The channel everything else leans on.', u:'/service/seo/'},
+  {n:'Local SEO & Maps',           s:'Local SEO',    d:'Google Business Profile, map pack visibility and the location pages that hold it.',          u:'/service/local-seo/'},
+  {n:'Web Design',                 s:'Web Design',   d:'Sites built to convert, not just to launch. Responsive from the first wireframe.',           u:'/service/web-design/'},
+  {n:'Web Development',            s:'Development',  d:'WordPress builds, integrations and the technical foundation search engines reward.',         u:'/service/web-development/'},
+  {n:'Google Ads',                 s:'Google Ads',   d:'Paid search that buys intent while the organic programme matures.',                          u:'/service/google-ads/'},
+  {n:'Conversion Rate Optimization', s:'CRO',        d:'Turning the traffic you already have into calls, forms and booked work.',                    u:'/conversion-rate-optimization-cro/'},
+  {n:'Content Marketing',          s:'Content',      d:'Answer-shaped content that earns the position and survives the next algorithm update.',      u:'/service/content-marketing/'},
+  {n:'AI Automation',              s:'AI Automation',d:'Workflow automation and AI tooling wired into how your business already runs.',              u:'/service/ai-automation-services/'},
+  {n:'White Label Services',       s:'White Label',  d:'SEO, web design, content and link building delivered under your agency’s brand.',       u:'/service/white-label-seo/'}
+];
+
+/* Markets are taken from the phone numbers Infintech publishes on its
+   own homepage (504, 713, 469, 512, 404, 347, 425, 628) — evidence of
+   real footprint, not invented. Confirm the list before it ships. */
+const MARKETS = [
+  {c:'New Orleans',  s:'Louisiana'},   {c:'Houston',   s:'Texas'},
+  {c:'Dallas',       s:'Texas'},       {c:'Austin',    s:'Texas'},
+  {c:'Atlanta',      s:'Georgia'},     {c:'New York',  s:'New York'},
+  {c:'Seattle',      s:'Washington'},  {c:'San Francisco', s:'California'}
+];
+
+const STATS = [
+  {b:'2002', s:'Founded'},
+  {b:'25+',  s:'Services'},
+  {b:'8',    s:'Markets'},
+  {b:'White label', s:'Partner programme'}
+];
+
+const CASES = [
+  {t:'Commercial Construction', h:'Winning work that starts as a search',
+   p:'A construction client’s buyers research long before they call. The programme targeted that research window with service and location pages built around how the work is actually specified.'},
+  {t:'Garage Door', h:'Owning the map pack in a service radius',
+   p:'Local intent converts fastest and decays quickest. This build paired Google Business Profile work with location pages that carry their own rankings rather than borrowing the homepage’s.'}
+];
+
+/* Placeholder PAA set. Replace with questions pulled from live SERPs
+   before this ships — see the note in the delivery report. */
+const FAQS = [
+  {q:'How much does SEO cost in New Orleans?',
+   a:'It depends on how competitive your service area is and how much technical debt the site is carrying. A single-location service business and a multi-market operator are not the same project. We scope from an audit rather than a price list, so the number reflects the work the site actually needs.'},
+  {q:'How long before SEO produces leads?',
+   a:'Technical fixes can move rankings within weeks. Content and authority work compound over months. Anyone promising page one in thirty days is either buying ads or bidding on your brand name.'},
+  {q:'What is the difference between SEO and local SEO?',
+   a:'SEO is about ranking pages. Local SEO is about ranking a business inside a geography, which brings Google Business Profile, proximity, citations and location pages into play. Most service businesses need both, weighted toward local.'},
+  {q:'Do I need a new website, or just SEO?',
+   a:'If the site is slow, hard to edit or built on a template fighting you at every turn, SEO spend gets absorbed by the platform. We audit first and say plainly which of the two is the constraint.'},
+  {q:'Do you work with agencies as a white label partner?',
+   a:'Yes. SEO, web design, content marketing, link building and reputation management are all available delivered under your brand, with reporting you can hand straight to your client.'},
+  {q:'How do you report on results?',
+   a:'Rankings, organic sessions, calls and form fills, tied back to the pages and queries driving them. The point of a report is to make the next decision obvious, not to fill a deck.'}
+];
+
+const NAV = ['Services','Case Studies','Locations','About'];
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const two = n => String(n).padStart(2,'0');
+
+/* =============================================================
+   DIRECTION 1 — MOMENTUM (the animated one)
+   ============================================================= */
+function renderMomentum(){
+  return '<div class="p-momentum">' +
+    '<div class="hero">' +
+      '<div class="hero-bg"><div class="vig"></div><div class="grain"></div></div>' +
+      '<div class="wrap"><div class="nav">' +
+        '<span class="mark">Infintech<b>.</b></span>' +
+        '<span class="links">' + NAV.map(n=>'<a href="#">'+n+'</a>').join('') + '</span>' +
+        '<a class="tel" href="'+TELH+'">'+TEL+'</a>' +
+      '</div></div>' +
+      '<div class="wrap hero-in">' +
+        '<p class="eyebrow"><i></i> New Orleans &middot; Since 2002</p>' +
+        '<h1>We help businesses rank higher, grow faster, and <em>convert better</em>.</h1>' +
+        '<p class="lede">Search, web design and paid media built for local intent. We map every service to every market you sell in, then hold the rankings you already earned.</p>' +
+        '<div class="cta"><a class="b1" href="#">Get a free proposal <span>&rarr;</span></a>' +
+        '<a class="b2" href="#">See case studies</a></div>' +
+        '<div class="chips"><span class="l">Services</span>' +
+          SERVICES.slice(0,6).map(s=>'<a href="'+s.u+'">'+esc(s.s)+'</a>').join('') +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+
+    '<section class="band"><div class="wrap"><div class="stats rev">' +
+      STATS.map(s=>'<div><b>'+esc(s.b)+'</b><span>'+esc(s.s)+'</span></div>').join('') +
+    '</div></div></section>' +
+
+    '<section><div class="wrap">' +
+      '<p class="kicker rev">What we do</p>' +
+      '<h2 class="rev">Every service, mapped to every market you sell in</h2>' +
+      '<p class="sec-lede rev">Nine disciplines that compound when they run together. Each one has its own page, its own rankings and its own reporting line.</p>' +
+      '<div class="grid3">' +
+        SERVICES.map((s,i)=>'<a class="card rev" href="'+s.u+'"><span class="num">'+two(i+1)+'</span>' +
+          '<h3>'+esc(s.n)+'</h3><p>'+esc(s.d)+'</p><span class="go">Explore &rarr;</span></a>').join('') +
+      '</div>' +
+    '</div></section>' +
+
+    '<section class="band"><div class="wrap">' +
+      '<p class="kicker rev">Where we work</p>' +
+      '<h2 class="rev">Eight markets, each with its own pages and its own rankings</h2>' +
+      '<p class="sec-lede rev">A location page that simply swaps the city name does not rank. Each market gets pages built for how that market actually searches.</p>' +
+      '<div class="markets">' +
+        MARKETS.map(m=>'<a href="#"><span>'+esc(m.c)+'</span><i>'+esc(m.s)+'</i></a>').join('') +
+      '</div>' +
+    '</div></section>' +
+
+    '<section><div class="wrap">' +
+      '<p class="kicker rev">Selected work</p>' +
+      '<h2 class="rev">Programmes built for how the work is actually bought</h2>' +
+      '<div class="grid3" style="grid-template-columns:repeat(2,1fr)">' +
+        CASES.map(c=>'<a class="card rev" href="#"><span class="num">'+esc(c.t.toUpperCase())+'</span>' +
+          '<h3>'+esc(c.h)+'</h3><p>'+esc(c.p)+'</p><span class="go">Read the case study &rarr;</span></a>').join('') +
+      '</div>' +
+    '</div></section>' +
+
+    '<section class="band"><div class="wrap">' +
+      '<p class="kicker rev">Questions we get asked</p>' +
+      '<h2 class="rev">Straight answers, before you call</h2>' +
+      '<div class="faq rev">' +
+        FAQS.map(f=>'<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>').join('') +
+      '</div>' +
+    '</div></section>' +
+
+    '<section><div class="wrap" style="text-align:center">' +
+      '<h2 class="rev" style="margin-inline:auto;max-width:20ch">Tell us the market. We will tell you what it takes to win it.</h2>' +
+      '<p class="sec-lede rev" style="margin-inline:auto;text-align:center">No pitch deck. An audit, a plan and the number it takes to run it.</p>' +
+      '<div class="cta rev" style="justify-content:center"><a class="b1" href="#">Get a free proposal <span>&rarr;</span></a>' +
+      '<a class="b2" href="'+TELH+'">Call '+TEL+'</a></div>' +
+    '</div></section>' +
+
+    '<div class="wrap"><footer><span>&copy; 2026 Infintech Designs</span>' +
+      '<a href="#">Privacy</a><a href="#">Terms</a>' +
+      '<span style="margin-left:auto">New Orleans, Louisiana &middot; ' + TEL + '</span></footer></div>' +
+  '</div>';
+}
+
+/* =============================================================
+   DIRECTION 2 — LEDGER
+   ============================================================= */
+function renderLedger(){
+  return '<div class="p-ledger">' +
+    '<div class="wrap"><div class="nav">' +
+      '<span class="mark">Infintech<b>.</b></span>' +
+      '<span class="links">' + NAV.map(n=>'<a href="#">'+n+'</a>').join('') + '</span>' +
+      '<a class="tel" href="'+TELH+'">'+TEL+'</a>' +
+    '</div></div>' +
+
+    '<div class="wrap"><div class="hero">' +
+      '<div>' +
+        '<p class="eyebrow"><s></s> New Orleans &middot; Since 2002</p>' +
+        '<h1>We help businesses rank higher, grow faster, and <em>convert better</em>.</h1>' +
+        '<p class="lede">Search, web design and paid media built for local intent. We map every service to every market you sell in, then hold the rankings you already earned.</p>' +
+      '</div>' +
+      '<div class="heroside">' +
+        STATS.map(s=>'<div class="row"><span>'+esc(s.s)+'</span><b>'+esc(s.b)+'</b></div>').join('') +
+        '<a class="b1" href="#">Get a free proposal</a>' +
+      '</div>' +
+    '</div></div>' +
+
+    '<div class="wrap"><section>' +
+      '<div class="sechead"><span class="secnum">01 / SERVICES</span><div>' +
+        '<h2>Every service, mapped to every market you sell in</h2>' +
+        '<p class="sec-lede">Nine disciplines that compound when they run together. Each has its own page, its own rankings and its own reporting line.</p>' +
+      '</div></div>' +
+      '<div class="svc">' +
+        SERVICES.map((s,i)=>'<a href="'+s.u+'"><span class="ix">'+two(i+1)+'</span>' +
+          '<span><span class="nm">'+esc(s.n)+'</span><span class="ds">'+esc(s.d)+'</span></span>' +
+          '<span class="ar">&rarr;</span></a>').join('') +
+      '</div>' +
+    '</section></div>' +
+
+    '<div class="wrap"><section>' +
+      '<div class="sechead"><span class="secnum">02 / MARKETS</span><div>' +
+        '<h2>Eight markets, each with its own pages and its own rankings</h2>' +
+        '<p class="sec-lede">A location page that simply swaps the city name does not rank. Each market gets pages built for how that market actually searches.</p>' +
+      '</div></div>' +
+      '<div class="mk">' + MARKETS.map(m=>'<a href="#"><b>'+esc(m.c)+'</b><span>'+esc(m.s)+'</span></a>').join('') + '</div>' +
+    '</section></div>' +
+
+    '<div class="wrap"><section>' +
+      '<div class="sechead"><span class="secnum">03 / WORK</span><div>' +
+        '<h2>Programmes built for how the work is actually bought</h2>' +
+      '</div></div>' +
+      '<div class="cases">' +
+        CASES.map(c=>'<article><p class="tag">'+esc(c.t)+'</p><h3>'+esc(c.h)+'</h3>' +
+          '<p>'+esc(c.p)+'</p><a class="go" href="#">Read the case study</a></article>').join('') +
+      '</div>' +
+    '</section></div>' +
+
+    '<div class="wrap"><section>' +
+      '<div class="sechead"><span class="secnum">04 / FAQ</span><div>' +
+        '<h2>Straight answers, before you call</h2>' +
+      '</div></div>' +
+      '<div class="faq">' +
+        FAQS.map((f,i)=>'<details><summary><i>'+two(i+1)+'</i><span>'+esc(f.q)+'</span></summary>' +
+          '<p>'+esc(f.a)+'</p></details>').join('') +
+      '</div>' +
+    '</section></div>' +
+
+    '<div class="wrap"><section style="border-bottom:0"><div class="endcta">' +
+      '<div><h2>Tell us the market. We will tell you what it takes to win it.</h2>' +
+      '<p>No pitch deck. An audit, a plan and the number it takes to run it.</p></div>' +
+      '<a href="#">Get a free proposal</a>' +
+    '</div></section></div>' +
+
+    '<div class="wrap"><footer><span>&copy; 2026 Infintech Designs</span>' +
+      '<a href="#">Privacy</a><a href="#">Terms</a>' +
+      '<span style="margin-left:auto">New Orleans, Louisiana &middot; '+TEL+'</span></footer></div>' +
+  '</div>';
+}
+
+/* =============================================================
+   DIRECTION 3 — BEACON
+   ============================================================= */
+function renderBeacon(){
+  return '<div class="p-beacon">' +
+    '<div class="topbar"><div class="wrap"><span>Serving <b>8 markets</b> nationwide</span>' +
+      '<span>Free proposal, no obligation</span><span class="r">Since 2002</span></div></div>' +
+
+    '<div class="wrap"><div class="nav">' +
+      '<span class="mark">Infintech<b>.</b></span>' +
+      '<span class="links">' + NAV.map(n=>'<a href="#">'+n+'</a>').join('') + '</span>' +
+      '<a class="tel" href="'+TELH+'">Call '+TEL+'</a>' +
+    '</div></div>' +
+
+    '<div class="hero"><div class="wrap">' +
+      '<div>' +
+        '<span class="flag">New Orleans &middot; Since 2002</span>' +
+        '<h1>We help businesses rank higher, grow faster, and <em>convert better</em>.</h1>' +
+        '<p class="lede">Search, web design and paid media built for local intent. We map every service to every market you sell in.</p>' +
+        '<ul class="ticks">' +
+          '<li><i>&#10003;</i> Location pages that carry their own rankings</li>' +
+          '<li><i>&#10003;</i> Reporting tied to calls and forms, not vanity charts</li>' +
+          '<li><i>&#10003;</i> White label delivery available under your brand</li>' +
+        '</ul>' +
+        '<div class="herobtns"><a class="b1" href="#">Get my free proposal</a>' +
+        '<a class="b2" href="#">See case studies</a></div>' +
+      '</div>' +
+      '<div class="quote">' +
+        '<h3>Free proposal</h3><p>Tell us the market and the service. We will come back with an audit and a plan.</p>' +
+        '<label for="bq-1">Business name</label><input id="bq-1" type="text" placeholder="Your business">' +
+        '<label for="bq-2">Primary market</label><select id="bq-2">' +
+          MARKETS.map(m=>'<option>'+esc(m.c)+', '+esc(m.s)+'</option>').join('') + '</select>' +
+        '<label for="bq-3">Service needed</label><select id="bq-3">' +
+          SERVICES.map(s=>'<option>'+esc(s.n)+'</option>').join('') + '</select>' +
+        '<button type="button">Send my request</button>' +
+        '<small>Or call '+TEL+'</small>' +
+      '</div>' +
+    '</div></div>' +
+
+    '<section><div class="wrap">' +
+      '<p class="kicker">What we do</p>' +
+      '<h2>Every service, mapped to every market</h2>' +
+      '<p class="sec-lede">Nine disciplines that compound when they run together. Each has its own page, its own rankings and its own reporting line.</p>' +
+      '<div class="svc">' +
+        SERVICES.map((s,i)=>'<a href="'+s.u+'"><span class="ic">'+two(i+1)+'</span>' +
+          '<h3>'+esc(s.n)+'</h3><p>'+esc(s.d)+'</p><span class="go">Explore &rarr;</span></a>').join('') +
+      '</div>' +
+    '</div></section>' +
+
+    '<div class="strip"><div class="wrap">' +
+      STATS.map(s=>'<div><b>'+esc(s.b)+'</b><span>'+esc(s.s)+'</span></div>').join('') +
+    '</div></div>' +
+
+    '<section class="alt"><div class="wrap">' +
+      '<p class="kicker">Where we work</p>' +
+      '<h2>Eight markets, each with its own pages</h2>' +
+      '<p class="sec-lede">A location page that simply swaps the city name does not rank. Each market gets pages built for how that market actually searches.</p>' +
+      '<div class="mk">' + MARKETS.map(m=>'<a href="#"><b>'+esc(m.c)+'</b><i>&rarr;</i></a>').join('') + '</div>' +
+    '</div></section>' +
+
+    '<section><div class="wrap">' +
+      '<p class="kicker">Questions we get asked</p>' +
+      '<h2>Straight answers, before you call</h2>' +
+      '<div class="faq" style="max-width:900px;margin:0 auto">' +
+        FAQS.map(f=>'<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>').join('') +
+      '</div>' +
+    '</div></section>' +
+
+    '<div class="sticky"><p>Free proposal, no obligation<span>Serving 8 markets since 2002</span></p>' +
+      '<a href="'+TELH+'">Call '+TEL+'</a></div>' +
+
+    '<footer><div class="wrap"><span>&copy; 2026 Infintech Designs</span>' +
+      '<a href="#">Privacy</a><a href="#">Terms</a>' +
+      '<span style="margin-left:auto">New Orleans, Louisiana &middot; '+TEL+'</span></div></footer>' +
+  '</div>';
+}
+
+/* =============================================================
+   MOTION — only Momentum has any. Both pieces below are torn
+   down on switch, so nothing survives into another direction.
+   ============================================================= */
+function attachMomentumMotion(root){
+  const stops = [];
+
+  /* --- scroll reveal --- */
+  const revs = [...root.querySelectorAll('.rev')];
+  if (REDUCED){
+    revs.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.06});
+    revs.forEach(el => io.observe(el));
+    stops.push(() => io.disconnect());
+  }
+
+  /* --- hero flow field (the "Current" background, carried over) --- */
+  const host = root.querySelector('.hero-bg');
+  const cv = document.createElement('canvas');
+  host.insertBefore(cv, host.firstChild);
+  const ctx = cv.getContext('2d');
+  let w = 0, h = 0, parts = [], COUNT = 0;
+
+  function size(){
+    const r = host.getBoundingClientRect();
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);   // capped: the single biggest lag guard
+    w = Math.max(1, Math.round(r.width)); h = Math.max(1, Math.round(r.height));
+    cv.width = Math.round(w*dpr); cv.height = Math.round(h*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    COUNT = Math.min(460, Math.max(150, Math.round((w*h)/3600)));
+    parts = Array.from({length:COUNT}, () => spawn(true));
+    ctx.clearRect(0,0,w,h);
+  }
+  function spawn(any){
+    return {x:Math.random()*w, y:any?Math.random()*h:h+20, life:0,
+            max:120+Math.random()*320, sp:.45+Math.random()*1.35, hue:Math.random()};
+  }
+  const field = (x,y,t) => (Math.sin(x*0.0016 + t*0.42) + Math.cos(y*0.0019 - t*0.31) +
+                            Math.sin((x+y)*0.00092 + t*0.19)) * 1.15 - 1.5;
+
+  function draw(t){
+    ctx.globalCompositeOperation = 'destination-out';   // erase alpha, keep the CSS base visible
+    ctx.fillStyle = 'rgba(0,0,0,0.115)';
+    ctx.fillRect(0,0,w,h);
+    ctx.globalCompositeOperation = 'lighter';           // additive: trails bloom into light
+    ctx.lineCap = 'round';
+    for (let i=0;i<COUNT;i++){
+      const p = parts[i], a = field(p.x,p.y,t);
+      const nx = p.x + Math.cos(a)*p.sp*1.5, ny = p.y + Math.sin(a)*p.sp*1.5;
+      const fade = Math.sin((p.life/p.max)*Math.PI);
+      if (fade > .01){
+        const r = 234+(246-234)*p.hue, g = 69+(185-69)*p.hue, b = 23+(105-23)*p.hue;
+        ctx.strokeStyle = 'rgba('+(r|0)+','+(g|0)+','+(b|0)+','+(fade*.34).toFixed(3)+')';
+        ctx.lineWidth = .8 + fade*1.8;
+        ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(nx,ny); ctx.stroke();
+      }
+      p.x = nx; p.y = ny; p.life++;
+      if (p.life > p.max || p.x < -40 || p.x > w+40 || p.y < -40 || p.y > h+40){
+        parts[i] = spawn(false);
+        parts[i].y = Math.random()*h;
+        parts[i].x = Math.random() < .5 ? -10 : Math.random()*w;
+      }
+    }
+  }
+
+  size();
+  const ro = new ResizeObserver(size); ro.observe(host);
+  stops.push(() => ro.disconnect());
+
+  if (REDUCED){
+    for (let k=0;k<90;k++) draw(k*.05);              // one composed still, then stop
+  } else {
+    let raf = 0, last = performance.now(), dead = false;
+    function frame(now){
+      if (dead) return;
+      last = now;
+      draw(now/1000);
+      raf = requestAnimationFrame(frame);
+    }
+    // stop dead when the tab is hidden, and when the hero scrolls out of view:
+    // there is no reason to burn a core animating something nobody can see.
+    let visible = true;
+    const vio = new IntersectionObserver(es => {
+      visible = es[0].isIntersecting;
+      if (visible && !dead && !document.hidden){ last = performance.now(); cancelAnimationFrame(raf); raf = requestAnimationFrame(frame); }
+      else cancelAnimationFrame(raf);
+    }, {threshold:0});
+    vio.observe(host);
+    function onVis(){
+      if (document.hidden || !visible) cancelAnimationFrame(raf);
+      else if (!dead){ last = performance.now(); raf = requestAnimationFrame(frame); }
+    }
+    document.addEventListener('visibilitychange', onVis);
+    raf = requestAnimationFrame(frame);
+    stops.push(() => { dead = true; cancelAnimationFrame(raf);
+      vio.disconnect(); document.removeEventListener('visibilitychange', onVis); });
+  }
+
+  return () => stops.forEach(f => f());
+}
+
+/* =============================================================
+   PICKER WIRING — behaviour contract per PICKER.md, plus the
+   teardown addition (variants return a cleanup fn) so a switch
+   cannot leak a live rAF loop or observer into the next page.
+   ============================================================= */
+const variants = [
+  {name:'Momentum', render:renderMomentum, motion:attachMomentumMotion},
+  {name:'Ledger',   render:renderLedger},
+  {name:'Beacon',   render:renderBeacon}
+];
+
+const stage     = document.getElementById('stage');
+const picker    = document.querySelector('.proto-picker');
+const highlight = picker.querySelector('.proto-picker-highlight');
+const items     = [...picker.querySelectorAll('.proto-picker-item:not(.proto-picker-replay)')];
+const replay    = picker.querySelector('.proto-picker-replay');
+let current = 0, teardown = null;
+
+function moveHighlight(){
+  const el = items[current];
+  highlight.style.width = el.offsetWidth + 'px';
+  highlight.style.transform = 'translateX(' + el.offsetLeft + 'px)';
+}
+
+function mount(i){
+  if (teardown){ teardown(); teardown = null; }
+  stage.innerHTML = '';
+  window.scrollTo(0, 0);
+  requestAnimationFrame(() => {
+    stage.innerHTML = variants[i].render();
+    teardown = variants[i].motion ? variants[i].motion(stage) : null;
+  });
+}
+
+function setActive(i){
+  if (i < 0 || i >= variants.length) return;
+  current = i;
+  items.forEach((el, j) => {
+    el.toggleAttribute('data-active', j === i);
+    if (j === i) el.setAttribute('aria-current','true'); else el.removeAttribute('aria-current');
+  });
+  moveHighlight();
+  try {
+    const url = new URL(location);
+    url.searchParams.set('v', i + 1);
+    history.replaceState(null, '', url);
+  } catch (_) { /* file:// — selection just won't persist across reload */ }
+  mount(i);
+}
+
+items.forEach((el,i) => el.addEventListener('click', () => setActive(i)));
+replay?.addEventListener('click', () => mount(current));
+window.addEventListener('resize', moveHighlight);
+
+document.addEventListener('keydown', (e) => {
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const num = parseInt(e.key, 10);
+  if (num >= 1 && num <= variants.length) setActive(num - 1);
+  else if (e.key === 'ArrowRight') setActive((current + 1) % variants.length);
+  else if (e.key === 'ArrowLeft')  setActive((current - 1 + variants.length) % variants.length);
+  else if (e.key === 'r' || e.key === 'R') mount(current);
+});
+
+setActive((parseInt(new URLSearchParams(location.search).get('v'),10) || 1) - 1);
+requestAnimationFrame(() => requestAnimationFrame(() => picker.setAttribute('data-ready','')));
+
+})();
+</script>
+</body>
+</html>
