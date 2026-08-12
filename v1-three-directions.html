@@ -1,0 +1,1344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infintech Designs — AI & Automation Agency Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   POSITIONING — corrected 2026-08-12.
+   This is an AI-driven AUTOMATION + digital marketing agency,
+   and a Google Premier Partner. Not a warm local service shop.
+   Every direction below leads with the system, not the city.
+
+   Brand tokens still from the live site:
+   #EA4517 flame (action) · #ED9924 amber · #273A47 slate ·
+   #121212 ink · Raleway body / Montserrat display.
+   Cool neutral base + JetBrains Mono for machine voice are the
+   deliberate additions that carry the automation identity.
+   ============================================================ */
+:root{
+  --flame:#EA4517;      /* brand accent: borders, dots, graph packets */
+  --flame-ink:#C4380F;  /* same hue, AA-safe as text / button ground */
+  --flame-dk:#A82D08; --amber:#ED9924;
+  --slate:#273A47; --ink:#121212;
+  --bg:#0B0F14; --bg-2:#0E141B; --panel:#111922; --line:#1E2A36;
+  --fg:#E8EDF2; --fg-2:#9FB0C0; --fg-3:#63788A;
+  --live:#3ECF8E;
+  --sans:'Raleway',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --display:'Montserrat','Raleway',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);-webkit-font-smoothing:antialiased;background:var(--bg)}
+#stage{min-height:100vh}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+a{text-decoration:none}
+.mono{font-family:var(--mono)}
+.mark img{height:46px;width:auto;display:block}
+@media (max-width:720px){.mark img{height:34px}}
+
+/* ============================================================
+   ==============  DIRECTION 1 — SIGNAL  ======================
+   Dark, product-grade. The hero runs a live automation graph:
+   jobs entering, routing, and clearing. The ONLY animated one.
+   ============================================================ */
+.p-signal{--bg:#F4F7F9;--bg-2:#EAEFF3;--panel:#FFFFFF;--line:#DCE4EA;--fg:#0E1820;--fg-2:#4C5C6A;--fg-3:#5E6E7C;background:var(--bg);color:var(--fg);font-size:16px}
+.p-signal .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.p-signal .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(80% 70% at 76% 40%,rgba(39,58,71,.10) 0%,rgba(244,247,249,0) 62%),
+             linear-gradient(180deg,#FFFFFF 0%,#F4F7F9 72%)}
+.p-signal .hero-bg canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.p-signal .hero-bg .grid{position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000 0%,transparent 100%);
+  mask-image:radial-gradient(70% 60% at 50% 40%,#000 0%,transparent 100%)}
+.p-signal .hero>.wrap{position:relative;z-index:1}
+
+.p-signal .nav{display:flex;align-items:center;gap:28px;padding:18px 0;
+  border-bottom:1px solid var(--line);position:relative;z-index:2;background:rgba(255,255,255,.78);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.p-signal .mark{display:block;flex:none}
+.p-signal .nav .links{display:flex;gap:24px;margin-left:auto}
+.p-signal .nav .links a{color:var(--fg-2);font-size:13.5px;font-weight:600}
+.p-signal .nav .links a:hover{color:var(--fg)}
+.p-signal .nav .tel{padding:10px 18px;border-radius:8px;background:var(--flame-ink);color:#fff;
+  font-size:13.5px;font-weight:700}
+
+.p-signal .hero-in{display:grid;grid-template-columns:1.12fr .88fr;gap:34px;
+  align-items:center;padding:clamp(44px,5.5vw,76px) 0 clamp(48px,5.5vw,80px)}
+.p-signal .badge{display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border-radius:999px;
+  border:1px solid var(--line);background:var(--panel);margin-bottom:22px}
+.p-signal .badge i{width:6px;height:6px;border-radius:50%;background:var(--live);
+  box-shadow:0 0 0 3px rgba(62,207,142,.16);font-style:normal}
+.p-signal .badge span{font-family:var(--mono);font-size:11.5px;font-weight:500;
+  letter-spacing:.04em;color:var(--fg-2)}
+.p-signal h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.5vw,45px);
+  line-height:1.06;letter-spacing:-.024em;margin:0 0 22px;color:var(--fg);text-wrap:balance}
+.p-signal h1 em{font-style:normal;color:var(--flame)}
+.p-signal .lede{font-size:clamp(15px,1.15vw,17px);line-height:1.6;color:var(--fg-2);
+  max-width:56ch;margin:0 0 24px}
+.p-signal .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.p-signal .b1{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:9px;
+  background:var(--flame-ink);color:#fff;font-size:15px;font-weight:700;
+  box-shadow:0 8px 24px rgba(234,69,23,.3);transition:transform .16s cubic-bezier(.23,1,.32,1)}
+.p-signal .b1:hover{transform:translateY(-2px)}
+.p-signal .b2{display:inline-flex;align-items:center;padding:14px 24px;border-radius:9px;
+  border:1px solid var(--line);background:var(--panel);color:var(--fg);font-size:15px;font-weight:600;
+  transition:border-color .16s ease-out}
+.p-signal .b2:hover{border-color:var(--fg-3)}
+.p-signal .partner{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;padding-top:22px;border-top:1px solid var(--line)}
+.p-signal .partner .g{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;
+  color:var(--fg-3);letter-spacing:.03em}
+.p-signal .partner .g b{color:var(--fg);font-weight:700}
+.p-signal .partner .dot{width:1px;height:14px;background:var(--line)}
+
+/* live job console beside the graph */
+.p-signal .console{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.92);box-shadow:0 20px 50px rgba(14,24,32,.10);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);overflow:hidden}
+.p-signal .console header{display:flex;align-items:center;gap:8px;padding:12px 16px;
+  border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--fg-3)}
+.p-signal .console header i{width:7px;height:7px;border-radius:50%;background:var(--live);font-style:normal}
+.p-signal .console header b{color:var(--fg-2);font-weight:500}
+.p-signal .console header .t{margin-left:auto}
+.p-signal .console ul{margin:0;padding:8px 0;list-style:none}
+.p-signal .console li{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;
+  padding:9px 16px;font-family:var(--mono);font-size:12px;color:var(--fg-2);
+  border-bottom:1px solid rgba(220,228,234,.9)}
+.p-signal .console li:last-child{border-bottom:0}
+.p-signal .console li .k{color:var(--fg-3)}
+.p-signal .console li .s{padding:3px 8px;border-radius:5px;font-size:10.5px;font-weight:700;letter-spacing:.04em}
+.p-signal .console li .ok{background:rgba(14,107,75,.12);color:#0E6B4B}
+.p-signal .console li .run{background:rgba(138,90,0,.12);color:#8A5A00}
+
+.p-signal section{padding:clamp(58px,7vw,100px) 0;border-bottom:1px solid var(--line)}
+.p-signal .kicker{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--flame-ink);margin:0 0 14px}
+.p-signal h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,40px);
+  line-height:1.14;letter-spacing:-.02em;margin:0 0 16px;color:var(--fg);text-wrap:balance;}
+.p-signal .sec-lede{font-size:16.5px;line-height:1.62;color:var(--fg-2);max-width:60ch;margin:0 0 44px}
+
+.p-signal .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.p-signal .step{padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--panel);
+  position:relative;transition:border-color .2s ease-out}
+.p-signal .step:hover{border-color:var(--fg-3)}
+.p-signal .step .n{font-family:var(--mono);font-size:11.5px;color:var(--flame-ink);margin-bottom:14px;display:block}
+.p-signal .step h3{font-family:var(--display);font-size:17px;font-weight:700;margin:0 0 8px;color:var(--fg)}
+.p-signal .step p{font-size:14px;line-height:1.6;color:var(--fg-2);margin:0}
+
+.p-signal .pains{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.p-signal .pain{padding:26px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.p-signal .pain .v{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--fg-3);margin:0 0 14px}
+.p-signal .pain h3{font-family:var(--display);font-size:18px;font-weight:700;margin:0 0 10px;color:var(--fg)}
+.p-signal .pain p{font-size:14.5px;line-height:1.6;color:var(--fg-2);margin:0 0 16px}
+.p-signal .pain .fix{display:flex;gap:9px;align-items:flex-start;padding-top:14px;
+  border-top:1px solid var(--line);font-size:13.5px;color:var(--fg-2)}
+.p-signal .pain .fix i{color:var(--live);font-style:normal;font-weight:700}
+
+.p-signal .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.p-signal .svc a{padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--panel);
+  color:var(--fg);font-size:14.5px;font-weight:600;display:flex;justify-content:space-between;gap:10px;
+  transition:border-color .16s ease-out,color .16s ease-out}
+.p-signal .svc a:hover{border-color:var(--flame)}
+.p-signal .svc a i{font-style:normal;color:var(--fg-3)}
+
+.p-signal .faq details{border-top:1px solid var(--line)}
+.p-signal .faq details:last-of-type{border-bottom:1px solid var(--line)}
+.p-signal .faq summary{list-style:none;cursor:pointer;padding:20px 0;display:flex;gap:16px;
+  align-items:center;font-family:var(--display);font-size:17px;font-weight:700;color:var(--fg)}
+.p-signal .faq summary::-webkit-details-marker{display:none}
+.p-signal .faq summary::after{content:'+';margin-left:auto;color:var(--flame);font-size:21px;font-weight:400}
+.p-signal .faq details[open] summary::after{content:'\2212'}
+.p-signal .faq p{margin:0 0 22px;font-size:15px;line-height:1.7;color:var(--fg-2);max-width:74ch}
+.p-signal footer{padding:40px 0;color:var(--fg-3);font-size:13.5px;display:flex;flex-wrap:wrap;gap:14px}
+.p-signal footer a{color:var(--fg-2)}
+.p-signal .rev{opacity:0;transform:translateY(14px);
+  transition:opacity .42s cubic-bezier(.16,1,.3,1),transform .42s cubic-bezier(.16,1,.3,1)}
+.p-signal .rev.in{opacity:1;transform:none}
+
+/* ============================================================
+   ==============  DIRECTION 2 — OPERATOR  ====================
+   Light, software-product. Reads like a platform you can buy,
+   not an agency you must brief. No motion.
+   ============================================================ */
+.p-operator{background:#FBFBFC;color:#0D1520;font-size:16px}
+.p-operator .nav{display:flex;align-items:center;gap:28px;padding:18px 0;border-bottom:1px solid #E6E9ED}
+.p-operator .mark{display:block;flex:none}
+.p-operator .nav .links{display:flex;gap:24px;margin-left:auto}
+.p-operator .nav .links a{color:#5A6675;font-size:13.5px;font-weight:600}
+.p-operator .nav .links a:hover{color:#0D1520}
+.p-operator .nav .tel{padding:10px 18px;border-radius:8px;background:#0D1520;color:#fff;font-size:13.5px;font-weight:700}
+
+.p-operator .hero{padding:clamp(50px,6.5vw,88px) 0;text-align:center;border-bottom:1px solid #E6E9ED;
+  background:radial-gradient(70% 60% at 50% 0%,#F2F4F7 0%,#FBFBFC 70%)}
+.p-operator .badge{display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border-radius:999px;
+  border:1px solid #E0E4E9;background:#fff;margin-bottom:24px;
+  font-family:var(--mono);font-size:11.5px;color:#5A6675}
+.p-operator .badge i{width:6px;height:6px;border-radius:50%;background:var(--live);font-style:normal}
+.p-operator h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.6vw,46px);
+  line-height:1.08;letter-spacing:-.024em;margin:0 auto 20px;max-width:24ch;text-wrap:balance}
+.p-operator h1 em{font-style:normal;color:var(--flame)}
+.p-operator .lede{font-size:17.5px;line-height:1.6;color:#5A6675;max-width:60ch;margin:0 auto 30px}
+.p-operator .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.p-operator .b1{padding:14px 28px;border-radius:9px;background:var(--flame-ink);color:#fff;
+  font-size:15px;font-weight:700;box-shadow:0 8px 22px rgba(234,69,23,.24)}
+.p-operator .b2{padding:14px 26px;border-radius:9px;border:1px solid #D8DDE4;background:#fff;
+  color:#0D1520;font-size:15px;font-weight:600}
+.p-operator .fine{font-family:var(--mono);font-size:11.5px;color:#64707E}
+
+/* the workflow board — the product shot, built in CSS */
+.p-operator .board{margin-top:44px;border:1px solid #E2E6EB;border-radius:16px;background:#fff;
+  box-shadow:0 24px 60px rgba(13,21,32,.09);overflow:hidden;text-align:left}
+.p-operator .board header{display:flex;align-items:center;gap:8px;padding:13px 18px;
+  border-bottom:1px solid #EDF0F3;background:#FAFBFC;font-family:var(--mono);font-size:11.5px;color:#64707E}
+.p-operator .board header i{width:9px;height:9px;border-radius:50%;background:#E2E6EB;font-style:normal}
+.p-operator .board header i:nth-of-type(2){background:#EDEFF2}
+.p-operator .board header b{margin-left:8px;color:#5A6675;font-weight:500}
+.p-operator .lanes{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.p-operator .lane{border-right:1px solid #EDF0F3;padding:16px}
+.p-operator .lane:last-child{border-right:0}
+.p-operator .lane .lane-h{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:#64707E;margin:0 0 14px;display:flex;align-items:center;gap:7px}
+.p-operator .lane .lane-h s{width:6px;height:6px;border-radius:50%;background:var(--flame);text-decoration:none}
+.p-operator .lane:nth-child(2) h4 s{background:var(--amber)}
+.p-operator .lane:nth-child(3) h4 s{background:#5B9BD5}
+.p-operator .lane:nth-child(4) h4 s{background:var(--live)}
+.p-operator .job{border:1px solid #E8ECF0;border-radius:9px;padding:12px;margin-bottom:9px;background:#fff}
+.p-operator .job b{display:block;font-size:13.5px;font-weight:700;margin-bottom:5px;color:#0D1520}
+.p-operator .job span{display:block;font-family:var(--mono);font-size:11px;color:#64707E}
+
+.p-operator section{padding:clamp(54px,6.5vw,88px) 0;border-bottom:1px solid #E6E9ED}
+.p-operator .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--flame-ink);margin:0 0 12px}
+.p-operator h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,38px);
+  line-height:1.14;letter-spacing:-.022em;margin:0 0 14px;text-wrap:balance}
+.p-operator .sec-lede{font-size:16.5px;line-height:1.6;color:#5A6675;max-width:60ch;margin:0 0 40px}
+.p-operator .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.p-operator .step{padding:22px;border:1px solid #E6E9ED;border-radius:12px;background:#fff}
+.p-operator .step .n{font-family:var(--mono);font-size:11.5px;color:var(--flame-ink);display:block;margin-bottom:12px}
+.p-operator .step h3{font-family:var(--display);font-size:17px;font-weight:700;margin:0 0 8px}
+.p-operator .step p{font-size:14px;line-height:1.58;color:#5A6675;margin:0}
+.p-operator .pains{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.p-operator .pain{padding:24px;border:1px solid #E6E9ED;border-radius:12px;background:#fff}
+.p-operator .pain .v{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:#64707E;margin:0 0 12px}
+.p-operator .pain h3{font-family:var(--display);font-size:18px;font-weight:700;margin:0 0 10px}
+.p-operator .pain p{font-size:14.5px;line-height:1.58;color:#5A6675;margin:0 0 14px}
+.p-operator .pain .fix{display:flex;gap:9px;padding-top:13px;border-top:1px solid #EDF0F3;
+  font-size:13.5px;color:#3C4757}
+.p-operator .pain .fix i{color:var(--live);font-style:normal;font-weight:700}
+.p-operator .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.p-operator .svc a{padding:17px;border:1px solid #E6E9ED;border-radius:10px;background:#fff;color:#0D1520;
+  font-size:14.5px;font-weight:600;display:flex;justify-content:space-between;gap:10px}
+.p-operator .svc a:hover{border-color:var(--flame)}
+.p-operator .svc a i{font-style:normal;color:#B6BEC8}
+.p-operator .faq details{border-top:1px solid #E6E9ED}
+.p-operator .faq details:last-of-type{border-bottom:1px solid #E6E9ED}
+.p-operator .faq summary{list-style:none;cursor:pointer;padding:19px 0;display:flex;gap:16px;
+  font-family:var(--display);font-size:16.5px;font-weight:700}
+.p-operator .faq summary::-webkit-details-marker{display:none}
+.p-operator .faq summary::after{content:'+';margin-left:auto;color:var(--flame);font-size:20px;font-weight:400}
+.p-operator .faq details[open] summary::after{content:'\2212'}
+.p-operator .faq p{margin:0 0 20px;font-size:15px;line-height:1.68;color:#5A6675;max-width:74ch}
+.p-operator footer{padding:36px 0;color:#64707E;font-size:13.5px;display:flex;flex-wrap:wrap;gap:14px}
+.p-operator footer a{color:#5A6675}
+
+/* ============================================================
+   ==============  DIRECTION 3 — PRACTICE  ====================
+   Vertical-first. Leads with the industry and its actual pain,
+   in their own words, then the automation that removes it.
+   ============================================================ */
+.p-practice{background:#fff;color:#111A22;font-size:16px}
+.p-practice .nav{display:flex;align-items:center;gap:26px;padding:18px 0}
+.p-practice .mark{display:block;flex:none}
+.p-practice .nav .links{display:flex;gap:22px;margin-left:auto}
+.p-practice .nav .links a{color:#4E5A66;font-size:13.5px;font-weight:700}
+.p-practice .nav .tel{padding:11px 20px;border-radius:8px;background:var(--flame-ink);color:#fff;
+  font-size:14px;font-weight:800}
+.p-practice .hero{background:#0E1620;color:#fff;padding:clamp(46px,6vw,80px) 0}
+.p-practice .hero .wrap{display:grid;grid-template-columns:1fr .82fr;gap:clamp(28px,4vw,56px);align-items:center}
+.p-practice .badge{display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border-radius:6px;
+  background:rgba(255,255,255,.08);margin-bottom:20px;font-family:var(--mono);font-size:11.5px;color:#B7C4D0}
+.p-practice .badge i{width:6px;height:6px;border-radius:50%;background:var(--live);font-style:normal}
+.p-practice h1{font-family:var(--display);font-weight:900;font-size:clamp(27px,3.4vw,43px);
+  line-height:1.05;letter-spacing:-.024em;margin:0 0 18px;text-wrap:balance}
+.p-practice h1 em{font-style:normal;color:var(--amber)}
+.p-practice .lede{font-size:16.5px;line-height:1.6;color:#B7C4D0;max-width:50ch;margin:0 0 26px}
+.p-practice .cta{display:flex;flex-wrap:wrap;gap:12px}
+.p-practice .b1{padding:15px 28px;border-radius:8px;background:var(--flame-ink);color:#fff;font-size:15.5px;font-weight:800}
+.p-practice .b2{padding:15px 26px;border-radius:8px;border:1px solid rgba(255,255,255,.28);color:#fff;
+  font-size:15.5px;font-weight:700}
+.p-practice .picker{background:#fff;color:#111A22;border-radius:12px;padding:22px;
+  box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.p-practice .picker .picker-h{font-family:var(--display);font-size:18px;font-weight:800;margin:0 0 4px}
+.p-practice .picker p{font-size:13.5px;color:#5A6673;margin:0 0 16px;line-height:1.5}
+.p-practice .picker a{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;border:1px solid #E6E9ED;border-radius:9px;margin-bottom:9px;color:#111A22;
+  font-size:14.5px;font-weight:700;transition:border-color .16s ease-out,background .16s ease-out}
+.p-practice .picker a:hover{border-color:var(--flame);background:#FFF6F3}
+.p-practice .picker a span{font-family:var(--mono);font-size:11px;color:#64707E;font-weight:400}
+
+.p-practice section{padding:clamp(50px,6vw,84px) 0}
+.p-practice .alt{background:#F5F7F9}
+.p-practice .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--flame-ink);margin:0 0 12px}
+.p-practice h2{font-family:var(--display);font-weight:900;font-size:clamp(25px,3.3vw,40px);
+  line-height:1.12;letter-spacing:-.022em;margin:0 0 14px;text-wrap:balance}
+.p-practice .sec-lede{font-size:16.5px;line-height:1.6;color:#5A6673;max-width:60ch;margin:0 0 40px}
+.p-practice .verticals{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.p-practice .vert{border:2px solid #E6E9ED;border-radius:14px;overflow:hidden;background:#fff}
+.p-practice .vert .top{padding:20px 22px;background:#0E1620;color:#fff}
+.p-practice .vert .top h3{font-family:var(--display);font-size:19px;font-weight:800;margin:0 0 4px}
+.p-practice .vert .top p{margin:0;font-family:var(--mono);font-size:11.5px;color:#8FA1B0}
+.p-practice .vert .body{padding:20px 22px}
+.p-practice .vert .row{padding:14px 0;border-bottom:1px solid #EDF0F3}
+.p-practice .vert .row:last-child{border-bottom:0}
+.p-practice .vert .row b{display:block;font-size:14.5px;font-weight:800;margin-bottom:5px;color:#111A22}
+.p-practice .vert .row span{display:flex;gap:8px;font-size:13.5px;color:#5A6673;line-height:1.5}
+.p-practice .vert .row span i{color:var(--live);font-style:normal;font-weight:800}
+.p-practice .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.p-practice .step{padding:22px;border:2px solid #E6E9ED;border-radius:12px;background:#fff}
+.p-practice .step .n{font-family:var(--mono);font-size:11.5px;color:var(--flame-ink);display:block;margin-bottom:12px}
+.p-practice .step h3{font-family:var(--display);font-size:17px;font-weight:800;margin:0 0 8px}
+.p-practice .step p{font-size:14px;line-height:1.58;color:#5A6673;margin:0}
+.p-practice .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.p-practice .svc a{padding:17px;border:2px solid #E6E9ED;border-radius:10px;color:#111A22;
+  font-size:14.5px;font-weight:700;display:flex;justify-content:space-between;gap:10px;background:#fff}
+.p-practice .svc a:hover{border-color:var(--flame)}
+.p-practice .svc a i{font-style:normal;color:var(--flame)}
+.p-practice .faq details{border:2px solid #E6E9ED;border-radius:10px;margin-bottom:11px;background:#fff}
+.p-practice .faq summary{list-style:none;cursor:pointer;padding:19px 21px;display:flex;gap:14px;
+  font-family:var(--display);font-size:16.5px;font-weight:800}
+.p-practice .faq summary::-webkit-details-marker{display:none}
+.p-practice .faq summary::after{content:'+';margin-left:auto;color:var(--flame);font-size:22px;font-weight:400;line-height:1}
+.p-practice .faq details[open]{border-color:var(--flame)}
+.p-practice .faq details[open] summary::after{content:'\2212'}
+.p-practice .faq p{margin:0;padding:0 21px 20px;font-size:15px;line-height:1.66;color:#5A6673;max-width:76ch}
+.p-practice footer{background:#0E1620;color:#8FA1B0;padding:38px 0;font-size:13.5px}
+.p-practice footer .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.p-practice footer a{color:#C7D2DC}
+
+/* ---------- shared partner strip ---------- */
+.gp{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:inherit}
+.p-signal .gp{color:var(--fg-2)}.p-signal .gp b{color:var(--fg);font-weight:700}
+.p-operator .gp{color:#5A6675}.p-operator .gp b{color:#0D1520;font-weight:700}
+.p-practice .gp{color:#B7C4D0}.p-practice .gp b{color:#fff;font-weight:700}
+.gp .sq{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:16px;height:16px;flex:none}
+.gp .sq s{display:block;width:100%;height:100%;border-radius:1px;text-decoration:none}
+.gp .sq s:nth-child(1){background:#4285F4}.gp .sq s:nth-child(2){background:#EA4335}
+.gp .sq s:nth-child(3){background:#FBBC04}.gp .sq s:nth-child(4){background:#34A853}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .p-signal .hero-in,.p-practice .hero .wrap{grid-template-columns:1fr}
+  .p-signal .steps,.p-operator .steps,.p-practice .steps,
+  .p-signal .svc,.p-operator .svc,.p-practice .svc{grid-template-columns:1fr 1fr}
+  .p-signal .pains,.p-operator .pains,.p-practice .verticals{grid-template-columns:1fr}
+  .p-operator .lanes{grid-template-columns:1fr 1fr}
+  .p-operator .lane{border-bottom:1px solid #EDF0F3}
+}
+@media (max-width:720px){
+  .p-signal .nav .links,.p-operator .nav .links,.p-practice .nav .links{display:none}
+  .p-signal .nav .tel,.p-operator .nav .tel,.p-practice .nav .tel{margin-left:auto}
+  .p-signal .steps,.p-operator .steps,.p-practice .steps,
+  .p-signal .svc,.p-operator .svc,.p-practice .svc{grid-template-columns:1fr}
+  .p-operator .lanes{grid-template-columns:1fr}
+  .p-signal .hero-in{min-height:0;padding-bottom:110px}
+  .p-signal .svc a,.p-operator .svc a,.p-practice .svc a,
+  .p-practice .picker a{min-width:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .p-signal .rev{opacity:1;transform:none;transition:none}
+}
+
+/* ============================================================
+   Components introduced by the real site content: hero tick
+   lists, service areas, the vs-other-agencies table, testimonial
+   ============================================================ */
+.ticks{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:8px}
+.ticks li{display:flex;gap:11px;align-items:flex-start;font-size:14.8px;line-height:1.45}
+.ticks i{font-style:normal;font-weight:900;flex:none;line-height:1.45}
+.p-signal .ticks li{color:var(--fg)} .p-signal .ticks i{color:#12764C}
+.p-operator .ticks{max-width:64ch;margin-inline:auto;text-align:left}
+.p-operator .ticks li{color:#3C4757} .p-operator .ticks i{color:#12764C}
+.p-practice .ticks li{color:#2B3946} .p-practice .ticks i{color:#12764C}
+.p-practice .hero .ticks li{color:#C7D4DE} .p-practice .hero .ticks i{color:var(--amber)}
+
+/* SERVICE AREAS — map + list, two columns so the row is occupied */
+.areas-wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+  gap:clamp(20px,3vw,40px);align-items:center}
+.map{min-height:180px}
+.map .usmap{width:100%;height:auto;display:block}
+.map .st-other path{fill:#DCE4EA;stroke:#fff;stroke-width:1.1}
+.map .st-served path{fill:var(--flame-ink);stroke:#fff;stroke-width:1.1}
+.map .cities circle{fill:#0E1820;stroke:#fff;stroke-width:1.3}
+.map .cities circle.hq{fill:var(--amber);stroke:#fff;stroke-width:2}
+.p-signal .map .st-other path{fill:#DFE6EC;stroke:var(--bg)}
+.p-practice .alt .map .st-other path{stroke:#F5F7F9}
+.area-list{display:grid;gap:10px}
+.area{padding:13px 16px;border-radius:10px}
+.area b{display:block;font-family:var(--display);font-size:14.5px;font-weight:800;margin-bottom:3px}
+.area span{display:block;font-size:12.5px;line-height:1.55}
+.p-signal .area{border:1px solid var(--line);background:var(--panel)}
+.p-signal .area b{color:var(--fg)} .p-signal .area span{color:var(--fg-2)}
+.p-operator .area{border:1px solid #E6E9ED;background:#fff}
+.p-operator .area b{color:#0D1520} .p-operator .area span{color:#5A6675}
+.p-practice .area{border:2px solid #E6E9ED;background:#fff}
+.p-practice .area b{color:#111A22} .p-practice .area span{color:#5A6673}
+
+/* LOGO WALLS — real grids, so nothing orphans onto a half-empty row */
+.logos.clients{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.2vw,28px);
+  align-items:center;justify-content:initial}
+.logos.clients img{height:auto;max-height:52px;max-width:100%;width:auto;margin:0 auto;
+  object-fit:contain;opacity:1;filter:none;transition:transform .2s ease-out}
+.logos.clients img:hover{transform:translateY(-2px)}
+.certs{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.6vw,22px);
+  align-items:end;justify-content:initial}
+.certs figure{margin:0}
+.certs img{width:100%;height:auto;max-height:104px;object-fit:contain;opacity:.95}
+
+/* CTA BAND */
+.ctaband{margin-inline:clamp(20px,5vw,40px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;
+  padding:clamp(24px,3.2vw,34px) clamp(22px,4vw,44px);border-radius:16px;
+  background:linear-gradient(100deg,var(--slate) 0%,#31485A 100%);color:#fff;
+  width:100%;max-width:1180px;margin:0 auto}
+.ctaband b{display:block;font-family:var(--display);font-size:clamp(19px,2.2vw,26px);
+  font-weight:800;letter-spacing:-.015em;margin-bottom:5px}
+.ctaband span{display:block;font-size:14.5px;color:rgba(255,255,255,.78)}
+.ctaband-btns{display:flex;flex-wrap:wrap;gap:11px}
+.ctaband .cb1{padding:14px 26px;border-radius:9px;background:var(--flame-ink);color:#fff;
+  font-size:15px;font-weight:700;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+.ctaband .cb2{padding:14px 24px;border-radius:9px;border:1px solid rgba(255,255,255,.42);
+  color:#fff;font-size:15px;font-weight:700}
+.ctaband .cb2:hover{border-color:#fff}
+.ctaband.end{margin-top:8px;margin-bottom:44px}
+body .ctaband{margin-left:auto;margin-right:auto}
+
+@media (max-width:980px){
+  .logos.clients{grid-template-columns:repeat(3,1fr)}
+  .certs{grid-template-columns:repeat(3,1fr)}
+  .areas-wrap{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .logos.clients{grid-template-columns:repeat(2,1fr)}
+  .certs{grid-template-columns:repeat(2,1fr)}
+  .ctaband{flex-direction:column;align-items:flex-start}
+}
+
+.quote-b{margin:34px 0 0;padding:26px 30px;border-radius:14px}
+.quote-b p{margin:0 0 12px;font-size:17px;line-height:1.6;font-style:italic}
+.quote-b cite{font-style:normal;font-family:var(--display);font-weight:800;font-size:14px}
+.p-signal .quote-b{border:1px solid var(--line);background:var(--panel);color:var(--fg)}
+.p-signal .quote-b cite{color:var(--flame-ink)}
+.p-operator .quote-b{border:1px solid #E6E9ED;background:#fff;color:#0D1520}
+.p-operator .quote-b cite{color:var(--flame-ink)}
+.p-practice .quote-b{border:2px solid #E6E9ED;background:#fff;color:#111A22}
+.p-practice .quote-b cite{color:var(--flame-ink)}
+
+.cmp{border:1px solid #E6E9ED;border-radius:12px;overflow:hidden;background:#fff}
+.cmp-row{display:grid;grid-template-columns:1fr 1.5fr 1.2fr;gap:16px;padding:15px 20px;
+  border-bottom:1px solid #EDF0F3;font-size:14.5px;align-items:start}
+.cmp-row:last-child{border-bottom:0}
+.cmp-head{background:#F7F8FA;font-family:var(--display);font-weight:800;font-size:12.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:#64707E}
+.cmp-row .f{font-weight:700;color:#0D1520}
+.cmp-row .us{color:#2B3946;display:flex;gap:9px;align-items:flex-start}
+.cmp-row .us i{font-style:normal;color:#12764C;font-weight:900;flex:none}
+.cmp-row .them{color:#64707E}
+
+.p-operator .job.res{border-color:#CFE8DA;background:#F4FBF7}
+.p-operator .job.res span{color:#12764C;font-weight:700;font-family:var(--sans);font-size:13px}
+
+@media (max-width:1000px){ .areas{grid-template-columns:1fr 1fr} }
+@media (max-width:720px){
+  .areas{grid-template-columns:1fr}
+  .cmp-row{grid-template-columns:1fr;gap:6px}
+  .cmp-head{display:none}
+  .cmp-row .them::before{content:'Other agencies: ';color:#B6BEC8}
+}
+
+/* ============================================================
+   SECTION HEADS — fill the row.
+   A heading that wraps inside a narrow column leaves a dead block
+   beside it. Kicker + h2 sit left, the supporting line sits right
+   and bottom-aligned, so the row is occupied rather than centred
+   or collapsed. With no supporting line the heading spans instead.
+   ============================================================ */
+section > .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  column-gap:clamp(26px,4vw,64px)}
+section > .wrap > *{grid-column:1/-1;min-width:0}
+/* ONLY the first head element is placed; later kickers (e.g. "Trusted By",
+   "Digital Marketer Certifications" inside the awards section) must flow
+   normally or they stack on top of the first one. */
+section > .wrap > .kicker:first-child{grid-column:1;grid-row:1}
+section > .wrap > h2:first-of-type{grid-column:1;grid-row:2;margin-bottom:40px}
+section > .wrap > .sec-lede{grid-column:2;grid-row:1/3;align-self:end;
+  margin-bottom:40px;max-width:46ch}
+/* no supporting line: let the heading occupy the row */
+section > .wrap:not(:has(> .sec-lede)) > h2:first-of-type{grid-column:1/-1;max-width:38ch}
+section > .wrap:not(:has(> .kicker:first-child)) > h2:first-of-type{grid-row:1}
+@media (max-width:860px){
+  section > .wrap{grid-template-columns:1fr}
+  section > .wrap > .kicker,section > .wrap > h2,section > .wrap > .sec-lede{grid-column:1/-1;grid-row:auto}
+  section > .wrap > h2{margin-bottom:14px}
+  section > .wrap > .sec-lede{margin-bottom:32px}
+}
+
+/* ============================================================
+   Imagery components: industry photo grid, press/client logo
+   walls, certification badges, founder card
+   ============================================================ */
+
+.ind{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ind-card{display:block;border-radius:14px;overflow:hidden;text-decoration:none;
+  transition:transform .2s cubic-bezier(.23,1,.32,1),box-shadow .2s ease-out}
+.ind-card:hover{transform:translateY(-3px)}
+.ind-card .ph{display:block;aspect-ratio:284/243;overflow:hidden;background:#DCE4EA}
+.ind-card .ph img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .35s cubic-bezier(.23,1,.32,1)}
+.ind-card:hover .ph img{transform:scale(1.04)}
+.ind-card .ph-none{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#273A47,#16222B)}
+.ind-card .ph-none b{font-family:var(--display);font-size:26px;font-weight:800;
+  color:rgba(255,255,255,.85);letter-spacing:-.02em}
+.ind-card .nm{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:14px 16px;font-family:var(--display);font-size:15.5px;font-weight:700}
+.ind-card .nm i{font-style:normal;color:var(--flame)}
+.p-signal .ind-card{border:1px solid var(--line);background:var(--panel);color:var(--fg)}
+.p-signal .ind-card:hover{border-color:var(--flame);box-shadow:0 14px 34px rgba(14,24,32,.10)}
+.p-operator .ind-card{border:1px solid #E6E9ED;background:#fff;color:#0D1520}
+.p-operator .ind-card:hover{border-color:var(--flame);box-shadow:0 14px 34px rgba(13,21,32,.10)}
+.p-practice .ind-card{border:2px solid #E6E9ED;background:#fff;color:#111A22}
+.p-practice .ind-card:hover{border-color:var(--flame);box-shadow:0 14px 34px rgba(17,26,34,.10)}
+
+/* As Seen On — the site's own treatment: #273A47 band, logos whitened
+   with brightness(0) invert(1). Without the filter, Inc. and HuffPost are
+   near-black artwork and vanish on the band; BuzzFeed is white artwork and
+   vanished on a light one. The filter is what makes the mixed set read. */
+.seen{background:var(--slate);padding:34px 0}
+.seen .wrap{display:block}
+.seen-h{margin:0 0 20px;text-align:center;font-family:var(--display);font-weight:800;
+  font-size:clamp(17px,1.7vw,22px);color:#fff;letter-spacing:-.01em}
+.logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-evenly;
+  gap:clamp(20px,3.5vw,44px);padding:0}
+.logos.press img{height:clamp(28px,3vw,44px);width:auto;object-fit:contain;
+  filter:brightness(0) invert(1);opacity:.92;
+  transition:opacity .2s ease-out,transform .2s ease-out}
+.logos.press img:hover{opacity:1;transform:translateY(-2px)}
+/* client wall sits on light backgrounds and keeps its own colour */
+.logos.clients{justify-content:center}
+.logos.clients img{height:46px;width:auto;object-fit:contain;opacity:1;filter:none;
+  transition:transform .2s ease-out}
+.logos.clients img:hover{transform:translateY(-2px)}
+
+/* awards row: list left, founder card right */
+.stepic{display:block;width:44px;height:44px;margin-bottom:12px;object-fit:contain}
+.proof2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(24px,4vw,48px);align-items:start}
+.proof2 .ticks{margin-bottom:0}
+.proof2 .founder{margin-top:0}
+@media (max-width:860px){ .proof2{grid-template-columns:1fr} }
+
+
+.founder{display:flex;gap:22px;align-items:center;margin:34px 0 0;padding:22px 26px;border-radius:14px}
+.founder img{width:92px;height:92px;border-radius:50%;object-fit:cover;object-position:top center;flex:none}
+.founder b{display:block;font-family:var(--display);font-size:17px;font-weight:800;margin-bottom:4px}
+.founder p{margin:0 0 12px;font-size:14px}
+.founder .fbtn{display:inline-flex;padding:11px 20px;border-radius:8px;background:var(--flame-ink);
+  color:#fff;font-size:14px;font-weight:700}
+.p-signal .founder{border:1px solid var(--line);background:var(--panel);color:var(--fg)}
+.p-signal .founder p{color:var(--fg-2)}
+.p-operator .founder{border:1px solid #E6E9ED;background:#fff;color:#0D1520}
+.p-operator .founder p{color:#5A6675}
+.p-practice .founder{border:2px solid #E6E9ED;background:#fff;color:#111A22}
+.p-practice .founder p{color:#5A6673}
+
+@media (max-width:1000px){ .ind{grid-template-columns:1fr 1fr} }
+@media (max-width:720px){
+  .ind{grid-template-columns:1fr}
+  .logos{gap:26px} .logos img{height:28px} .logos.clients img{height:34px}
+  .founder{flex-direction:column;align-items:flex-start;text-align:left}
+}
+
+/* ============================================================
+   PICKER — verbatim from ~/.claude/skills/prototype/PICKER.md
+   ============================================================ */
+.proto-picker{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  z-index:2147483647;display:flex;align-items:center;gap:2px;padding:4px;border-radius:999px;
+  background:rgba(10,10,10,.82);
+  -webkit-backdrop-filter:blur(12px) saturate(1.4);backdrop-filter:blur(12px) saturate(1.4);
+  box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 8px 24px rgba(0,0,0,.24),0 2px 6px rgba(0,0,0,.12);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;line-height:1;
+  -webkit-font-smoothing:antialiased;user-select:none;-webkit-user-select:none}
+.proto-picker-highlight{position:absolute;top:4px;left:0;height:28px;border-radius:999px;
+  background:rgba(255,255,255,.12);will-change:transform}
+.proto-picker[data-ready] .proto-picker-highlight{
+  transition:transform 250ms cubic-bezier(.23,1,.32,1),width 250ms cubic-bezier(.23,1,.32,1)}
+@media (prefers-reduced-motion:reduce){.proto-picker[data-ready] .proto-picker-highlight{transition:none}}
+.proto-picker-item{position:relative;display:flex;align-items:center;height:28px;padding:0 12px;border:0;
+  border-radius:999px;background:transparent;color:rgba(255,255,255,.55);font:inherit;cursor:pointer;
+  transition:color 150ms ease-out}
+.proto-picker-item:hover{color:rgba(255,255,255,.85)}
+.proto-picker-item:active{transform:scale(.97)}
+.proto-picker-item:focus-visible{outline:2px solid rgba(255,255,255,.4);outline-offset:2px}
+.proto-picker-item[data-active]{color:#fff}
+.proto-picker-divider{width:1px;height:16px;margin:0 4px;background:rgba(255,255,255,.12)}
+.proto-picker-replay{padding:0 10px;font-size:14px}
+</style>
+</head>
+<body>
+
+<div id="stage"></div>
+
+<nav class="proto-picker" aria-label="Prototype variants">
+  <span class="proto-picker-highlight" aria-hidden="true"></span>
+  <button class="proto-picker-item" data-active aria-current="true">Signal</button>
+  <button class="proto-picker-item">Operator</button>
+  <button class="proto-picker-item">Practice</button>
+  <span class="proto-picker-divider" aria-hidden="true"></span>
+  <button class="proto-picker-item proto-picker-replay" aria-label="Replay animation (R)">&#8635;</button>
+</nav>
+
+<script>
+(function(){
+'use strict';
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* =============================================================
+   CONTENT — every line below traces to infintechdesigns.com.
+   Process steps, vertical names and pain headings are taken
+   verbatim from /service/ai-automation-services/.
+   ============================================================= */
+const TEL='(504) 777-3296', TELH='tel:5047773296';
+const GP_URL='https://www.google.com/partners/agency?id=9381770992';
+
+/* Real logo, pulled from infintechdesigns.com (wp-content/uploads/2021/01/logo-black.png,
+   236x86, the only logo on the site). The site ships NO reversed version, so the light
+   one was generated from that exact file by whitening only the low-saturation wordmark
+   pixels - the coloured mark is untouched, not redrawn. */
+const LOGO_LIGHT_BG="data:image/png;base64,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";
+const LOGO_DARK_BG="data:image/png;base64,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";
+const logo=onDark=>'<a class="mark" href="/" aria-label="Infintech Designs home">'+
+  '<img src="'+(onDark?LOGO_DARK_BG:LOGO_LIGHT_BG)+'" width="236" height="86" alt="Infintech Designs"></a>';
+
+/* =============================================================
+   CONTENT — COPIED FROM infintechdesigns.com, NOT WRITTEN BY ME.
+   Homepage: H1, subhead, hero bullets, services + their taglines,
+   industries, awards, comparison table, testimonial, FAQs, areas.
+   /service/ai-automation-services/: intro, outcomes, definition,
+   the 4-step process, and the before/after cases with results.
+   ============================================================= */
+const H1='We Help Businesses Rank Higher, Grow Faster and Convert Better To Drive Revenue';
+const SUB='Our Team innovated the Google Ranking Game and is committed that your Business Ranks on the Highly Coveted Top 3 Spots of the Google Map Pack';
+const LOCAL='Locally Owned in the Lower Garden District of New Orleans';
+const HERO_BULLETS=[
+  'FREE Initial Consultation With Founder &amp; CEO Brian Hong',
+  'Over 26 Years Experience In SEO And Web Design',
+  'Real-Time Tracking Dashboard',
+  'Data-Driven SEO Marketing With Measurable Results',
+  'Web Design That Turns Visitors Into Customers'
+];
+
+const AI_H2='Transform Your Business Operations with AI-Powered Automation';
+const AI_INTRO='Every day, businesses lose valuable hours to repetitive tasks that intelligent automation could handle.';
+const AI_WHAT='AI automation represents the convergence of artificial intelligence and robotic process automation (RPA) to create intelligent systems that handle complex business tasks. Unlike traditional automation that follows rigid rules, AI-powered automation adapts, learns, and improves over time.';
+const AI_OUTCOMES=[
+  'Transform 10-20 hours of weekly manual tasks into automated workflows',
+  'Achieve up to 99% accuracy in routine business processes',
+  'Scale operations without proportional overhead increases',
+  'Enable your team to focus on high-value activities',
+  'Create sustainable work patterns for long-term success'
+];
+const AI_STEPS=[
+  {n:'01',w:'Week 1-2',h:'We Watch &amp; Learn',    i:'img/step-1.png',
+   p:'We observe your current workflows, identify the biggest time-wasters, calculate potential time savings, and design your custom solution.'},
+  {n:'02',w:'Week 3-4',h:'We Build Your Solution',i:'img/step-2.png',
+   p:'Create your automated workflows, connect your existing tools, and test everything thoroughly.'},
+  {n:'03',w:'Week 5-6',h:'We Train Your Team',    i:'img/step-3.png',
+   p:'Show everyone how to use it, provide simple documentation, and support the transition.'},
+  {n:'04',w:'Ongoing', h:'We Keep Improving',     i:'img/step-4.png',
+   p:'Monitor performance, optimize based on results, and add new automations as needed.'}
+];
+
+/* Before / after, verbatim from the AI automation page including its stated results */
+const CASES=[
+  {v:'Home Services: HVAC, Plumbing, Electrical', h:'The Scheduling Nightmare',
+   before:'Sarah runs an HVAC company. Every morning starts with 45 minutes of voicemails. Her dispatcher spends 3 hours daily playing phone tag, double-booking technicians, and dealing with angry customers.',
+   after:['Customers book appointments online 24/7 (yes, even at 2 AM)',
+          'AI automatically assigns jobs based on technician location and expertise',
+          'Automatic text reminders reduce no-shows by 73%',
+          'Customers can reschedule themselves without calling'],
+   result:'One plumbing company saved 20 hours/week on scheduling alone'},
+  {v:'Home Services: HVAC, Plumbing, Electrical', h:'The Quote &amp; Invoice Chase',
+   before:'Technician finishes the job, writes a paper invoice, the office enters it later, sends it, waits, calls about payment, waits more, and finally gets paid 45 days later.',
+   after:['Technician completes digital form on phone',
+          'Customer gets invoice immediately via email or text',
+          'Automatic payment reminders every 7 days',
+          'Online payment options included'],
+   result:'Average payment time dropped from 45 to 12 days'},
+  {v:'Medical Practices: Solo to Multi-Location', h:'The Appointment Avalanche',
+   before:'Dr. Johnson&rsquo;s receptionist spends 5 hours daily on the phone scheduling, rescheduling and confirming appointments, while the waiting room is full of patients needing help.',
+   after:['Patients book online anytime (even during lunch)',
+          'AI sends appointment reminders via text',
+          'Two-way texting for confirmations',
+          'Pre-visit forms sent automatically'],
+   result:'One dental practice reduced phone time by 75%'},
+  {v:'Medical Practices: Solo to Multi-Location', h:'The Insurance Verification Maze',
+   before:'Staff call insurance companies, wait on hold for 30 minutes, verify coverage, enter data. Repeat 50 times daily.',
+   after:['AI verifies insurance eligibility instantly',
+          'Checks coverage limits and copays',
+          'Alerts staff to issues before the appointment',
+          'Updates patient records automatically'],
+   result:'Medical assistant saved 3 hours daily on insurance calls'},
+  {v:'Legal Services: Law Firms', h:'The Intake Information Overload',
+   before:'A potential client calls, the receptionist takes notes, schedules a consultation, and the lawyer repeats all the questions during the meeting. Half do not show up.',
+   after:['Online intake forms collect all details upfront',
+          'AI pre-screens for case viability',
+          'Qualified leads automatically scheduled',
+          'Conflict checks run automatically'],
+   result:'One personal injury firm increased consultation show rate from 50% to 85%'},
+  {v:'Legal Services: Law Firms', h:'The Document Generation Marathon',
+   before:'A paralegal spends hours creating standard documents: changing names, dates, and copying information from one system to another.',
+   after:['Client information flows into all documents',
+          'Standard forms generate instantly',
+          'Custom clauses inserted based on case type',
+          'Organized digital filing system'],
+   result:'Document preparation time cut by 80%'}
+];
+
+/* Homepage services, with the taglines the site actually uses */
+const SERVICES=[
+  {n:'Full Stack Digital Marketing', d:'All in one digital marketing to help your business grow', u:'/service/'},
+  {n:'Web Design',             d:'Creative and Effective Web Design Services', u:'/service/web-design/'},
+  {n:'SEO',                    d:'Make Your Brand &amp; Content Visible with SEO Services', u:'/service/seo/'},
+  {n:'Google Ads',             d:'Google Adwords Internet Marketing Services', u:'/service/google-ads/'},
+  {n:'Social Media Marketing', d:'Grow Your Audience With Social Media Marketing', u:'/service/social-media-marketing/'},
+  {n:'Link Building',          d:'Utilize Link Building that Will Improve Your Website&rsquo;s Google Rankings', u:'/service/link-building/'},
+  {n:'Google Reviews',         d:'Boost Your Business With Quality Google Reviews', u:'/service/'},
+  {n:'Lead Generation',        d:'Online Lead Generation, Make Your Customers Interested in Your Business', u:'/service/lead-generation/'},
+  {n:'Facebook Ads',           d:'Get More Visibility and Customers With Facebook Ads Services', u:'/service/facebook-ads/'},
+  {n:'Local SEO',              d:'Results-Driven Local SEO Services', u:'/service/local-seo/'},
+  {n:'AI Automation',          d:'Transform Your Business Operations with AI-Powered Automation', u:'/service/ai-automation-services/'}
+];
+
+const INDUSTRIES=['Lawyers','Dentists','Medical','Home Services','Small Businesses',
+                  'Restaurants','Multi Location Business','Enterprise','School &amp; Universities'];
+const LEDE_SERVICES='Let us help your business stand out in the search engine market.';
+const LEDE_AWARDS='When it comes to reaching the top in your industry, choosing the right partner is crucial. Infintech Designs offers the expertise and personalized approach you need to stand out in a crowded market.';
+const LEDE_AREAS='We provide services for businesses in Louisiana, as well as outside the state such as Texas, Mississippi, and California.';
+const LEDE_FAQ='We do free consultations to determine which service is best for your business.';
+const LEDE_PROCESS='Whether you are scaling a growing team or preserving the quality that makes your business stand out, automation helps protect your most limited resource, time.';
+const INDUSTRIES_SUB='Infintech Designs has served different industries for years from home services to local enterprises';
+
+const AWARDS=[
+  'National and Local Excellence Award Winner by UpCity',
+  'We are one of the top social media agencies in the state of Louisiana',
+  'Number one agency in New Orleans ranked by the good people of NOLA (Seolium.com)',
+  'Recognized as one of the best companies in Louisiana',
+  'Acclaimed as one of the best of the best web designers &amp; web agencies in Louisiana'
+];
+
+const COMPARE=[
+  ['Custom Design Solutions',   'Tailor-Made Design Solutions That Tell Your Brand&rsquo;s Story', 'Often template-based with customization'],
+  ['Pricing Models',            'Transparent, Value-Based Pricing with No-Surprise Costs',    'Variable, often with hidden costs'],
+  ['SEO Optimization Services', 'Advanced SEO Strategies That Boost Visibility and Drive Results', 'Basic SEO, often outsourced'],
+  ['E-commerce Integration',    'High-Converting E-commerce Solutions so You Sell More, Faster','Limited or add-on service'],
+  ['Project Delivery Time',     'Accelerated Results without Sacrificing Quality',            'Standard industry timelines'],
+  ['Portfolio Diversity',       'Insights from Multiple Industries',                          'Focused on specific sectors'],
+  ['Design Revision Policies',  'Flexible Revisions Until You&rsquo;re Thrilled with the Results',  'Limited number or charged extra']
+];
+
+const TESTIMONIAL={n:'Jon Silkin',
+  q:'I contacted Infintech Designs 2 months ago to create and build a creative website for my company. The web design service from Brian and his team has been great from the start.'};
+
+const AREAS=[
+  {s:'Louisiana',  c:['New Orleans','Covington','Mandeville','Slidell','Metairie','Kenner','Baton Rouge','Shreveport','Lafayette','Hammond']},
+  {s:'Texas',      c:['Dallas','Houston','San Antonio','Austin','Fort Worth']},
+  {s:'Colorado',   c:['Colorado Springs','Pueblo','Fort Collins','Denver']},
+  {s:'Washington', c:['Seattle','Tacoma','Spokane']},
+  {s:'Mississippi',c:['Biloxi','Hattiesburg']},
+  {s:'Georgia',    c:['Atlanta']}
+];
+
+/* Homepage FAQs, verbatim */
+const FAQS=[
+  {q:'What digital marketing services does Infintech Designs offer?',
+   a:'We provide a full range of digital marketing services, including SEO, PPC advertising, social media management, and content marketing, all designed to boost your online visibility and drive conversions.'},
+  {q:'How can SEO help my business grow?',
+   a:'SEO helps improve your website&rsquo;s ranking on search engines like Google, making it easier for potential customers to find you. Our tailored SEO strategies focus on increasing organic traffic and driving leads.'},
+  {q:'How long does it take to see results from SEO?',
+   a:'SEO is a long-term strategy. While you may start seeing improvements in traffic within a few months, significant results typically take 6-12 months, depending on your industry and competition.'},
+  {q:'Can you redesign my existing website?',
+   a:'Yes! Infintech Designs specializes in both website redesigns and new builds. We&rsquo;ll improve your site&rsquo;s functionality, design, and user experience to ensure it meets today&rsquo;s web standards and converts visitors into customers.'},
+  {q:'What makes your web design services stand out?',
+   a:'Our web design services focus on creating user-friendly, mobile-responsive websites that are visually appealing and optimized for conversions. We build sites that reflect your brand and engage your audience.'},
+  {q:'Do you offer ongoing support after the website is built?',
+   a:'Absolutely! We provide ongoing website maintenance, updates, and support to ensure your site remains secure, functional, and up-to-date with the latest trends and technologies.'},
+  {q:'Do you only do business in New Orleans?',
+   a:'We provide services for businesses in Louisiana, as well as outside the state such as Texas, Mississippi, and California.'},
+  {q:'Do you offer free services?',
+   a:'We do free consultations to determine which service is best for your business.'}
+];
+
+const NAV=['AI Automation','Services','Industries','Case Studies','About'];
+const gp=cls=>'<a class="gp '+(cls||'')+'" href="'+GP_URL+'" target="_blank" rel="noopener">'+
+  '<span class="sq"><s></s><s></s><s></s><s></s></span><span>Google <b>Premier Partner</b></span></a>';
+const bullets=(arr,cls)=>'<ul class="'+(cls||'ticks')+'">'+
+  arr.map(b=>'<li><i>&#10003;</i><span>'+b+'</span></li>').join('')+'</ul>';
+const faqHTML=()=>FAQS.map(f=>'<details><summary>'+f.q+'</summary><p>'+f.a+'</p></details>').join('');
+const areasHTML=()=>'<div class="areas-wrap">'+
+  '<div class="map" id="usmap-slot"></div>'+
+  '<div class="area-list">'+AREAS.map(a=>'<div class="area"><b>'+a.s+'</b>'+
+    '<span>'+a.c.join(' &middot; ')+'</span></div>').join('')+'</div></div>';
+const ctaHTML=cls=>'<div class="ctaband '+(cls||'')+'">'+
+  '<div><b>Ready to Get Your Time Back?</b>'+
+  '<span>FREE Initial Consultation With Founder &amp; CEO Brian Hong</span></div>'+
+  '<div class="ctaband-btns"><a class="cb1" href="#">Claim Your FREE Consultation</a>'+
+  '<a class="cb2" href="'+TELH+'">'+TEL+'</a></div></div>';
+const quoteHTML=()=>'<blockquote class="quote-b"><p>&ldquo;'+TESTIMONIAL.q+'&rdquo;</p><cite>'+TESTIMONIAL.n+'</cite></blockquote>';
+
+/* =============================================================
+   IMAGERY — every file below was downloaded from
+   infintechdesigns.com, validated as a real JPEG/PNG (not an
+   HTML error page) and viewed before use.
+   NOTE: the site's "Multi Location Business" industry image is
+   BROKEN at source — every URL encoding of
+   "multi-location -business-industries-served-img.jpg" (it has a
+   literal space in the filename) returns the homepage HTML with
+   content-type text/html. It renders a typographic tile instead;
+   a duplicate photo would read as a bug, not a fallback.
+   ============================================================= */
+const IND_IMG={
+  'Lawyers':'img/ind-lawyers.jpg',
+  'Dentists':'img/ind-dentists.jpg',
+  'Medical':'img/ind-medical.jpg',
+  'Home Services':'img/ind-home-services.jpg',
+  'Small Businesses':'img/ind-small-businesses.jpg',
+  'Restaurants':'img/ind-restaurants.jpg',
+  'Multi Location Business':null,
+  'Enterprise':'img/ind-enterprise.jpg',
+  'School &amp; Universities':'img/ind-school-universities.jpg'
+};
+/* Exact set and order taken from the live DOM (the strip is JS-rendered,
+   so it is absent from the static HTML). The site shows them on a #273A47
+   band with filter: brightness(0) invert(1), which is why mixed-colour
+   artwork all reads as white. Replicated rather than invented. */
+const PRESS=[
+  ['img/press-buzzfeed.png','BuzzFeed'],
+  ['img/press-entrepreneur.png','Entrepreneur'],
+  ['img/press-inc.png','Inc.'],
+  ['img/press-huffpost.png','HuffPost'],
+  ['img/press-sme.png','Social Media Explorer']
+];
+/* Eight, so the wall is an even 4x2 with no orphaned row. Teleleaf was
+   dropped: that asset is a screenshot of a web page, not a logo. */
+const CLIENTS=[
+  ['img/cl-gcj-law.png','Gregorio, Chafin, Johnson, Poolson &amp; Tabor'],
+  ['img/cl-phillips.png','Phillips Law Group'],
+  ['img/cl-gifted.png','Gifted Healthcare'],
+  ['img/cl-nola-auto.png','NOLA Automotive Repairs'],
+  ['img/cl-walkons.png','Walk-On&rsquo;s Sports Bistreaux'],
+  ['img/cl-50floor.png','50Floor'],
+  ['img/cl-tofer.png','Tofer &amp; Associates'],
+  ['img/cl-himmels.png','Himmel&rsquo;s Architectural Door &amp; Hardware']
+];
+const CERTS=[
+  ['img/cert-search-marketing-specialist.png','Search Marketing Specialist'],
+  ['img/cert-content-marketing-specialist.png','Content Marketing Specialist'],
+  ['img/cert-email-marketing-specialist.png','Email Marketing Specialist'],
+  ['img/cert-customer-acquisition.png','Customer Acquisition Specialist'],
+  ['img/cert-analytics-data-specialist.png','Analytics & Data Specialist'],
+  ['img/cert-optimization-and-testing-specialist.png','Optimization & Testing Specialist']
+];
+
+const industriesHTML=rev=>'<div class="ind">'+INDUSTRIES.map(i=>{
+  const src=IND_IMG[i], cls='ind-card'+(rev?' rev':'');
+  return '<a class="'+cls+'" href="#">'+
+    (src ? '<span class="ph"><img src="'+src+'" alt="'+i.replace(/&amp;/g,'and')+'" loading="lazy" width="284" height="243"></span>'
+         : '<span class="ph ph-none"><b>'+i.split(' ')[0]+'</b></span>')+
+    '<span class="nm">'+i+'<i>&rarr;</i></span></a>';
+}).join('')+'</div>';
+
+const pressHTML=()=>'<div class="seen"><div class="wrap">'+
+  '<p class="seen-h">As Seen On</p><div class="logos press">'+
+  PRESS.map(p=>'<img src="'+p[0]+'" alt="'+p[1]+'" loading="lazy">').join('')+'</div></div></div>';
+
+const clientsHTML=rev=>'<div class="logos clients'+(rev?' rev':'')+'">'+
+  CLIENTS.map(c=>'<img src="'+c[0]+'" alt="'+c[1]+'" loading="lazy">').join('')+'</div>';
+
+const certsHTML=rev=>'<div class="certs'+(rev?' rev':'')+'">'+
+  CERTS.map(c=>'<figure><img src="'+c[0]+'" alt="'+c[1]+'" loading="lazy"></figure>').join('')+'</div>';
+
+const founderHTML=rev=>'<div class="founder'+(rev?' rev':'')+'">'+
+  '<img src="img/brian-hong.png" alt="Brian Hong, Founder and CEO of Infintech Designs" width="290" height="299">'+
+  '<div><b>FREE Initial Consultation With Founder &amp; CEO Brian Hong</b>'+
+  '<p>Over 26 Years Experience In SEO And Web Design</p>'+
+  '<a class="fbtn" href="'+TELH+'">Call '+TEL+'</a></div></div>';
+
+/* ===================== DIRECTION 1 — SIGNAL ===================== */
+function renderSignal(){
+  return '<div class="p-signal">'+
+    '<div class="hero">'+
+      '<div class="hero-bg"><div class="grid"></div></div>'+
+      '<div class="wrap"><div class="nav">'+logo(false)+
+        '<span class="links">'+NAV.map(n=>'<a href="#">'+n+'</a>').join('')+'</span>'+
+        '<a class="tel" href="'+TELH+'">'+TEL+'</a></div></div>'+
+      '<div class="wrap"><div class="hero-in">'+
+        '<div>'+
+          '<span class="badge"><i></i><span>'+LOCAL+'</span></span>'+
+          '<h1>'+H1+'</h1>'+
+          '<p class="lede">'+SUB+'</p>'+
+          bullets(HERO_BULLETS)+
+          '<div class="cta"><a class="b1" href="#">Claim Your FREE Consultation <span>&rarr;</span></a>'+
+          '<a class="b2" href="'+TELH+'">'+TEL+'</a></div>'+
+          '<div class="partner">'+gp()+'<span class="dot"></span>'+
+            '<span class="g">Over <b>26 Years</b> Experience</span></div>'+
+        '</div>'+
+        '<div class="console">'+
+          '<header><i></i><b>ai automation / live</b><span class="t">last 60s</span></header>'+
+          '<ul>'+
+            '<li><span class="k">booking</span><span>Booked online at 2 AM</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">dispatch</span><span>Job assigned by location</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">reminder</span><span>No-show reminder sent</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">invoice</span><span>Invoice sent from phone</span><span class="s run">RUN</span></li>'+
+            '<li><span class="k">insurance</span><span>Eligibility verified</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">intake</span><span>Case pre-screened</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">conflict</span><span>Conflict check run</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">docgen</span><span>Standard form generated</span><span class="s run">RUN</span></li>'+
+            '<li><span class="k">review</span><span>Review request sent</span><span class="s ok">DONE</span></li>'+
+          '</ul>'+
+        '</div>'+
+      '</div></div>'+
+    '</div>'+
+
+    pressHTML()+
+    '<section><div class="wrap">'+
+      '<p class="kicker rev">AI Automation Services</p>'+
+      '<h2 class="rev">'+AI_H2+'</h2>'+
+      '<p class="sec-lede rev">'+AI_INTRO+'</p>'+
+      '<div class="steps">'+AI_OUTCOMES.slice(0,4).map((o,i)=>'<div class="step rev">'+
+        '<span class="n">'+String(i+1).padStart(2,'0')+'</span>'+
+        '<p style="color:var(--fg);font-size:15px;font-weight:600;line-height:1.5;margin:0">'+o+'</p></div>').join('')+'</div>'+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker rev">Real-World AI Automation Solutions by Industry</p>'+
+      '<h2 class="rev">Real-World AI Automation Solutions by Industry</h2><p class="sec-lede rev">'+AI_WHAT+'</p>'+
+      '<div class="pains">'+CASES.map(c=>'<div class="pain rev"><p class="v">'+c.v+'</p>'+
+        '<h3>'+c.h+'</h3><p><b style="color:var(--fg)">Before Automation:</b> '+c.before+'</p>'+
+        '<div class="fix"><i>&rarr;</i><span>'+c.result+'</span></div></div>').join('')+'</div>'+
+    '</div></section>'+
+
+    ctaHTML()+
+    '<section><div class="wrap">'+
+      '<h2 class="rev">Our Simple 4-Step Process</h2><p class="sec-lede rev">'+LEDE_PROCESS+'</p>'+
+      '<div class="steps">'+AI_STEPS.map(s=>'<div class="step rev">'+
+        '<img class="stepic" src="'+s.i+'" alt="" width="80" height="80" loading="lazy">'+
+        '<span class="n">'+s.n+' &middot; '+s.w+'</span>'+
+        '<h3>'+s.h+'</h3><p>'+s.p+'</p></div>').join('')+'</div>'+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker rev">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</p>'+
+      '<h2 class="rev">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</h2><p class="sec-lede rev">'+LEDE_SERVICES+'</p>'+
+      '<div class="svc">'+SERVICES.map(s=>'<a class="rev" href="'+s.u+'"><span>'+s.n+'</span><i>&rarr;</i></a>').join('')+'</div>'+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<h2 class="rev">Industries Served</h2><p class="sec-lede rev">'+INDUSTRIES_SUB+'</p>'+
+      industriesHTML(true)+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker rev">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
+      '<h2 class="rev">Top Reasons Infintech Designs Should Be Your First Choice</h2><p class="sec-lede rev">'+LEDE_AWARDS+'</p>'+'<div class="proof2 rev">'+bullets(AWARDS,'ticks')+founderHTML()+'</div>'+
+      '<div class="rev">'+quoteHTML()+'</div>'+
+      '<p class="kicker rev" style="margin-top:44px">Trusted By</p>'+clientsHTML(true)+
+      '<p class="kicker rev" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML(true)+
+    '</div></section>'+
+
+    '<section><div class="wrap"><h2 class="rev">Service Areas</h2><p class="sec-lede rev">'+LEDE_AREAS+'</p>'+
+      '<div class="areas rev">'+areasHTML()+'</div></div></section>'+
+
+    '<section><div class="wrap">'+
+      '<h2 class="rev">Your Guide to Web Design, SEO, and Digital Marketing: FAQs</h2><p class="sec-lede rev">'+LEDE_FAQ+'</p><div class="faq rev">'+faqHTML()+'</div></div></section>'+
+
+    ctaHTML('end')+
+    '<div class="wrap"><footer><span>&copy; 2026 Infintech Designs</span><a href="#">Privacy</a>'+
+      '<a href="#">Terms</a><span style="margin-left:auto">'+LOCAL+' &middot; '+TEL+'</span></footer></div>'+
+  '</div>';
+}
+
+/* ===================== DIRECTION 2 — OPERATOR ===================== */
+function renderOperator(){
+  return '<div class="p-operator">'+
+    '<div class="wrap"><div class="nav">'+logo(false)+
+      '<span class="links">'+NAV.map(n=>'<a href="#">'+n+'</a>').join('')+'</span>'+
+      '<a class="tel" href="'+TELH+'">'+TEL+'</a></div></div>'+
+
+    '<div class="hero"><div class="wrap">'+
+      '<span class="badge"><i></i> '+LOCAL+'</span>'+
+      '<h1>'+H1+'</h1>'+
+      '<p class="lede">'+SUB+'</p>'+
+      '<div class="cta"><a class="b1" href="#">Claim Your FREE Consultation</a>'+
+      '<a class="b2" href="'+TELH+'">'+TEL+'</a></div>'+
+      '<p class="fine">FREE Initial Consultation With Founder &amp; CEO Brian Hong &middot; Over 26 Years Experience</p>'+
+      '<div class="board">'+
+        '<header><i></i><i></i><b>ai automation / what it replaces</b></header>'+
+        '<div class="lanes">'+CASES.slice(0,4).map(c=>'<div class="lane">'+
+          '<p class="lane-h"><s></s>'+c.h+'</p>'+
+          c.after.slice(0,3).map(a=>'<div class="job"><b>'+a+'</b></div>').join('')+
+          '<div class="job res"><span>'+c.result+'</span></div>'+
+        '</div>').join('')+'</div>'+
+      '</div>'+
+      '<div style="display:flex;justify-content:center;margin-top:28px">'+gp()+'</div>'+
+    '</div></div>'+
+
+    pressHTML()+
+    '<section><div class="wrap">'+
+      '<p class="kicker">AI Automation Services</p><h2>'+AI_H2+'</h2>'+
+      '<p class="sec-lede">'+AI_WHAT+'</p>'+bullets(AI_OUTCOMES)+
+    '</div></section>'+
+
+    ctaHTML()+
+    '<section><div class="wrap">'+
+      '<h2>Our Simple 4-Step Process</h2><p class="sec-lede">'+LEDE_PROCESS+'</p>'+
+      '<div class="steps">'+AI_STEPS.map(s=>'<div class="step">'+
+        '<img class="stepic" src="'+s.i+'" alt="" width="80" height="80" loading="lazy">'+
+        '<span class="n">'+s.n+' &middot; '+s.w+'</span>'+
+        '<h3>'+s.h+'</h3><p>'+s.p+'</p></div>').join('')+'</div>'+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</p>'+
+      '<h2>Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</h2><p class="sec-lede">'+LEDE_SERVICES+'</p>'+
+      '<div class="pains">'+SERVICES.map(s=>'<div class="pain"><h3>'+s.n+'</h3><p>'+s.d+'</p>'+
+        '<div class="fix"><i>&rarr;</i><span><a href="'+s.u+'" style="color:inherit">Learn more</a></span></div></div>').join('')+'</div>'+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<h2>Industries Served</h2><p class="sec-lede">'+INDUSTRIES_SUB+'</p>'+
+      industriesHTML(false)+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<h2>Discover the Infintech Designs Difference: Elevate Your Brand with Tailor-Made Solutions, Transparent Pricing, and Advanced SEO Strategies</h2>'+
+      '<p class="sec-lede">'+LEDE_AWARDS+'</p>'+
+      '<div class="cmp"><div class="cmp-row cmp-head"><span>Feature</span><span>Infintech Designs</span><span>Other Agencies</span></div>'+
+      COMPARE.map(r=>'<div class="cmp-row"><span class="f">'+r[0]+'</span>'+
+        '<span class="us"><i>&#10003;</i>'+r[1]+'</span><span class="them">'+r[2]+'</span></div>').join('')+'</div>'+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
+      '<h2>Top Reasons Infintech Designs Should Be Your First Choice</h2><p class="sec-lede">'+LEDE_AWARDS+'</p>'+'<div class="proof2">'+bullets(AWARDS)+founderHTML()+'</div>'+quoteHTML()+
+      '<p class="kicker" style="margin-top:44px">Trusted By</p>'+clientsHTML()+
+      '<p class="kicker" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML()+
+    '</div></section>'+
+
+    '<section><div class="wrap"><h2>Service Areas</h2><p class="sec-lede">'+LEDE_AREAS+'</p>'+
+      '<div class="areas">'+areasHTML()+'</div></div></section>'+
+
+    '<section><div class="wrap"><h2>Your Guide to Web Design, SEO, and Digital Marketing: FAQs</h2><p class="sec-lede">'+LEDE_FAQ+'</p><div class="faq">'+faqHTML()+'</div></div></section>'+
+
+    ctaHTML('end')+
+    '<div class="wrap"><footer><span>&copy; 2026 Infintech Designs</span><a href="#">Privacy</a>'+
+      '<a href="#">Terms</a><span style="margin-left:auto">'+LOCAL+' &middot; '+TEL+'</span></footer></div>'+
+  '</div>';
+}
+
+/* ===================== DIRECTION 3 — PRACTICE ===================== */
+function renderPractice(){
+  const groups=[
+    {h:'Home Services',    s:'HVAC, Plumbing, Electrical &amp; More',            rows:CASES.slice(0,2)},
+    {h:'Medical Practices',s:'From Solo Practitioners to Multi-Location Clinics',rows:CASES.slice(2,4)},
+    {h:'Legal Services',   s:'Law Firms &amp; Legal Professionals',              rows:CASES.slice(4,6)}
+  ];
+  return '<div class="p-practice">'+
+    '<div class="wrap"><div class="nav">'+logo(false)+
+      '<span class="links">'+NAV.map(n=>'<a href="#">'+n+'</a>').join('')+'</span>'+
+      '<a class="tel" href="'+TELH+'">Call '+TEL+'</a></div></div>'+
+
+    '<div class="hero"><div class="wrap">'+
+      '<div>'+
+        '<span class="badge"><i></i> '+LOCAL+'</span>'+
+        '<h1>'+H1+'</h1>'+
+        '<p class="lede">'+SUB+'</p>'+
+        bullets(HERO_BULLETS.slice(0,3))+
+        '<div class="cta"><a class="b1" href="#">Claim Your FREE Consultation</a>'+
+        '<a class="b2" href="'+TELH+'">'+TEL+'</a></div>'+
+        '<div style="margin-top:26px">'+gp()+'</div>'+
+      '</div>'+
+      '<div class="picker">'+
+        '<p class="picker-h">Real-World AI Automation by Industry</p>'+
+        '<p>'+AI_INTRO+'</p>'+
+        groups.map(g=>'<a href="#"><span style="font-weight:800;color:#111A22">'+g.h+'</span>'+
+          '<span>'+g.rows.length+' automations &rarr;</span></a>').join('')+
+      '</div>'+
+    '</div></div>'+
+
+    pressHTML()+
+    '<section><div class="wrap">'+
+      '<p class="kicker">Real-World AI Automation Solutions by Industry</p>'+
+      '<h2>'+AI_H2+'</h2><p class="sec-lede">'+AI_WHAT+'</p>'+
+      '<div class="verticals">'+groups.map(g=>'<div class="vert">'+
+        '<div class="top"><h3>'+g.h+'</h3><p>'+g.s+'</p></div>'+
+        '<div class="body">'+g.rows.map(r=>'<div class="row"><b>'+r.h+'</b>'+
+          '<span><i>&rarr;</i>'+r.result+'</span></div>').join('')+'</div>'+
+      '</div>').join('')+'</div>'+
+    '</div></section>'+
+
+    ctaHTML()+
+    '<section class="alt"><div class="wrap">'+
+      '<h2>Our Simple 4-Step Process</h2><p class="sec-lede">'+LEDE_PROCESS+'</p>'+
+      '<div class="steps">'+AI_STEPS.map(s=>'<div class="step">'+
+        '<img class="stepic" src="'+s.i+'" alt="" width="80" height="80" loading="lazy">'+
+        '<span class="n">'+s.n+' &middot; '+s.w+'</span>'+
+        '<h3>'+s.h+'</h3><p>'+s.p+'</p></div>').join('')+'</div>'+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</p>'+
+      '<h2>Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</h2><p class="sec-lede">'+LEDE_SERVICES+'</p>'+
+      '<div class="svc">'+SERVICES.map(s=>'<a href="'+s.u+'"><span>'+s.n+'</span><i>&rarr;</i></a>').join('')+'</div>'+
+    '</div></section>'+
+
+    '<section class="alt"><div class="wrap">'+
+      '<h2>Industries Served</h2><p class="sec-lede">'+INDUSTRIES_SUB+'</p>'+
+      industriesHTML(false)+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
+      '<h2>Top Reasons Infintech Designs Should Be Your First Choice</h2><p class="sec-lede">'+LEDE_AWARDS+'</p>'+'<div class="proof2">'+bullets(AWARDS)+founderHTML()+'</div>'+quoteHTML()+
+      '<p class="kicker" style="margin-top:44px">Trusted By</p>'+clientsHTML()+
+      '<p class="kicker" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML()+
+    '</div></section>'+
+
+    '<section class="alt"><div class="wrap"><h2>Service Areas</h2><p class="sec-lede">'+LEDE_AREAS+'</p>'+
+      '<div class="areas">'+areasHTML()+'</div></div></section>'+
+
+    '<section><div class="wrap"><h2>Your Guide to Web Design, SEO, and Digital Marketing: FAQs</h2><p class="sec-lede">'+LEDE_FAQ+'</p><div class="faq">'+faqHTML()+'</div></div></section>'+
+
+    ctaHTML('end')+
+    '<footer><div class="wrap"><span>&copy; 2026 Infintech Designs</span><a href="#">Privacy</a>'+
+      '<a href="#">Terms</a><span style="margin-left:auto">'+LOCAL+' &middot; '+TEL+'</span></div></footer>'+
+  '</div>';
+}
+
+/* =============================================================
+   MOTION — Signal only. An automation graph: jobs enter, route
+   through steps, and clear. This is the brand, not decoration.
+   ============================================================= */
+function attachSignalMotion(root){
+  const stops=[];
+
+  const revs=[...root.querySelectorAll('.rev')];
+  if(REDUCED){ revs.forEach(e=>e.classList.add('in')); }
+  else{
+    const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
+      e.target.classList.add('in'); io.unobserve(e.target);}});},
+      {rootMargin:'0px 0px -8% 0px',threshold:.06});
+    revs.forEach(e=>io.observe(e)); stops.push(()=>io.disconnect());
+  }
+
+  const host=root.querySelector('.hero-bg');
+  const cv=document.createElement('canvas');
+  host.insertBefore(cv,host.firstChild);
+  const ctx=cv.getContext('2d');
+  let w=0,h=0,dpr=1,small=false;
+
+  // normalised layout; drawn into the right-hand 58% so hero copy stays clean
+  const NODES=[
+    {x:.04,y:.50,l:'intake'},   {x:.24,y:.24,l:'qualify'}, {x:.24,y:.76,l:'enrich'},
+    {x:.46,y:.50,l:'route'},    {x:.68,y:.18,l:'schedule'},{x:.68,y:.50,l:'quote'},
+    {x:.68,y:.82,l:'follow-up'},{x:.88,y:.32,l:'crm'},     {x:.88,y:.68,l:'report'}
+  ];
+  const ROUTES=[[0,1,3,4,7],[0,2,3,5,7],[0,1,3,6,8],[0,2,3,6,8],[0,1,3,5,7]];
+  const EDGES=[];
+  ROUTES.forEach(r=>{for(let i=0;i<r.length-1;i++){
+    const k=r[i]+'-'+r[i+1];
+    if(!EDGES.some(e=>e.k===k)) EDGES.push({k,a:r[i],b:r[i+1]});
+  }});
+
+  const MAXP=26;
+  let packets=[], pulses=[];
+
+  // one cached glow sprite; createRadialGradient per packet per frame was
+  // the single biggest cost in this loop
+  const GLOW=(()=>{
+    const s=document.createElement('canvas'); s.width=s.height=24;
+    const c=s.getContext('2d');
+    const g=c.createRadialGradient(12,12,0,12,12,12);
+    g.addColorStop(0,'rgba(234,69,23,0.30)'); g.addColorStop(1,'rgba(234,69,23,0)');
+    c.fillStyle=g; c.fillRect(0,0,24,24);
+    return s;
+  })();
+  // Full-bleed schematic. It previously occupied the right 56%, which put the
+  // console panel straight through the middle of the graph and made it read as
+  // random noise. Spanning the hero and dropping the alpha reads as intent.
+  function px(n){ return (0.05 + NODES[n].x*0.90) * w; }
+  function py(n){ return (0.10 + NODES[n].y*0.80) * h; }
+
+  function size(){
+    const r=host.getBoundingClientRect();
+    dpr=Math.min(devicePixelRatio||1,1.5);           // capped: biggest lag guard
+    w=Math.max(1,Math.round(r.width)); h=Math.max(1,Math.round(r.height));
+    cv.width=Math.round(w*dpr); cv.height=Math.round(h*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    small = w < 900;                                  // graph is noise on a phone
+  }
+  function spawn(){
+    if(packets.length>=MAXP) return;
+    packets.push({r:ROUTES[(Math.random()*ROUTES.length)|0],i:0,t:Math.random()*0.2,
+                  sp:0.30+Math.random()*0.30});
+  }
+  size(); for(let i=0;i<10;i++) spawn();
+  const ro=new ResizeObserver(size); ro.observe(host); stops.push(()=>ro.disconnect());
+
+  let acc=0;
+  function step(dt){
+    acc+=dt; if(acc>0.5){acc=0; spawn();}
+    for(let k=packets.length-1;k>=0;k--){
+      const p=packets[k]; p.t+=dt*p.sp;
+      while(p.t>=1){
+        p.t-=1; p.i++;
+        if(p.i>=p.r.length-1){ pulses.push({n:p.r[p.r.length-1],t:0}); packets.splice(k,1); break; }
+        pulses.push({n:p.r[p.i],t:0});
+      }
+    }
+    for(let k=pulses.length-1;k>=0;k--){ pulses[k].t+=dt*1.8; if(pulses[k].t>1) pulses.splice(k,1); }
+  }
+
+  function draw(time){
+    ctx.clearRect(0,0,w,h);
+    if(small) return;                                  // nothing to draw on narrow screens
+
+    // edges
+    ctx.lineWidth=1;
+    ctx.strokeStyle='rgba(39,58,71,0.20)';
+    EDGES.forEach(e=>{
+      const x1=px(e.a),y1=py(e.a),x2=px(e.b),y2=py(e.b),mx=(x1+x2)/2;
+      ctx.beginPath(); ctx.moveTo(x1,y1); ctx.bezierCurveTo(mx,y1,mx,y2,x2,y2); ctx.stroke();
+    });
+
+    // nodes
+    NODES.forEach((n,i)=>{
+      const x=px(i),y=py(i);
+      ctx.fillStyle='rgba(255,255,255,0.98)';
+      ctx.strokeStyle='rgba(39,58,71,0.38)';
+      ctx.beginPath(); ctx.arc(x,y,5.5,0,Math.PI*2); ctx.fill(); ctx.stroke();
+      ctx.font='500 10px "JetBrains Mono", monospace';
+      ctx.fillStyle='rgba(39,58,71,0.42)';
+      ctx.textAlign='center'; ctx.fillText(n.l,x,y-13);
+    });
+
+    // pulses
+    pulses.forEach(p=>{
+      const x=px(p.n),y=py(p.n),r=5.5+p.t*15;
+      ctx.strokeStyle='rgba(30,170,110,'+((1-p.t)*0.42).toFixed(3)+')';
+      ctx.lineWidth=1.5; ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.stroke();
+    });
+
+    // packets travelling along their bezier
+    packets.forEach(p=>{
+      const a=p.r[p.i],b=p.r[p.i+1]; if(b===undefined) return;
+      const x1=px(a),y1=py(a),x2=px(b),y2=py(b),mx=(x1+x2)/2,t=p.t,u=1-t;
+      const x=u*u*u*x1+3*u*u*t*mx+3*u*t*t*mx+t*t*t*x2;
+      const y=u*u*u*y1+3*u*u*t*y1+3*u*t*t*y2+t*t*t*y2;
+      ctx.drawImage(GLOW,x-12,y-12);
+      ctx.fillStyle='rgba(214,55,12,0.95)'; ctx.beginPath(); ctx.arc(x,y,2,0,Math.PI*2); ctx.fill();
+    });
+  }
+
+  if(REDUCED){ for(let k=0;k<60;k++) step(0.05); draw(0); return ()=>stops.forEach(f=>f()); }
+
+  let raf=0,last=performance.now(),dead=false,visible=true;
+  function frame(now){
+    if(dead) return;
+    const dt=Math.min((now-last)/1000,0.05); last=now;
+    step(dt); draw(now/1000);
+    raf=requestAnimationFrame(frame);
+  }
+  function run(on){ cancelAnimationFrame(raf); if(on&&!dead&&!document.hidden){ last=performance.now(); raf=requestAnimationFrame(frame);} }
+  const vio=new IntersectionObserver(es=>{visible=es[0].isIntersecting; run(visible);},{threshold:0});
+  vio.observe(host);
+  const onVis=()=>run(visible&&!document.hidden);
+  document.addEventListener('visibilitychange',onVis);
+  raf=requestAnimationFrame(frame);
+  stops.push(()=>{dead=true;cancelAnimationFrame(raf);vio.disconnect();
+    document.removeEventListener('visibilitychange',onVis);});
+  return ()=>stops.forEach(f=>f());
+}
+
+/* ============================ PICKER ============================ */
+const variants=[
+  {name:'Signal',   render:renderSignal, motion:attachSignalMotion},
+  {name:'Operator', render:renderOperator},
+  {name:'Practice', render:renderPractice}
+];
+const stage=document.getElementById('stage');
+const picker=document.querySelector('.proto-picker');
+const highlight=picker.querySelector('.proto-picker-highlight');
+const items=[...picker.querySelectorAll('.proto-picker-item:not(.proto-picker-replay)')];
+const replay=picker.querySelector('.proto-picker-replay');
+let current=0, teardown=null;
+
+function moveHighlight(){const el=items[current];
+  highlight.style.width=el.offsetWidth+'px';
+  highlight.style.transform='translateX('+el.offsetLeft+'px)';}
+
+let mountGen=0;
+const MAPSVG={html:null};
+fetch('img/us-map.svg').then(r=>r.ok?r.text():null)
+  .then(s=>{MAPSVG.html=s; document.querySelectorAll('#usmap-slot,.map').forEach(el=>{if(s&&!el.firstChild)el.innerHTML=s;});})
+  .catch(()=>{});
+function paintMap(){ if(MAPSVG.html) document.querySelectorAll('.map').forEach(el=>{if(!el.firstChild)el.innerHTML=MAPSVG.html;}); }
+
+function mount(i){
+  if(teardown){teardown();teardown=null;}
+  const gen=++mountGen;                       // generation guard
+  stage.innerHTML=''; window.scrollTo(0,0);
+  requestAnimationFrame(()=>{
+    // a newer mount already ran: abandon this one rather than starting a
+    // second set of loops and clobbering the live teardown reference
+    if(gen!==mountGen) return;
+    stage.innerHTML=variants[i].render();
+    paintMap();
+    teardown=variants[i].motion?variants[i].motion(stage):null;
+  });
+}
+function setActive(i){
+  if(i<0||i>=variants.length) return;
+  current=i;
+  items.forEach((el,j)=>{el.toggleAttribute('data-active',j===i);
+    if(j===i) el.setAttribute('aria-current','true'); else el.removeAttribute('aria-current');});
+  moveHighlight();
+  try{const u=new URL(location);u.searchParams.set('v',i+1);history.replaceState(null,'',u);}catch(_){}
+  mount(i);
+}
+items.forEach((el,i)=>el.addEventListener('click',()=>setActive(i)));
+replay?.addEventListener('click',()=>mount(current));
+window.addEventListener('resize',moveHighlight);
+document.addEventListener('keydown',e=>{
+  if(/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)||e.target.isContentEditable) return;
+  if(e.metaKey||e.ctrlKey||e.altKey) return;
+  const n=parseInt(e.key,10);
+  if(n>=1&&n<=variants.length) setActive(n-1);
+  else if(e.key==='ArrowRight') setActive((current+1)%variants.length);
+  else if(e.key==='ArrowLeft') setActive((current-1+variants.length)%variants.length);
+  else if(e.key==='r'||e.key==='R') mount(current);
+});
+setActive((parseInt(new URLSearchParams(location.search).get('v'),10)||1)-1);
+requestAnimationFrame(()=>requestAnimationFrame(()=>picker.setAttribute('data-ready','')));
+})();
+</script>
+</body>
+</html>
