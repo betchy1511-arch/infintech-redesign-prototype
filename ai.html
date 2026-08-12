@@ -68,7 +68,7 @@ a{text-decoration:none}
 .p-signal .nav .tel{padding:10px 18px;border-radius:8px;background:var(--flame);color:#fff;
   font-size:13.5px;font-weight:700}
 
-.p-signal .hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;
+.p-signal .hero-in{display:grid;grid-template-columns:1.12fr .88fr;gap:34px;
   align-items:center;padding:clamp(44px,5.5vw,76px) 0 clamp(48px,5.5vw,80px)}
 .p-signal .badge{display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border-radius:999px;
   border:1px solid var(--line);background:var(--panel);margin-bottom:22px}
@@ -76,11 +76,11 @@ a{text-decoration:none}
   box-shadow:0 0 0 3px rgba(62,207,142,.16);font-style:normal}
 .p-signal .badge span{font-family:var(--mono);font-size:11.5px;font-weight:500;
   letter-spacing:.04em;color:var(--fg-2)}
-.p-signal h1{font-family:var(--display);font-weight:800;font-size:clamp(32px,4.6vw,58px);
+.p-signal h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.5vw,45px);
   line-height:1.06;letter-spacing:-.024em;margin:0 0 22px;color:var(--fg);text-wrap:balance}
 .p-signal h1 em{font-style:normal;color:var(--flame)}
-.p-signal .lede{font-size:clamp(15px,1.25vw,18px);line-height:1.62;color:var(--fg-2);
-  max-width:52ch;margin:0 0 30px}
+.p-signal .lede{font-size:clamp(15px,1.15vw,17px);line-height:1.6;color:var(--fg-2);
+  max-width:56ch;margin:0 0 24px}
 .p-signal .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
 .p-signal .b1{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:9px;
   background:var(--flame);color:#fff;font-size:15px;font-weight:700;
@@ -179,8 +179,8 @@ a{text-decoration:none}
   border:1px solid #E0E4E9;background:#fff;margin-bottom:24px;
   font-family:var(--mono);font-size:11.5px;color:#5A6675}
 .p-operator .badge i{width:6px;height:6px;border-radius:50%;background:var(--live);font-style:normal}
-.p-operator h1{font-family:var(--display);font-weight:800;font-size:clamp(32px,4.7vw,58px);
-  line-height:1.06;letter-spacing:-.026em;margin:0 auto 20px;max-width:17ch;text-wrap:balance}
+.p-operator h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.6vw,46px);
+  line-height:1.08;letter-spacing:-.024em;margin:0 auto 20px;max-width:24ch;text-wrap:balance}
 .p-operator h1 em{font-style:normal;color:var(--flame)}
 .p-operator .lede{font-size:17.5px;line-height:1.6;color:#5A6675;max-width:60ch;margin:0 auto 30px}
 .p-operator .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
@@ -264,7 +264,7 @@ a{text-decoration:none}
 .p-practice .badge{display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border-radius:6px;
   background:rgba(255,255,255,.08);margin-bottom:20px;font-family:var(--mono);font-size:11.5px;color:#B7C4D0}
 .p-practice .badge i{width:6px;height:6px;border-radius:50%;background:var(--live);font-style:normal}
-.p-practice h1{font-family:var(--display);font-weight:900;font-size:clamp(30px,4.4vw,54px);
+.p-practice h1{font-family:var(--display);font-weight:900;font-size:clamp(27px,3.4vw,43px);
   line-height:1.05;letter-spacing:-.024em;margin:0 0 18px;text-wrap:balance}
 .p-practice h1 em{font-style:normal;color:var(--amber)}
 .p-practice .lede{font-size:16.5px;line-height:1.6;color:#B7C4D0;max-width:50ch;margin:0 0 26px}
@@ -357,6 +357,62 @@ a{text-decoration:none}
 }
 
 /* ============================================================
+   Components introduced by the real site content: hero tick
+   lists, service areas, the vs-other-agencies table, testimonial
+   ============================================================ */
+.ticks{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:8px}
+.ticks li{display:flex;gap:11px;align-items:flex-start;font-size:14.8px;line-height:1.45}
+.ticks i{font-style:normal;font-weight:900;flex:none;line-height:1.45}
+.p-signal .ticks li{color:var(--fg)} .p-signal .ticks i{color:#1E9E68}
+.p-operator .ticks{max-width:64ch;margin-inline:auto;text-align:left}
+.p-operator .ticks li{color:#3C4757} .p-operator .ticks i{color:#1E9E68}
+.p-practice .ticks li{color:#2B3946} .p-practice .ticks i{color:#1E9E68}
+.p-practice .hero .ticks li{color:#C7D4DE} .p-practice .hero .ticks i{color:var(--amber)}
+
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.area{padding:18px 20px;border-radius:12px}
+.area b{display:block;font-family:var(--display);font-size:16px;font-weight:800;margin-bottom:6px}
+.area span{display:block;font-size:13.5px;line-height:1.6}
+.p-signal .area{border:1px solid var(--line);background:var(--panel)}
+.p-signal .area b{color:var(--fg)} .p-signal .area span{color:var(--fg-2)}
+.p-operator .area{border:1px solid #E6E9ED;background:#fff}
+.p-operator .area b{color:#0D1520} .p-operator .area span{color:#5A6675}
+.p-practice .area{border:2px solid #E6E9ED;background:#fff}
+.p-practice .area b{color:#111A22} .p-practice .area span{color:#5A6673}
+
+.quote-b{margin:34px 0 0;padding:26px 30px;border-radius:14px}
+.quote-b p{margin:0 0 12px;font-size:17px;line-height:1.6;font-style:italic}
+.quote-b cite{font-style:normal;font-family:var(--display);font-weight:800;font-size:14px}
+.p-signal .quote-b{border:1px solid var(--line);background:var(--panel);color:var(--fg)}
+.p-signal .quote-b cite{color:var(--flame)}
+.p-operator .quote-b{border:1px solid #E6E9ED;background:#fff;color:#0D1520}
+.p-operator .quote-b cite{color:var(--flame)}
+.p-practice .quote-b{border:2px solid #E6E9ED;background:#fff;color:#111A22}
+.p-practice .quote-b cite{color:var(--flame)}
+
+.cmp{border:1px solid #E6E9ED;border-radius:12px;overflow:hidden;background:#fff}
+.cmp-row{display:grid;grid-template-columns:1fr 1.5fr 1.2fr;gap:16px;padding:15px 20px;
+  border-bottom:1px solid #EDF0F3;font-size:14.5px;align-items:start}
+.cmp-row:last-child{border-bottom:0}
+.cmp-head{background:#F7F8FA;font-family:var(--display);font-weight:800;font-size:12.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:#8A94A1}
+.cmp-row .f{font-weight:700;color:#0D1520}
+.cmp-row .us{color:#2B3946;display:flex;gap:9px;align-items:flex-start}
+.cmp-row .us i{font-style:normal;color:#1E9E68;font-weight:900;flex:none}
+.cmp-row .them{color:#8A94A1}
+
+.p-operator .job.res{border-color:#CFE8DA;background:#F4FBF7}
+.p-operator .job.res span{color:#1E9E68;font-weight:700;font-family:var(--sans);font-size:13px}
+
+@media (max-width:1000px){ .areas{grid-template-columns:1fr 1fr} }
+@media (max-width:720px){
+  .areas{grid-template-columns:1fr}
+  .cmp-row{grid-template-columns:1fr;gap:6px}
+  .cmp-head{display:none}
+  .cmp-row .them::before{content:'Other agencies: ';color:#B6BEC8}
+}
+
+/* ============================================================
    PICKER — verbatim from ~/.claude/skills/prototype/PICKER.md
    ============================================================ */
 .proto-picker{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
@@ -406,279 +462,406 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
    verbatim from /service/ai-automation-services/.
    ============================================================= */
 const TEL='(504) 777-3296', TELH='tel:5047773296';
+const GP_URL='https://www.google.com/partners/agency?id=9381770992';
+
 /* Real logo, pulled from infintechdesigns.com (wp-content/uploads/2021/01/logo-black.png,
    236x86, the only logo on the site). The site ships NO reversed version, so the light
-   one below was generated from that exact file by whitening only the low-saturation
-   wordmark pixels — the coloured mark is untouched, not redrawn. */
+   one was generated from that exact file by whitening only the low-saturation wordmark
+   pixels - the coloured mark is untouched, not redrawn. */
 const LOGO_LIGHT_BG="data:image/png;base64,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";
 const LOGO_DARK_BG="data:image/png;base64,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";
 const logo=onDark=>'<a class="mark" href="/" aria-label="Infintech Designs home">'+
   '<img src="'+(onDark?LOGO_DARK_BG:LOGO_LIGHT_BG)+'" width="236" height="86" alt="Infintech Designs"></a>';
-const GP_URL='https://www.google.com/partners/agency?id=9381770992';
 
-const STEPS=[
-  {n:'01',h:'We Watch & Learn',   p:'We sit with how your team actually works before proposing anything. The bottlenecks are rarely where people assume.'},
-  {n:'02',h:'We Build Your Solution',p:'Automations wired into the tools you already run, not a platform migration you did not ask for.'},
-  {n:'03',h:'We Train Your Team', p:'Your staff run it, not us. If a system only works while the agency is on retainer, it is not automation.'},
-  {n:'04',h:'We Keep Improving',  p:'Processes drift. We keep tuning as volume, staff and seasons change.'}
+/* =============================================================
+   CONTENT — COPIED FROM infintechdesigns.com, NOT WRITTEN BY ME.
+   Homepage: H1, subhead, hero bullets, services + their taglines,
+   industries, awards, comparison table, testimonial, FAQs, areas.
+   /service/ai-automation-services/: intro, outcomes, definition,
+   the 4-step process, and the before/after cases with results.
+   ============================================================= */
+const H1='We Help Businesses Rank Higher, Grow Faster and Convert Better To Drive Revenue';
+const SUB='Our Team innovated the Google Ranking Game and is committed that your Business Ranks on the Highly Coveted Top 3 Spots of the Google Map Pack';
+const LOCAL='Locally Owned in the Lower Garden District of New Orleans';
+const HERO_BULLETS=[
+  'FREE Initial Consultation With Founder &amp; CEO Brian Hong',
+  'Over 26 Years Experience In SEO And Web Design',
+  'Real-Time Tracking Dashboard',
+  'Data-Driven SEO Marketing With Measurable Results',
+  'Web Design That Turns Visitors Into Customers'
 ];
 
-const PAINS=[
-  {v:'Home Services · HVAC, Plumbing, Electrical', h:'The Scheduling Nightmare',
-   p:'Calls come in while every tech is on a roof. The ones you miss do not call back, they call the next result.',
-   f:'Calls answered and jobs booked into the calendar around the clock'},
-  {v:'Home Services · HVAC, Plumbing, Electrical', h:'The Quote & Invoice Chase',
-   p:'Quotes written in the van at 9pm, invoices chased for weeks, cash sat in someone else’s account.',
-   f:'Quotes out the same day, invoices and reminders sent on their own'},
-  {v:'Medical Practices · Solo to multi-location', h:'The Appointment Avalanche',
-   p:'Front desk buried in booking, rescheduling and no-show calls instead of looking after the people in the room.',
-   f:'Booking, reminders and rescheduling handled without a phone call'},
-  {v:'Medical Practices · Solo to multi-location', h:'The Insurance Verification Maze',
-   p:'Hours a week on hold confirming coverage that could have been checked before the patient arrived.',
-   f:'Coverage checked ahead of the visit, exceptions flagged for a human'},
-  {v:'Legal Services · Law firms', h:'The Intake Information Overload',
-   p:'Every new matter starts with the same questions, typed twice, and a file that is never quite complete.',
-   f:'Intake captured once, structured, and filed into the matter automatically'},
-  {v:'Legal Services · Law firms', h:'The Document Generation Marathon',
-   p:'Billable hours spent rebuilding documents that differ by a handful of fields.',
-   f:'Documents drafted from matter data, ready for a fee earner to review'}
+const AI_H2='Transform Your Business Operations with AI-Powered Automation';
+const AI_INTRO='Every day, businesses lose valuable hours to repetitive tasks that intelligent automation could handle.';
+const AI_WHAT='AI automation represents the convergence of artificial intelligence and robotic process automation (RPA) to create intelligent systems that handle complex business tasks. Unlike traditional automation that follows rigid rules, AI-powered automation adapts, learns, and improves over time.';
+const AI_OUTCOMES=[
+  'Transform 10-20 hours of weekly manual tasks into automated workflows',
+  'Achieve up to 99% accuracy in routine business processes',
+  'Scale operations without proportional overhead increases',
+  'Enable your team to focus on high-value activities',
+  'Create sustainable work patterns for long-term success'
+];
+const AI_STEPS=[
+  {n:'01',h:'We Watch &amp; Learn',    p:'We observe your current workflows, identify the biggest time-wasters, and calculate potential time savings.'},
+  {n:'02',h:'We Build Your Solution',p:'We create your automated workflows.'},
+  {n:'03',h:'We Train Your Team',    p:'Your staff run it day to day.'},
+  {n:'04',h:'We Keep Improving',     p:'Processes drift, so we keep tuning them.'}
 ];
 
-const VERTICALS=[
-  {h:'Home Services', s:'HVAC · Plumbing · Electrical', rows:[PAINS[0],PAINS[1]]},
-  {h:'Medical Practices', s:'Solo to multi-location clinics', rows:[PAINS[2],PAINS[3]]},
-  {h:'Legal Services', s:'Law firms & legal professionals', rows:[PAINS[4],PAINS[5]]}
+/* Before / after, verbatim from the AI automation page including its stated results */
+const CASES=[
+  {v:'Home Services: HVAC, Plumbing, Electrical', h:'The Scheduling Nightmare',
+   before:'Sarah runs an HVAC company. Every morning starts with 45 minutes of voicemails. Her dispatcher spends 3 hours daily playing phone tag, double-booking technicians, and dealing with angry customers.',
+   after:['Customers book appointments online 24/7 (yes, even at 2 AM)',
+          'AI automatically assigns jobs based on technician location and expertise',
+          'Automatic text reminders reduce no-shows by 73%',
+          'Customers can reschedule themselves without calling'],
+   result:'One plumbing company saved 20 hours/week on scheduling alone'},
+  {v:'Home Services: HVAC, Plumbing, Electrical', h:'The Quote &amp; Invoice Chase',
+   before:'Technician finishes the job, writes a paper invoice, the office enters it later, sends it, waits, calls about payment, waits more, and finally gets paid 45 days later.',
+   after:['Technician completes digital form on phone',
+          'Customer gets invoice immediately via email or text',
+          'Automatic payment reminders every 7 days',
+          'Online payment options included'],
+   result:'Average payment time dropped from 45 to 12 days'},
+  {v:'Medical Practices: Solo to Multi-Location', h:'The Appointment Avalanche',
+   before:'Dr. Johnson&rsquo;s receptionist spends 5 hours daily on the phone scheduling, rescheduling and confirming appointments, while the waiting room is full of patients needing help.',
+   after:['Patients book online anytime (even during lunch)',
+          'AI sends appointment reminders via text',
+          'Two-way texting for confirmations',
+          'Pre-visit forms sent automatically'],
+   result:'One dental practice reduced phone time by 75%'},
+  {v:'Medical Practices: Solo to Multi-Location', h:'The Insurance Verification Maze',
+   before:'Staff call insurance companies, wait on hold for 30 minutes, verify coverage, enter data. Repeat 50 times daily.',
+   after:['AI verifies insurance eligibility instantly',
+          'Checks coverage limits and copays',
+          'Alerts staff to issues before the appointment',
+          'Updates patient records automatically'],
+   result:'Medical assistant saved 3 hours daily on insurance calls'},
+  {v:'Legal Services: Law Firms', h:'The Intake Information Overload',
+   before:'A potential client calls, the receptionist takes notes, schedules a consultation, and the lawyer repeats all the questions during the meeting. Half do not show up.',
+   after:['Online intake forms collect all details upfront',
+          'AI pre-screens for case viability',
+          'Qualified leads automatically scheduled',
+          'Conflict checks run automatically'],
+   result:'One personal injury firm increased consultation show rate from 50% to 85%'},
+  {v:'Legal Services: Law Firms', h:'The Document Generation Marathon',
+   before:'A paralegal spends hours creating standard documents: changing names, dates, and copying information from one system to another.',
+   after:['Client information flows into all documents',
+          'Standard forms generate instantly',
+          'Custom clauses inserted based on case type',
+          'Organized digital filing system'],
+   result:'Document preparation time cut by 80%'}
 ];
 
+/* Homepage services, with the taglines the site actually uses */
 const SERVICES=[
-  {n:'AI Automation',   u:'/service/ai-automation-services/'},
-  {n:'SEO',             u:'/service/seo/'},
-  {n:'Local SEO',       u:'/service/local-seo/'},
-  {n:'Google Ads',      u:'/service/google-ads/'},
-  {n:'Web Design',      u:'/service/web-design/'},
-  {n:'Web Development', u:'/service/web-development/'},
-  {n:'CRO',             u:'/conversion-rate-optimization-cro/'},
-  {n:'White Label',     u:'/service/white-label-seo/'}
+  {n:'Full Stack Digital Marketing', d:'All in one digital marketing to help your business grow', u:'/service/'},
+  {n:'Web Design',             d:'Creative and Effective Web Design Services', u:'/service/web-design/'},
+  {n:'SEO',                    d:'Make Your Brand &amp; Content Visible with SEO Services', u:'/service/seo/'},
+  {n:'Google Ads',             d:'Google Adwords Internet Marketing Services', u:'/service/google-ads/'},
+  {n:'Social Media Marketing', d:'Grow Your Audience With Social Media Marketing', u:'/service/social-media-marketing/'},
+  {n:'Link Building',          d:'Utilize Link Building that Will Improve Your Website&rsquo;s Google Rankings', u:'/service/link-building/'},
+  {n:'Google Reviews',         d:'Boost Your Business With Quality Google Reviews', u:'/service/'},
+  {n:'Lead Generation',        d:'Online Lead Generation, Make Your Customers Interested in Your Business', u:'/service/lead-generation/'},
+  {n:'Facebook Ads',           d:'Get More Visibility and Customers With Facebook Ads Services', u:'/service/facebook-ads/'},
+  {n:'Local SEO',              d:'Results-Driven Local SEO Services', u:'/service/local-seo/'},
+  {n:'AI Automation',          d:'Transform Your Business Operations with AI-Powered Automation', u:'/service/ai-automation-services/'}
 ];
 
+const INDUSTRIES=['Lawyers','Dentists','Medical','Home Services','Small Businesses',
+                  'Restaurants','Multi Location Business','Enterprise','School &amp; Universities'];
+const INDUSTRIES_SUB='Infintech Designs has served different industries for years from home services to local enterprises';
+
+const AWARDS=[
+  'National and Local Excellence Award Winner by UpCity',
+  'We are one of the top social media agencies in the state of Louisiana',
+  'Number one agency in New Orleans ranked by the good people of NOLA (Seolium.com)',
+  'Recognized as one of the best companies in Louisiana',
+  'Acclaimed as one of the best of the best web designers &amp; web agencies in Louisiana'
+];
+
+const COMPARE=[
+  ['Custom Design Solutions',   'Tailor-Made Design Solutions That Tell Your Brand&rsquo;s Story', 'Often template-based with customization'],
+  ['Pricing Models',            'Transparent, Value-Based Pricing with No-Surprise Costs',    'Variable, often with hidden costs'],
+  ['SEO Optimization Services', 'Advanced SEO Strategies That Boost Visibility and Drive Results', 'Basic SEO, often outsourced'],
+  ['E-commerce Integration',    'High-Converting E-commerce Solutions so You Sell More, Faster','Limited or add-on service'],
+  ['Project Delivery Time',     'Accelerated Results without Sacrificing Quality',            'Standard industry timelines'],
+  ['Portfolio Diversity',       'Insights from Multiple Industries',                          'Focused on specific sectors'],
+  ['Design Revision Policies',  'Flexible Revisions Until You&rsquo;re Thrilled with the Results',  'Limited number or charged extra']
+];
+
+const TESTIMONIAL={n:'Jon Silkin',
+  q:'I contacted Infintech Designs 2 months ago to create and build a creative website for my company. The web design service from Brian and his team has been great from the start.'};
+
+const AREAS=[
+  {s:'Louisiana',  c:['New Orleans','Covington','Mandeville','Slidell','Metairie','Kenner','Baton Rouge','Shreveport','Lafayette','Hammond']},
+  {s:'Texas',      c:['Dallas','Houston','San Antonio','Austin','Fort Worth']},
+  {s:'Colorado',   c:['Colorado Springs','Pueblo','Fort Collins','Denver']},
+  {s:'Washington', c:['Seattle','Tacoma','Spokane']},
+  {s:'Mississippi',c:['Biloxi','Hattiesburg']},
+  {s:'Georgia',    c:['Atlanta']}
+];
+
+/* Homepage FAQs, verbatim */
 const FAQS=[
-  {q:'What can actually be automated in a business like mine?',
-   a:'Anything that follows a rule and repeats. Booking, reminders, intake, quoting, invoicing, follow-up, document drafting, reporting. What does not automate is judgement, and that is the part you want your people spending their day on.'},
-  {q:'Do we have to change the software we already use?',
-   a:'No. Automations are wired into the tools you already run. A platform migration is a different project with a different budget, and most of the time it is not the constraint.'},
-  {q:'How is this different from hiring another person?',
-   a:'A person is the right answer for judgement and relationships. Automation is the right answer for the work that is identical every time. Most firms need less of the second so they can afford more of the first.'},
-  {q:'What does it cost, and how do you show the return?',
-   a:'We scope from what we observe in your process rather than a price list, and the return is measured in hours reclaimed and work that stops falling through. If we cannot see a return, we will say so.'},
-  {q:'Who runs it once it is live?',
-   a:'Your team. We train them and keep improving it. If a system only works while an agency is on retainer, it is not automation, it is outsourcing.'},
-  {q:'You are a marketing agency. Why automation?',
-   a:'Because generating more leads for a business that cannot answer the phone makes the problem worse. The marketing and the operations behind it are the same system, and we are a Google Premier Partner on the marketing half of it.'}
+  {q:'What digital marketing services does Infintech Designs offer?',
+   a:'We provide a full range of digital marketing services, including SEO, PPC advertising, social media management, and content marketing, all designed to boost your online visibility and drive conversions.'},
+  {q:'How can SEO help my business grow?',
+   a:'SEO helps improve your website&rsquo;s ranking on search engines like Google, making it easier for potential customers to find you. Our tailored SEO strategies focus on increasing organic traffic and driving leads.'},
+  {q:'How long does it take to see results from SEO?',
+   a:'SEO is a long-term strategy. While you may start seeing improvements in traffic within a few months, significant results typically take 6-12 months, depending on your industry and competition.'},
+  {q:'Can you redesign my existing website?',
+   a:'Yes! Infintech Designs specializes in both website redesigns and new builds. We&rsquo;ll improve your site&rsquo;s functionality, design, and user experience to ensure it meets today&rsquo;s web standards and converts visitors into customers.'},
+  {q:'What makes your web design services stand out?',
+   a:'Our web design services focus on creating user-friendly, mobile-responsive websites that are visually appealing and optimized for conversions. We build sites that reflect your brand and engage your audience.'},
+  {q:'Do you offer ongoing support after the website is built?',
+   a:'Absolutely! We provide ongoing website maintenance, updates, and support to ensure your site remains secure, functional, and up-to-date with the latest trends and technologies.'},
+  {q:'Do you only do business in New Orleans?',
+   a:'We provide services for businesses in Louisiana, as well as outside the state such as Texas, Mississippi, and California.'},
+  {q:'Do you offer free services?',
+   a:'We do free consultations to determine which service is best for your business.'}
 ];
 
 const NAV=['AI Automation','Services','Industries','Case Studies','About'];
-const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const gp=cls=>'<a class="gp '+(cls||'')+'" href="'+GP_URL+'" target="_blank" rel="noopener">'+
   '<span class="sq"><s></s><s></s><s></s><s></s></span><span>Google <b>Premier Partner</b></span></a>';
+const bullets=(arr,cls)=>'<ul class="'+(cls||'ticks')+'">'+
+  arr.map(b=>'<li><i>&#10003;</i><span>'+b+'</span></li>').join('')+'</ul>';
+const faqHTML=()=>FAQS.map(f=>'<details><summary>'+f.q+'</summary><p>'+f.a+'</p></details>').join('');
+const areasHTML=()=>AREAS.map(a=>'<div class="area"><b>'+a.s+'</b><span>'+a.c.join(' &middot; ')+'</span></div>').join('');
+const quoteHTML=()=>'<blockquote class="quote-b"><p>&ldquo;'+TESTIMONIAL.q+'&rdquo;</p><cite>'+TESTIMONIAL.n+'</cite></blockquote>';
 
-/* =============================================================
-   DIRECTION 1 — SIGNAL  (the animated one)
-   ============================================================= */
+/* ===================== DIRECTION 1 — SIGNAL ===================== */
 function renderSignal(){
   return '<div class="p-signal">'+
     '<div class="hero">'+
       '<div class="hero-bg"><div class="grid"></div></div>'+
-      '<div class="wrap"><div class="nav">'+
-        logo(false)+
-        '<span class="links">'+NAV.map(n=>'<a href="#">'+esc(n)+'</a>').join('')+'</span>'+
-        '<a class="tel" href="'+TELH+'">'+TEL+'</a>'+
-      '</div></div>'+
+      '<div class="wrap"><div class="nav">'+logo(false)+
+        '<span class="links">'+NAV.map(n=>'<a href="#">'+n+'</a>').join('')+'</span>'+
+        '<a class="tel" href="'+TELH+'">'+TEL+'</a></div></div>'+
       '<div class="wrap"><div class="hero-in">'+
         '<div>'+
-          '<span class="badge"><i></i><span>AI automation &amp; growth systems</span></span>'+
-          '<h1>Put the repetitive half of your business <em>on autopilot</em></h1>'+
-          '<p class="lede">We map how your team actually works, automate the parts that repeat, and run the marketing that fills the pipeline behind it. Built into the tools you already use.</p>'+
-          '<div class="cta"><a class="b1" href="#">Book an automation audit <span>&rarr;</span></a>'+
-          '<a class="b2" href="#">See what we automate</a></div>'+
+          '<span class="badge"><i></i><span>'+LOCAL+'</span></span>'+
+          '<h1>'+H1+'</h1>'+
+          '<p class="lede">'+SUB+'</p>'+
+          bullets(HERO_BULLETS)+
+          '<div class="cta"><a class="b1" href="#">Claim Your FREE Consultation <span>&rarr;</span></a>'+
+          '<a class="b2" href="'+TELH+'">'+TEL+'</a></div>'+
           '<div class="partner">'+gp()+'<span class="dot"></span>'+
-            '<span class="g">New Orleans &middot; <b>Since 2002</b></span><span class="dot"></span>'+
-            '<span class="g">Home services &middot; Medical &middot; Legal</span></div>'+
+            '<span class="g">Over <b>26 Years</b> Experience</span></div>'+
         '</div>'+
         '<div class="console">'+
-          '<header><i></i><b>automations / live</b><span class="t">last 60s</span></header>'+
+          '<header><i></i><b>ai automation / live</b><span class="t">last 60s</span></header>'+
           '<ul>'+
-            '<li><span class="k">missed_call</span><span>Booked to calendar</span><span class="s ok">DONE</span></li>'+
-            '<li><span class="k">new_lead</span><span>Enriched &amp; routed</span><span class="s ok">DONE</span></li>'+
-            '<li><span class="k">quote_req</span><span>Drafting estimate</span><span class="s run">RUN</span></li>'+
-            '<li><span class="k">invoice_14d</span><span>Reminder sent</span><span class="s ok">DONE</span></li>'+
-            '<li><span class="k">intake_form</span><span>Filed to matter</span><span class="s ok">DONE</span></li>'+
-            '<li><span class="k">no_show</span><span>Rescheduling</span><span class="s run">RUN</span></li>'+
-            '<li><span class="k">review_req</span><span>Review request sent</span><span class="s ok">DONE</span></li>'+
-            '<li><span class="k">coverage</span><span>Insurance verified</span><span class="s ok">DONE</span></li>'+
-            '<li><span class="k">weekly_rpt</span><span>Owner report built</span><span class="s run">RUN</span></li>'+
+            '<li><span class="k">booking</span><span>Booked online at 2 AM</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">dispatch</span><span>Job assigned by location</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">reminder</span><span>No-show reminder sent</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">invoice</span><span>Invoice sent from phone</span><span class="s run">RUN</span></li>'+
+            '<li><span class="k">insurance</span><span>Eligibility verified</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">intake</span><span>Case pre-screened</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">conflict</span><span>Conflict check run</span><span class="s ok">DONE</span></li>'+
+            '<li><span class="k">docgen</span><span>Standard form generated</span><span class="s run">RUN</span></li>'+
+            '<li><span class="k">review</span><span>Review request sent</span><span class="s ok">DONE</span></li>'+
           '</ul>'+
         '</div>'+
       '</div></div>'+
     '</div>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker rev">Our simple 4-step process</p>'+
-      '<h2 class="rev">We watch how you work before we automate anything</h2>'+
-      '<p class="sec-lede rev">Most automation fails because it encodes a process nobody checked. We start by watching.</p>'+
-      '<div class="steps">'+STEPS.map(s=>'<div class="step rev"><span class="n">'+s.n+'</span>'+
-        '<h3>'+esc(s.h)+'</h3><p>'+esc(s.p)+'</p></div>').join('')+'</div>'+
+      '<p class="kicker rev">AI Automation Services</p>'+
+      '<h2 class="rev">'+AI_H2+'</h2>'+
+      '<p class="sec-lede rev">'+AI_INTRO+'</p>'+
+      '<div class="steps">'+AI_OUTCOMES.slice(0,4).map((o,i)=>'<div class="step rev">'+
+        '<span class="n">'+String(i+1).padStart(2,'0')+'</span>'+
+        '<p style="color:var(--fg);font-size:15px;font-weight:600;line-height:1.5;margin:0">'+o+'</p></div>').join('')+'</div>'+
     '</div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker rev">The daily struggles we solve</p>'+
-      '<h2 class="rev">Six jobs your team should not still be doing by hand</h2>'+
-      '<div class="pains">'+PAINS.map(p=>'<div class="pain rev"><p class="v">'+esc(p.v)+'</p>'+
-        '<h3>'+esc(p.h)+'</h3><p>'+esc(p.p)+'</p>'+
-        '<div class="fix"><i>&rarr;</i><span>'+esc(p.f)+'</span></div></div>').join('')+'</div>'+
+      '<p class="kicker rev">Real-World AI Automation Solutions by Industry</p>'+
+      '<h2 class="rev">The Daily Struggles We Solve</h2>'+
+      '<div class="pains">'+CASES.map(c=>'<div class="pain rev"><p class="v">'+c.v+'</p>'+
+        '<h3>'+c.h+'</h3><p><b style="color:var(--fg)">Before Automation:</b> '+c.before+'</p>'+
+        '<div class="fix"><i>&rarr;</i><span>'+c.result+'</span></div></div>').join('')+'</div>'+
     '</div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker rev">Everything else we run</p>'+
-      '<h2 class="rev">The growth side, from a Google Premier Partner</h2>'+
-      '<p class="sec-lede rev">Automation clears the operational drag. These fill the pipeline that runs through it.</p>'+
-      '<div class="svc">'+SERVICES.map(s=>'<a class="rev" href="'+s.u+'"><span>'+esc(s.n)+'</span><i>&rarr;</i></a>').join('')+'</div>'+
+      '<p class="kicker rev">Our Simple 4-Step Process</p><h2 class="rev">How we build it</h2>'+
+      '<div class="steps">'+AI_STEPS.map(s=>'<div class="step rev"><span class="n">'+s.n+'</span>'+
+        '<h3>'+s.h+'</h3><p>'+s.p+'</p></div>').join('')+'</div>'+
     '</div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker rev">Common questions</p>'+
-      '<h2 class="rev">Straight answers, before you call</h2>'+
-      '<div class="faq rev">'+FAQS.map(f=>'<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>').join('')+'</div>'+
+      '<p class="kicker rev">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</p>'+
+      '<h2 class="rev">Services</h2>'+
+      '<div class="svc">'+SERVICES.map(s=>'<a class="rev" href="'+s.u+'"><span>'+s.n+'</span><i>&rarr;</i></a>').join('')+'</div>'+
     '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker rev">Industries Served</p><h2 class="rev">'+INDUSTRIES_SUB+'</h2>'+
+      '<div class="svc">'+INDUSTRIES.map(i=>'<a class="rev" href="#"><span>'+i+'</span><i>&rarr;</i></a>').join('')+'</div>'+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker rev">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
+      '<h2 class="rev">Awards &amp; Recognitions</h2>'+bullets(AWARDS,'ticks rev')+
+      '<div class="rev">'+quoteHTML()+'</div>'+
+    '</div></section>'+
+
+    '<section><div class="wrap"><p class="kicker rev">Service Areas</p><h2 class="rev">Where we work</h2>'+
+      '<div class="areas rev">'+areasHTML()+'</div></div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker rev">Your Guide to Web Design, SEO, and Digital Marketing</p>'+
+      '<h2 class="rev">FAQs</h2><div class="faq rev">'+faqHTML()+'</div></div></section>'+
 
     '<div class="wrap"><footer><span>&copy; 2026 Infintech Designs</span><a href="#">Privacy</a>'+
-      '<a href="#">Terms</a><span style="margin-left:auto">New Orleans, Louisiana &middot; '+TEL+'</span></footer></div>'+
+      '<a href="#">Terms</a><span style="margin-left:auto">'+LOCAL+' &middot; '+TEL+'</span></footer></div>'+
   '</div>';
 }
 
-/* =============================================================
-   DIRECTION 2 — OPERATOR
-   ============================================================= */
+/* ===================== DIRECTION 2 — OPERATOR ===================== */
 function renderOperator(){
-  const lanes=[
-    {h:'Intake',   jobs:[['Missed call · 14:02','home services'],['Web form · 14:04','legal']]},
-    {h:'Qualified',jobs:[['New lead · enriched','medical']]},
-    {h:'In flight',jobs:[['Estimate drafting','home services'],['Coverage check','medical']]},
-    {h:'Cleared',  jobs:[['Booked to calendar','home services'],['Filed to matter','legal'],['Reminder sent','medical']]}
-  ];
   return '<div class="p-operator">'+
-    '<div class="wrap"><div class="nav">'+
-      logo(false)+
-      '<span class="links">'+NAV.map(n=>'<a href="#">'+esc(n)+'</a>').join('')+'</span>'+
-      '<a class="tel" href="'+TELH+'">'+TEL+'</a>'+
-    '</div></div>'+
+    '<div class="wrap"><div class="nav">'+logo(false)+
+      '<span class="links">'+NAV.map(n=>'<a href="#">'+n+'</a>').join('')+'</span>'+
+      '<a class="tel" href="'+TELH+'">'+TEL+'</a></div></div>'+
 
     '<div class="hero"><div class="wrap">'+
-      '<span class="badge"><i></i> AI automation &amp; growth systems</span>'+
-      '<h1>Put the repetitive half of your business <em>on autopilot</em></h1>'+
-      '<p class="lede">We map how your team actually works, automate the parts that repeat, and run the marketing that fills the pipeline behind it. Built into the tools you already use.</p>'+
-      '<div class="cta"><a class="b1" href="#">Book an automation audit</a>'+
-      '<a class="b2" href="#">See what we automate</a></div>'+
-      '<p class="fine">No platform migration &middot; your team runs it &middot; since 2002</p>'+
-
+      '<span class="badge"><i></i> '+LOCAL+'</span>'+
+      '<h1>'+H1+'</h1>'+
+      '<p class="lede">'+SUB+'</p>'+
+      '<div class="cta"><a class="b1" href="#">Claim Your FREE Consultation</a>'+
+      '<a class="b2" href="'+TELH+'">'+TEL+'</a></div>'+
+      '<p class="fine">FREE Initial Consultation With Founder &amp; CEO Brian Hong &middot; Over 26 Years Experience</p>'+
       '<div class="board">'+
-        '<header><i></i><i></i><b>infintech / automations</b></header>'+
-        '<div class="lanes">'+lanes.map(l=>'<div class="lane"><h4><s></s>'+esc(l.h)+'</h4>'+
-          l.jobs.map(j=>'<div class="job"><b>'+esc(j[0])+'</b><span>'+esc(j[1])+'</span></div>').join('')+
+        '<header><i></i><i></i><b>ai automation / what it replaces</b></header>'+
+        '<div class="lanes">'+CASES.slice(0,4).map(c=>'<div class="lane">'+
+          '<h4><s></s>'+c.h+'</h4>'+
+          c.after.slice(0,3).map(a=>'<div class="job"><b>'+a+'</b></div>').join('')+
+          '<div class="job res"><span>'+c.result+'</span></div>'+
         '</div>').join('')+'</div>'+
       '</div>'+
       '<div style="display:flex;justify-content:center;margin-top:28px">'+gp()+'</div>'+
     '</div></div>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker">Our simple 4-step process</p>'+
-      '<h2>We watch how you work before we automate anything</h2>'+
-      '<p class="sec-lede">Most automation fails because it encodes a process nobody checked. We start by watching.</p>'+
-      '<div class="steps">'+STEPS.map(s=>'<div class="step"><span class="n">'+s.n+'</span>'+
-        '<h3>'+esc(s.h)+'</h3><p>'+esc(s.p)+'</p></div>').join('')+'</div>'+
+      '<p class="kicker">AI Automation Services</p><h2>'+AI_H2+'</h2>'+
+      '<p class="sec-lede">'+AI_WHAT+'</p>'+bullets(AI_OUTCOMES)+
     '</div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker">The daily struggles we solve</p>'+
-      '<h2>Six jobs your team should not still be doing by hand</h2>'+
-      '<div class="pains">'+PAINS.map(p=>'<div class="pain"><p class="v">'+esc(p.v)+'</p>'+
-        '<h3>'+esc(p.h)+'</h3><p>'+esc(p.p)+'</p>'+
-        '<div class="fix"><i>&rarr;</i><span>'+esc(p.f)+'</span></div></div>').join('')+'</div>'+
+      '<p class="kicker">Our Simple 4-Step Process</p><h2>How we build it</h2>'+
+      '<div class="steps">'+AI_STEPS.map(s=>'<div class="step"><span class="n">'+s.n+'</span>'+
+        '<h3>'+s.h+'</h3><p>'+s.p+'</p></div>').join('')+'</div>'+
     '</div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker">Everything else we run</p>'+
-      '<h2>The growth side, from a Google Premier Partner</h2>'+
-      '<div class="svc">'+SERVICES.map(s=>'<a href="'+s.u+'"><span>'+esc(s.n)+'</span><i>&rarr;</i></a>').join('')+'</div>'+
+      '<p class="kicker">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</p>'+
+      '<h2>Services</h2>'+
+      '<div class="pains">'+SERVICES.map(s=>'<div class="pain"><h3>'+s.n+'</h3><p>'+s.d+'</p>'+
+        '<div class="fix"><i>&rarr;</i><span><a href="'+s.u+'" style="color:inherit">Learn more</a></span></div></div>').join('')+'</div>'+
     '</div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker">Common questions</p><h2>Straight answers, before you call</h2>'+
-      '<div class="faq">'+FAQS.map(f=>'<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>').join('')+'</div>'+
+      '<p class="kicker">Industries Served</p><h2>'+INDUSTRIES_SUB+'</h2>'+
+      '<div class="svc">'+INDUSTRIES.map(i=>'<a href="#"><span>'+i+'</span><i>&rarr;</i></a>').join('')+'</div>'+
     '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker">Discover the Infintech Designs Difference</p>'+
+      '<h2>Infintech Designs vs Other Agencies</h2>'+
+      '<div class="cmp"><div class="cmp-row cmp-head"><span>Feature</span><span>Infintech Designs</span><span>Other Agencies</span></div>'+
+      COMPARE.map(r=>'<div class="cmp-row"><span class="f">'+r[0]+'</span>'+
+        '<span class="us"><i>&#10003;</i>'+r[1]+'</span><span class="them">'+r[2]+'</span></div>').join('')+'</div>'+
+    '</div></section>'+
+
+    '<section><div class="wrap">'+
+      '<p class="kicker">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
+      '<h2>Awards &amp; Recognitions</h2>'+bullets(AWARDS)+quoteHTML()+
+    '</div></section>'+
+
+    '<section><div class="wrap"><p class="kicker">Service Areas</p><h2>Where we work</h2>'+
+      '<div class="areas">'+areasHTML()+'</div></div></section>'+
+
+    '<section><div class="wrap"><p class="kicker">Your Guide to Web Design, SEO, and Digital Marketing</p>'+
+      '<h2>FAQs</h2><div class="faq">'+faqHTML()+'</div></div></section>'+
 
     '<div class="wrap"><footer><span>&copy; 2026 Infintech Designs</span><a href="#">Privacy</a>'+
-      '<a href="#">Terms</a><span style="margin-left:auto">New Orleans, Louisiana &middot; '+TEL+'</span></footer></div>'+
+      '<a href="#">Terms</a><span style="margin-left:auto">'+LOCAL+' &middot; '+TEL+'</span></footer></div>'+
   '</div>';
 }
 
-/* =============================================================
-   DIRECTION 3 — PRACTICE
-   ============================================================= */
+/* ===================== DIRECTION 3 — PRACTICE ===================== */
 function renderPractice(){
+  const groups=[
+    {h:'Home Services',    s:'HVAC, Plumbing, Electrical &amp; More',            rows:CASES.slice(0,2)},
+    {h:'Medical Practices',s:'From Solo Practitioners to Multi-Location Clinics',rows:CASES.slice(2,4)},
+    {h:'Legal Services',   s:'Law Firms &amp; Legal Professionals',              rows:CASES.slice(4,6)}
+  ];
   return '<div class="p-practice">'+
-    '<div class="wrap"><div class="nav">'+
-      logo(false)+
-      '<span class="links">'+NAV.map(n=>'<a href="#">'+esc(n)+'</a>').join('')+'</span>'+
-      '<a class="tel" href="'+TELH+'">Call '+TEL+'</a>'+
-    '</div></div>'+
+    '<div class="wrap"><div class="nav">'+logo(false)+
+      '<span class="links">'+NAV.map(n=>'<a href="#">'+n+'</a>').join('')+'</span>'+
+      '<a class="tel" href="'+TELH+'">Call '+TEL+'</a></div></div>'+
 
     '<div class="hero"><div class="wrap">'+
       '<div>'+
-        '<span class="badge"><i></i> AI automation &amp; growth systems</span>'+
-        '<h1>Your team is doing work a system should have done <em>hours ago</em></h1>'+
-        '<p class="lede">We automate the repetitive half of home services, medical and legal practices, then run the marketing that fills the pipeline behind it.</p>'+
-        '<div class="cta"><a class="b1" href="#">Book an automation audit</a>'+
-        '<a class="b2" href="#">See what we automate</a></div>'+
+        '<span class="badge"><i></i> '+LOCAL+'</span>'+
+        '<h1>'+H1+'</h1>'+
+        '<p class="lede">'+SUB+'</p>'+
+        bullets(HERO_BULLETS.slice(0,3))+
+        '<div class="cta"><a class="b1" href="#">Claim Your FREE Consultation</a>'+
+        '<a class="b2" href="'+TELH+'">'+TEL+'</a></div>'+
         '<div style="margin-top:26px">'+gp()+'</div>'+
       '</div>'+
       '<div class="picker">'+
-        '<h3>Where does it hurt?</h3><p>Pick your world. We will show the automations that apply to it.</p>'+
-        VERTICALS.map(v=>'<a href="#"><span style="font-weight:800;color:#111A22">'+esc(v.h)+'</span>'+
-          '<span>'+esc(v.s.split(' · ')[0])+' &rarr;</span></a>').join('')+
+        '<h3>Real-World AI Automation by Industry</h3>'+
+        '<p>'+AI_INTRO+'</p>'+
+        groups.map(g=>'<a href="#"><span style="font-weight:800;color:#111A22">'+g.h+'</span>'+
+          '<span>'+g.rows.length+' automations &rarr;</span></a>').join('')+
       '</div>'+
     '</div></div>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker">The daily struggles we solve</p>'+
-      '<h2>Built around how your practice actually runs</h2>'+
-      '<p class="sec-lede">Different worlds, same shape of problem: skilled people doing work that repeats.</p>'+
-      '<div class="verticals">'+VERTICALS.map(v=>'<div class="vert">'+
-        '<div class="top"><h3>'+esc(v.h)+'</h3><p>'+esc(v.s)+'</p></div>'+
-        '<div class="body">'+v.rows.map(r=>'<div class="row"><b>'+esc(r.h)+'</b>'+
-          '<span><i>&rarr;</i>'+esc(r.f)+'</span></div>').join('')+'</div>'+
+      '<p class="kicker">Real-World AI Automation Solutions by Industry</p>'+
+      '<h2>'+AI_H2+'</h2><p class="sec-lede">'+AI_WHAT+'</p>'+
+      '<div class="verticals">'+groups.map(g=>'<div class="vert">'+
+        '<div class="top"><h3>'+g.h+'</h3><p>'+g.s+'</p></div>'+
+        '<div class="body">'+g.rows.map(r=>'<div class="row"><b>'+r.h+'</b>'+
+          '<span><i>&rarr;</i>'+r.result+'</span></div>').join('')+'</div>'+
       '</div>').join('')+'</div>'+
     '</div></section>'+
 
     '<section class="alt"><div class="wrap">'+
-      '<p class="kicker">Our simple 4-step process</p>'+
-      '<h2>We watch how you work before we automate anything</h2>'+
-      '<div class="steps">'+STEPS.map(s=>'<div class="step"><span class="n">'+s.n+'</span>'+
-        '<h3>'+esc(s.h)+'</h3><p>'+esc(s.p)+'</p></div>').join('')+'</div>'+
+      '<p class="kicker">Our Simple 4-Step Process</p><h2>How we build it</h2>'+
+      '<div class="steps">'+AI_STEPS.map(s=>'<div class="step"><span class="n">'+s.n+'</span>'+
+        '<h3>'+s.h+'</h3><p>'+s.p+'</p></div>').join('')+'</div>'+
     '</div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker">Everything else we run</p>'+
-      '<h2>The growth side, from a Google Premier Partner</h2>'+
-      '<div class="svc">'+SERVICES.map(s=>'<a href="'+s.u+'"><span>'+esc(s.n)+'</span><i>&rarr;</i></a>').join('')+'</div>'+
+      '<p class="kicker">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</p>'+
+      '<h2>Services</h2>'+
+      '<div class="svc">'+SERVICES.map(s=>'<a href="'+s.u+'"><span>'+s.n+'</span><i>&rarr;</i></a>').join('')+'</div>'+
     '</div></section>'+
 
     '<section class="alt"><div class="wrap">'+
-      '<p class="kicker">Common questions</p><h2>Straight answers, before you call</h2>'+
-      '<div class="faq">'+FAQS.map(f=>'<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>').join('')+'</div>'+
+      '<p class="kicker">Industries Served</p><h2>'+INDUSTRIES_SUB+'</h2>'+
+      '<div class="svc">'+INDUSTRIES.map(i=>'<a href="#"><span>'+i+'</span><i>&rarr;</i></a>').join('')+'</div>'+
     '</div></section>'+
 
+    '<section><div class="wrap">'+
+      '<p class="kicker">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
+      '<h2>Awards &amp; Recognitions</h2>'+bullets(AWARDS)+quoteHTML()+
+    '</div></section>'+
+
+    '<section class="alt"><div class="wrap"><p class="kicker">Service Areas</p><h2>Where we work</h2>'+
+      '<div class="areas">'+areasHTML()+'</div></div></section>'+
+
+    '<section><div class="wrap"><p class="kicker">Your Guide to Web Design, SEO, and Digital Marketing</p>'+
+      '<h2>FAQs</h2><div class="faq">'+faqHTML()+'</div></div></section>'+
+
     '<footer><div class="wrap"><span>&copy; 2026 Infintech Designs</span><a href="#">Privacy</a>'+
-      '<a href="#">Terms</a><span style="margin-left:auto">New Orleans, Louisiana &middot; '+TEL+'</span></div></footer>'+
+      '<a href="#">Terms</a><span style="margin-left:auto">'+LOCAL+' &middot; '+TEL+'</span></div></footer>'+
   '</div>';
 }
 
