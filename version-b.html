@@ -232,14 +232,6 @@ h1 .b{color:var(--flame);display:block}
 .area span{display:block;font-size:12.4px;line-height:1.55;color:var(--ink-2)}
 @media (max-width:900px){.areas{grid-template-columns:1fr}}
 
-.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
-.faq details[open]{border-color:var(--flame)}
-.faq summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;gap:14px;align-items:center;
-  font-size:16.5px;font-weight:900}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:'+';margin-left:auto;color:var(--flame-ink);font-size:23px;font-weight:400}
-.faq details[open] summary::after{content:'\2212'}
-.faq p{margin:0;padding:0 20px 20px;font-size:15px;line-height:1.68;color:var(--ink-2)}
 
 .ctaband{background:linear-gradient(100deg,var(--slate) 0%,var(--indigo-dk) 100%);color:#fff}
 .ctaband .wrap{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;
@@ -264,6 +256,41 @@ footer a{color:rgba(255,255,255,.85)}
   font-family:-apple-system,sans-serif;font-size:13px}
 .vsw a{padding:7px 13px;border-radius:999px;color:rgba(255,255,255,.6);font-weight:600}
 .vsw a.on{background:rgba(255,255,255,.14);color:#fff}
+
+/* ---------------- FAQ: one-line head + two-column layout ----------------
+   The long real heading wrapped to three lines and the accordion was a
+   plain stacked list. Head now spans the row on one line; the panel is
+   split so the questions sit beside a dark "still have questions" card. */
+.faq-head h2{font-size:clamp(19px,2.5vw,34px);white-space:nowrap;letter-spacing:-.028em}
+@media (max-width:1120px){.faq-head h2{white-space:normal;font-size:clamp(24px,3.4vw,34px)}}
+.faq-wrap{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);
+  gap:clamp(18px,2.8vw,38px);align-items:start}
+.faq-aside{position:sticky;top:96px;background:var(--slate);color:#fff;border-radius:14px;
+  padding:clamp(22px,2.6vw,30px);overflow:hidden}
+.faq-aside b{display:block;font-size:clamp(19px,2.1vw,25px);font-weight:900;
+  letter-spacing:-.02em;margin-bottom:10px}
+.faq-aside p{margin:0 0 18px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.8)}
+.faq-aside .btn{width:100%;margin-bottom:10px}
+.faq-aside .ftel{display:block;text-align:center;font-family:var(--mono);font-size:14px;
+  font-weight:700;color:#fff;padding:12px;border:1px solid rgba(255,255,255,.34);border-radius:6px}
+.faq-aside .ftel:hover{border-color:#fff}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;
+  transition:border-color .18s,box-shadow .18s}
+.faq details[open]{border-color:var(--flame);box-shadow:0 10px 26px rgba(39,58,71,.10)}
+.faq summary{list-style:none;cursor:pointer;padding:16px 20px;display:grid;
+  grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+  font-size:16px;font-weight:800}
+.faq summary::-webkit-details-marker{display:none}
+.faq .qn{font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--ink-3)}
+.faq details[open] .qn{color:var(--flame-ink)}
+.faq summary::after{content:'+';color:var(--flame-ink);font-size:23px;font-weight:400;line-height:1}
+.faq details[open] summary::after{content:'2'}
+.faq p{margin:0;padding:0 20px 18px 54px;font-size:15px;line-height:1.68;color:var(--ink-2)}
+@media (max-width:900px){
+  .faq-wrap{grid-template-columns:1fr}
+  .faq-aside{position:static}
+  .faq p{padding-left:20px}
+}
 </style>
 </head>
 <body>
@@ -403,10 +430,17 @@ footer a{color:rgba(255,255,255,.85)}
 
 <section style="background:var(--lav)">
   <div class="wrap">
-    <div class="head rev"><div><p class="kick">Common questions</p>
-      <h2>Your Guide to Web Design, SEO, and Digital Marketing: FAQs</h2></div>
-      <p>We do free consultations to determine which service is best for your business.</p></div>
-    <div class="faq" id="faq"></div>
+    <div class="head solo faq-head rev"><div><p class="kick">Common questions</p>
+      <h2>Your Guide to Web Design, SEO, and Digital Marketing: FAQs</h2></div></div>
+    <div class="faq-wrap">
+      <aside class="faq-aside rev">
+        <b>Still have questions?</b>
+        <p>We do free consultations to determine which service is best for your business. Talk it through with Founder &amp; CEO Brian Hong.</p>
+        <a class="btn btn-p" href="#quote">Claim Your FREE Consultation</a>
+        <a class="ftel" href="tel:5047773296">(504) 777-3296</a>
+      </aside>
+      <div class="faq" id="faq"></div>
+    </div>
   </div>
 </section>
 
@@ -449,7 +483,9 @@ $('#awards').innerHTML=C.AWARDS.map(a=>'<li><i>&#10003;</i><span>'+a+'</span></l
 $('#wall').innerHTML=C.WALL.map(w=>'<img src="'+w[0]+'" alt="'+w[1].replace(/&[a-z]+;/g,'')+'" loading="lazy">').join('')+
   C.WALL.map(w=>'<img src="'+w[0]+'" alt="" aria-hidden="true" loading="lazy">').join('');
 $('#arealist').innerHTML=C.AREAS.map(a=>'<div class="area"><b>'+a[0]+'</b><span>'+a[1]+'</span></div>').join('');
-$('#faq').innerHTML=C.FAQS.map(f=>'<details><summary>'+f[0]+'</summary><p>'+f[1]+'</p></details>').join('');
+$('#faq').innerHTML=(window.ID?window.ID.FAQS:FAQS).map((f,i)=>'<details><summary>'+
+  '<span class="qn">'+String(i+1).padStart(2,'0')+'</span><span>'+f[0]+'</span></summary>'+
+  '<p>'+f[1]+'</p></details>').join('');
 fetch('img/us-map.svg').then(r=>r.ok?r.text():null).then(s=>{if(s)$('#map').innerHTML=s;}).catch(()=>{});
 
 const revs=[...document.querySelectorAll('.rev')];
