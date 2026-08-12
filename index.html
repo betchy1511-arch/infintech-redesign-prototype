@@ -371,16 +371,66 @@ a{text-decoration:none}
 .p-practice .ticks li{color:#2B3946} .p-practice .ticks i{color:#12764C}
 .p-practice .hero .ticks li{color:#C7D4DE} .p-practice .hero .ticks i{color:var(--amber)}
 
-.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.area{padding:18px 20px;border-radius:12px}
-.area b{display:block;font-family:var(--display);font-size:16px;font-weight:800;margin-bottom:6px}
-.area span{display:block;font-size:13.5px;line-height:1.6}
+/* SERVICE AREAS — map + list, two columns so the row is occupied */
+.areas-wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+  gap:clamp(20px,3vw,40px);align-items:center}
+.map{min-height:180px}
+.map .usmap{width:100%;height:auto;display:block}
+.map .st-other path{fill:#DCE4EA;stroke:#fff;stroke-width:1.1}
+.map .st-served path{fill:var(--flame-ink);stroke:#fff;stroke-width:1.1}
+.map .cities circle{fill:#0E1820;stroke:#fff;stroke-width:1.3}
+.map .cities circle.hq{fill:var(--amber);stroke:#fff;stroke-width:2}
+.p-signal .map .st-other path{fill:#DFE6EC;stroke:var(--bg)}
+.p-practice .alt .map .st-other path{stroke:#F5F7F9}
+.area-list{display:grid;gap:10px}
+.area{padding:13px 16px;border-radius:10px}
+.area b{display:block;font-family:var(--display);font-size:14.5px;font-weight:800;margin-bottom:3px}
+.area span{display:block;font-size:12.5px;line-height:1.55}
 .p-signal .area{border:1px solid var(--line);background:var(--panel)}
 .p-signal .area b{color:var(--fg)} .p-signal .area span{color:var(--fg-2)}
 .p-operator .area{border:1px solid #E6E9ED;background:#fff}
 .p-operator .area b{color:#0D1520} .p-operator .area span{color:#5A6675}
 .p-practice .area{border:2px solid #E6E9ED;background:#fff}
 .p-practice .area b{color:#111A22} .p-practice .area span{color:#5A6673}
+
+/* LOGO WALLS — real grids, so nothing orphans onto a half-empty row */
+.logos.clients{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.2vw,28px);
+  align-items:center;justify-content:initial}
+.logos.clients img{height:auto;max-height:52px;max-width:100%;width:auto;margin:0 auto;
+  object-fit:contain;opacity:1;filter:none;transition:transform .2s ease-out}
+.logos.clients img:hover{transform:translateY(-2px)}
+.certs{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.6vw,22px);
+  align-items:end;justify-content:initial}
+.certs figure{margin:0}
+.certs img{width:100%;height:auto;max-height:104px;object-fit:contain;opacity:.95}
+
+/* CTA BAND */
+.ctaband{margin-inline:clamp(20px,5vw,40px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;
+  padding:clamp(24px,3.2vw,34px) clamp(22px,4vw,44px);border-radius:16px;
+  background:linear-gradient(100deg,var(--slate) 0%,#31485A 100%);color:#fff;
+  width:100%;max-width:1180px;margin:0 auto}
+.ctaband b{display:block;font-family:var(--display);font-size:clamp(19px,2.2vw,26px);
+  font-weight:800;letter-spacing:-.015em;margin-bottom:5px}
+.ctaband span{display:block;font-size:14.5px;color:rgba(255,255,255,.78)}
+.ctaband-btns{display:flex;flex-wrap:wrap;gap:11px}
+.ctaband .cb1{padding:14px 26px;border-radius:9px;background:var(--flame-ink);color:#fff;
+  font-size:15px;font-weight:700;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+.ctaband .cb2{padding:14px 24px;border-radius:9px;border:1px solid rgba(255,255,255,.42);
+  color:#fff;font-size:15px;font-weight:700}
+.ctaband .cb2:hover{border-color:#fff}
+.ctaband.end{margin-top:8px;margin-bottom:44px}
+body .ctaband{margin-left:auto;margin-right:auto}
+
+@media (max-width:980px){
+  .logos.clients{grid-template-columns:repeat(3,1fr)}
+  .certs{grid-template-columns:repeat(3,1fr)}
+  .areas-wrap{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .logos.clients{grid-template-columns:repeat(2,1fr)}
+  .certs{grid-template-columns:repeat(2,1fr)}
+  .ctaband{flex-direction:column;align-items:flex-start}
+}
 
 .quote-b{margin:34px 0 0;padding:26px 30px;border-radius:14px}
 .quote-b p{margin:0 0 12px;font-size:17px;line-height:1.6;font-style:italic}
@@ -429,7 +479,7 @@ section > .wrap > *{grid-column:1/-1;min-width:0}
    normally or they stack on top of the first one. */
 section > .wrap > .kicker:first-child{grid-column:1;grid-row:1}
 section > .wrap > h2:first-of-type{grid-column:1;grid-row:2;margin-bottom:40px}
-section > .wrap > .sec-lede:first-of-type{grid-column:2;grid-row:1/3;align-self:end;
+section > .wrap > .sec-lede{grid-column:2;grid-row:1/3;align-self:end;
   margin-bottom:40px;max-width:46ch}
 /* no supporting line: let the heading occupy the row */
 section > .wrap:not(:has(> .sec-lede)) > h2:first-of-type{grid-column:1/-1;max-width:38ch}
@@ -496,9 +546,6 @@ section > .wrap:not(:has(> .kicker:first-child)) > h2:first-of-type{grid-row:1}
 .proof2 .founder{margin-top:0}
 @media (max-width:860px){ .proof2{grid-template-columns:1fr} }
 
-.certs{display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,28px);align-items:center;justify-content:center}
-.certs figure{margin:0}
-.certs img{height:88px;width:auto;object-fit:contain;opacity:.92}
 
 .founder{display:flex;gap:22px;align-items:center;margin:34px 0 0;padding:22px 26px;border-radius:14px}
 .founder img{width:92px;height:92px;border-radius:50%;object-fit:cover;object-position:top center;flex:none}
@@ -513,11 +560,10 @@ section > .wrap:not(:has(> .kicker:first-child)) > h2:first-of-type{grid-row:1}
 .p-practice .founder{border:2px solid #E6E9ED;background:#fff;color:#111A22}
 .p-practice .founder p{color:#5A6673}
 
-@media (max-width:1000px){ .ind{grid-template-columns:1fr 1fr} .certs img{height:74px} }
+@media (max-width:1000px){ .ind{grid-template-columns:1fr 1fr} }
 @media (max-width:720px){
   .ind{grid-template-columns:1fr}
   .logos{gap:26px} .logos img{height:28px} .logos.clients img{height:34px}
-  .certs img{height:64px}
   .founder{flex-direction:column;align-items:flex-start;text-align:left}
 }
 
@@ -684,6 +730,11 @@ const SERVICES=[
 
 const INDUSTRIES=['Lawyers','Dentists','Medical','Home Services','Small Businesses',
                   'Restaurants','Multi Location Business','Enterprise','School &amp; Universities'];
+const LEDE_SERVICES='Let us help your business stand out in the search engine market.';
+const LEDE_AWARDS='When it comes to reaching the top in your industry, choosing the right partner is crucial. Infintech Designs offers the expertise and personalized approach you need to stand out in a crowded market.';
+const LEDE_AREAS='We provide services for businesses in Louisiana, as well as outside the state such as Texas, Mississippi, and California.';
+const LEDE_FAQ='We do free consultations to determine which service is best for your business.';
+const LEDE_PROCESS='Whether you are scaling a growing team or preserving the quality that makes your business stand out, automation helps protect your most limited resource, time.';
 const INDUSTRIES_SUB='Infintech Designs has served different industries for years from home services to local enterprises';
 
 const AWARDS=[
@@ -742,7 +793,15 @@ const gp=cls=>'<a class="gp '+(cls||'')+'" href="'+GP_URL+'" target="_blank" rel
 const bullets=(arr,cls)=>'<ul class="'+(cls||'ticks')+'">'+
   arr.map(b=>'<li><i>&#10003;</i><span>'+b+'</span></li>').join('')+'</ul>';
 const faqHTML=()=>FAQS.map(f=>'<details><summary>'+f.q+'</summary><p>'+f.a+'</p></details>').join('');
-const areasHTML=()=>AREAS.map(a=>'<div class="area"><b>'+a.s+'</b><span>'+a.c.join(' &middot; ')+'</span></div>').join('');
+const areasHTML=()=>'<div class="areas-wrap">'+
+  '<div class="map" id="usmap-slot"></div>'+
+  '<div class="area-list">'+AREAS.map(a=>'<div class="area"><b>'+a.s+'</b>'+
+    '<span>'+a.c.join(' &middot; ')+'</span></div>').join('')+'</div></div>';
+const ctaHTML=cls=>'<div class="ctaband '+(cls||'')+'">'+
+  '<div><b>Ready to Get Your Time Back?</b>'+
+  '<span>FREE Initial Consultation With Founder &amp; CEO Brian Hong</span></div>'+
+  '<div class="ctaband-btns"><a class="cb1" href="#">Claim Your FREE Consultation</a>'+
+  '<a class="cb2" href="'+TELH+'">'+TEL+'</a></div></div>';
 const quoteHTML=()=>'<blockquote class="quote-b"><p>&ldquo;'+TESTIMONIAL.q+'&rdquo;</p><cite>'+TESTIMONIAL.n+'</cite></blockquote>';
 
 /* =============================================================
@@ -778,15 +837,17 @@ const PRESS=[
   ['img/press-huffpost.png','HuffPost'],
   ['img/press-sme.png','Social Media Explorer']
 ];
+/* Eight, so the wall is an even 4x2 with no orphaned row. Teleleaf was
+   dropped: that asset is a screenshot of a web page, not a logo. */
 const CLIENTS=[
-  ['img/cl-gcj-law.png','GCJ Law'],
+  ['img/cl-gcj-law.png','Gregorio, Chafin, Johnson, Poolson &amp; Tabor'],
   ['img/cl-phillips.png','Phillips Law Group'],
   ['img/cl-gifted.png','Gifted Healthcare'],
-  ['img/cl-nola-auto.png','NOLA Automotive'],
-  ['img/cl-walkons.png','Walk-On&rsquo;s'],
+  ['img/cl-nola-auto.png','NOLA Automotive Repairs'],
+  ['img/cl-walkons.png','Walk-On&rsquo;s Sports Bistreaux'],
   ['img/cl-50floor.png','50Floor'],
-  ['img/cl-tofer.png','Tofer Law'],
-  ['img/cl-teleleaf.jpg','Teleleaf']
+  ['img/cl-tofer.png','Tofer &amp; Associates'],
+  ['img/cl-himmels.png','Himmel&rsquo;s Architectural Door &amp; Hardware']
 ];
 const CERTS=[
   ['img/cert-search-marketing-specialist.png','Search Marketing Specialist'],
@@ -869,14 +930,15 @@ function renderSignal(){
 
     '<section><div class="wrap">'+
       '<p class="kicker rev">Real-World AI Automation Solutions by Industry</p>'+
-      '<h2 class="rev">The Daily Struggles We Solve</h2>'+
+      '<h2 class="rev">Real-World AI Automation Solutions by Industry</h2><p class="sec-lede rev">'+AI_WHAT+'</p>'+
       '<div class="pains">'+CASES.map(c=>'<div class="pain rev"><p class="v">'+c.v+'</p>'+
         '<h3>'+c.h+'</h3><p><b style="color:var(--fg)">Before Automation:</b> '+c.before+'</p>'+
         '<div class="fix"><i>&rarr;</i><span>'+c.result+'</span></div></div>').join('')+'</div>'+
     '</div></section>'+
 
+    ctaHTML()+
     '<section><div class="wrap">'+
-      '<p class="kicker rev">Our Simple 4-Step Process</p><h2 class="rev">How we build it</h2>'+
+      '<h2 class="rev">Our Simple 4-Step Process</h2><p class="sec-lede rev">'+LEDE_PROCESS+'</p>'+
       '<div class="steps">'+AI_STEPS.map(s=>'<div class="step rev">'+
         '<img class="stepic" src="'+s.i+'" alt="" width="80" height="80" loading="lazy">'+
         '<span class="n">'+s.n+' &middot; '+s.w+'</span>'+
@@ -885,7 +947,7 @@ function renderSignal(){
 
     '<section><div class="wrap">'+
       '<p class="kicker rev">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</p>'+
-      '<h2 class="rev">Services</h2>'+
+      '<h2 class="rev">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</h2><p class="sec-lede rev">'+LEDE_SERVICES+'</p>'+
       '<div class="svc">'+SERVICES.map(s=>'<a class="rev" href="'+s.u+'"><span>'+s.n+'</span><i>&rarr;</i></a>').join('')+'</div>'+
     '</div></section>'+
 
@@ -896,19 +958,19 @@ function renderSignal(){
 
     '<section><div class="wrap">'+
       '<p class="kicker rev">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
-      '<h2 class="rev">Awards &amp; Recognitions</h2>'+'<div class="proof2 rev">'+bullets(AWARDS,'ticks')+founderHTML()+'</div>'+
+      '<h2 class="rev">Top Reasons Infintech Designs Should Be Your First Choice</h2><p class="sec-lede rev">'+LEDE_AWARDS+'</p>'+'<div class="proof2 rev">'+bullets(AWARDS,'ticks')+founderHTML()+'</div>'+
       '<div class="rev">'+quoteHTML()+'</div>'+
       '<p class="kicker rev" style="margin-top:44px">Trusted By</p>'+clientsHTML(true)+
       '<p class="kicker rev" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML(true)+
     '</div></section>'+
 
-    '<section><div class="wrap"><p class="kicker rev">Service Areas</p><h2 class="rev">Where we work</h2>'+
+    '<section><div class="wrap"><h2 class="rev">Service Areas</h2><p class="sec-lede rev">'+LEDE_AREAS+'</p>'+
       '<div class="areas rev">'+areasHTML()+'</div></div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker rev">Your Guide to Web Design, SEO, and Digital Marketing</p>'+
-      '<h2 class="rev">FAQs</h2><div class="faq rev">'+faqHTML()+'</div></div></section>'+
+      '<h2 class="rev">Your Guide to Web Design, SEO, and Digital Marketing: FAQs</h2><p class="sec-lede rev">'+LEDE_FAQ+'</p><div class="faq rev">'+faqHTML()+'</div></div></section>'+
 
+    ctaHTML('end')+
     '<div class="wrap"><footer><span>&copy; 2026 Infintech Designs</span><a href="#">Privacy</a>'+
       '<a href="#">Terms</a><span style="margin-left:auto">'+LOCAL+' &middot; '+TEL+'</span></footer></div>'+
   '</div>';
@@ -945,8 +1007,9 @@ function renderOperator(){
       '<p class="sec-lede">'+AI_WHAT+'</p>'+bullets(AI_OUTCOMES)+
     '</div></section>'+
 
+    ctaHTML()+
     '<section><div class="wrap">'+
-      '<p class="kicker">Our Simple 4-Step Process</p><h2>How we build it</h2>'+
+      '<h2>Our Simple 4-Step Process</h2><p class="sec-lede">'+LEDE_PROCESS+'</p>'+
       '<div class="steps">'+AI_STEPS.map(s=>'<div class="step">'+
         '<img class="stepic" src="'+s.i+'" alt="" width="80" height="80" loading="lazy">'+
         '<span class="n">'+s.n+' &middot; '+s.w+'</span>'+
@@ -955,7 +1018,7 @@ function renderOperator(){
 
     '<section><div class="wrap">'+
       '<p class="kicker">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</p>'+
-      '<h2>Services</h2>'+
+      '<h2>Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</h2><p class="sec-lede">'+LEDE_SERVICES+'</p>'+
       '<div class="pains">'+SERVICES.map(s=>'<div class="pain"><h3>'+s.n+'</h3><p>'+s.d+'</p>'+
         '<div class="fix"><i>&rarr;</i><span><a href="'+s.u+'" style="color:inherit">Learn more</a></span></div></div>').join('')+'</div>'+
     '</div></section>'+
@@ -966,8 +1029,8 @@ function renderOperator(){
     '</div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker">Discover the Infintech Designs Difference</p>'+
-      '<h2>Infintech Designs vs Other Agencies</h2>'+
+      '<h2>Discover the Infintech Designs Difference: Elevate Your Brand with Tailor-Made Solutions, Transparent Pricing, and Advanced SEO Strategies</h2>'+
+      '<p class="sec-lede">'+LEDE_AWARDS+'</p>'+
       '<div class="cmp"><div class="cmp-row cmp-head"><span>Feature</span><span>Infintech Designs</span><span>Other Agencies</span></div>'+
       COMPARE.map(r=>'<div class="cmp-row"><span class="f">'+r[0]+'</span>'+
         '<span class="us"><i>&#10003;</i>'+r[1]+'</span><span class="them">'+r[2]+'</span></div>').join('')+'</div>'+
@@ -975,17 +1038,17 @@ function renderOperator(){
 
     '<section><div class="wrap">'+
       '<p class="kicker">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
-      '<h2>Awards &amp; Recognitions</h2>'+'<div class="proof2">'+bullets(AWARDS)+founderHTML()+'</div>'+quoteHTML()+
+      '<h2>Top Reasons Infintech Designs Should Be Your First Choice</h2><p class="sec-lede">'+LEDE_AWARDS+'</p>'+'<div class="proof2">'+bullets(AWARDS)+founderHTML()+'</div>'+quoteHTML()+
       '<p class="kicker" style="margin-top:44px">Trusted By</p>'+clientsHTML()+
       '<p class="kicker" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML()+
     '</div></section>'+
 
-    '<section><div class="wrap"><p class="kicker">Service Areas</p><h2>Where we work</h2>'+
+    '<section><div class="wrap"><h2>Service Areas</h2><p class="sec-lede">'+LEDE_AREAS+'</p>'+
       '<div class="areas">'+areasHTML()+'</div></div></section>'+
 
-    '<section><div class="wrap"><p class="kicker">Your Guide to Web Design, SEO, and Digital Marketing</p>'+
-      '<h2>FAQs</h2><div class="faq">'+faqHTML()+'</div></div></section>'+
+    '<section><div class="wrap"><h2>Your Guide to Web Design, SEO, and Digital Marketing: FAQs</h2><p class="sec-lede">'+LEDE_FAQ+'</p><div class="faq">'+faqHTML()+'</div></div></section>'+
 
+    ctaHTML('end')+
     '<div class="wrap"><footer><span>&copy; 2026 Infintech Designs</span><a href="#">Privacy</a>'+
       '<a href="#">Terms</a><span style="margin-left:auto">'+LOCAL+' &middot; '+TEL+'</span></footer></div>'+
   '</div>';
@@ -1032,8 +1095,9 @@ function renderPractice(){
       '</div>').join('')+'</div>'+
     '</div></section>'+
 
+    ctaHTML()+
     '<section class="alt"><div class="wrap">'+
-      '<p class="kicker">Our Simple 4-Step Process</p><h2>How we build it</h2>'+
+      '<h2>Our Simple 4-Step Process</h2><p class="sec-lede">'+LEDE_PROCESS+'</p>'+
       '<div class="steps">'+AI_STEPS.map(s=>'<div class="step">'+
         '<img class="stepic" src="'+s.i+'" alt="" width="80" height="80" loading="lazy">'+
         '<span class="n">'+s.n+' &middot; '+s.w+'</span>'+
@@ -1042,7 +1106,7 @@ function renderPractice(){
 
     '<section><div class="wrap">'+
       '<p class="kicker">Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</p>'+
-      '<h2>Services</h2>'+
+      '<h2>Drive Growth with Our Strategic Digital Marketing and Web Design Solutions</h2><p class="sec-lede">'+LEDE_SERVICES+'</p>'+
       '<div class="svc">'+SERVICES.map(s=>'<a href="'+s.u+'"><span>'+s.n+'</span><i>&rarr;</i></a>').join('')+'</div>'+
     '</div></section>'+
 
@@ -1053,17 +1117,17 @@ function renderPractice(){
 
     '<section><div class="wrap">'+
       '<p class="kicker">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
-      '<h2>Awards &amp; Recognitions</h2>'+'<div class="proof2">'+bullets(AWARDS)+founderHTML()+'</div>'+quoteHTML()+
+      '<h2>Top Reasons Infintech Designs Should Be Your First Choice</h2><p class="sec-lede">'+LEDE_AWARDS+'</p>'+'<div class="proof2">'+bullets(AWARDS)+founderHTML()+'</div>'+quoteHTML()+
       '<p class="kicker" style="margin-top:44px">Trusted By</p>'+clientsHTML()+
       '<p class="kicker" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML()+
     '</div></section>'+
 
-    '<section class="alt"><div class="wrap"><p class="kicker">Service Areas</p><h2>Where we work</h2>'+
+    '<section class="alt"><div class="wrap"><h2>Service Areas</h2><p class="sec-lede">'+LEDE_AREAS+'</p>'+
       '<div class="areas">'+areasHTML()+'</div></div></section>'+
 
-    '<section><div class="wrap"><p class="kicker">Your Guide to Web Design, SEO, and Digital Marketing</p>'+
-      '<h2>FAQs</h2><div class="faq">'+faqHTML()+'</div></div></section>'+
+    '<section><div class="wrap"><h2>Your Guide to Web Design, SEO, and Digital Marketing: FAQs</h2><p class="sec-lede">'+LEDE_FAQ+'</p><div class="faq">'+faqHTML()+'</div></div></section>'+
 
+    ctaHTML('end')+
     '<footer><div class="wrap"><span>&copy; 2026 Infintech Designs</span><a href="#">Privacy</a>'+
       '<a href="#">Terms</a><span style="margin-left:auto">'+LOCAL+' &middot; '+TEL+'</span></div></footer>'+
   '</div>';
@@ -1232,6 +1296,12 @@ function moveHighlight(){const el=items[current];
   highlight.style.transform='translateX('+el.offsetLeft+'px)';}
 
 let mountGen=0;
+const MAPSVG={html:null};
+fetch('img/us-map.svg').then(r=>r.ok?r.text():null)
+  .then(s=>{MAPSVG.html=s; document.querySelectorAll('#usmap-slot,.map').forEach(el=>{if(s&&!el.firstChild)el.innerHTML=s;});})
+  .catch(()=>{});
+function paintMap(){ if(MAPSVG.html) document.querySelectorAll('.map').forEach(el=>{if(!el.firstChild)el.innerHTML=MAPSVG.html;}); }
+
 function mount(i){
   if(teardown){teardown();teardown=null;}
   const gen=++mountGen;                       // generation guard
@@ -1241,6 +1311,7 @@ function mount(i){
     // second set of loops and clobbering the live teardown reference
     if(gen!==mountGen) return;
     stage.innerHTML=variants[i].render();
+    paintMap();
     teardown=variants[i].motion?variants[i].motion(stage):null;
   });
 }
