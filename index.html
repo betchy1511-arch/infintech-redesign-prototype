@@ -413,6 +413,67 @@ a{text-decoration:none}
 }
 
 /* ============================================================
+   Imagery components: industry photo grid, press/client logo
+   walls, certification badges, founder card
+   ============================================================ */
+section.tight{padding-top:34px !important;padding-bottom:34px !important}
+
+.ind{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ind-card{display:block;border-radius:14px;overflow:hidden;text-decoration:none;
+  transition:transform .2s cubic-bezier(.23,1,.32,1),box-shadow .2s ease-out}
+.ind-card:hover{transform:translateY(-3px)}
+.ind-card .ph{display:block;aspect-ratio:284/243;overflow:hidden;background:#DCE4EA}
+.ind-card .ph img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .35s cubic-bezier(.23,1,.32,1)}
+.ind-card:hover .ph img{transform:scale(1.04)}
+.ind-card .ph-none{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#273A47,#16222B)}
+.ind-card .ph-none b{font-family:var(--display);font-size:26px;font-weight:800;
+  color:rgba(255,255,255,.85);letter-spacing:-.02em}
+.ind-card .nm{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:14px 16px;font-family:var(--display);font-size:15.5px;font-weight:700}
+.ind-card .nm i{font-style:normal;color:var(--flame)}
+.p-signal .ind-card{border:1px solid var(--line);background:var(--panel);color:var(--fg)}
+.p-signal .ind-card:hover{border-color:var(--flame);box-shadow:0 14px 34px rgba(14,24,32,.10)}
+.p-operator .ind-card{border:1px solid #E6E9ED;background:#fff;color:#0D1520}
+.p-operator .ind-card:hover{border-color:var(--flame);box-shadow:0 14px 34px rgba(13,21,32,.10)}
+.p-practice .ind-card{border:2px solid #E6E9ED;background:#fff;color:#111A22}
+.p-practice .ind-card:hover{border-color:var(--flame);box-shadow:0 14px 34px rgba(17,26,34,.10)}
+
+.logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:clamp(22px,4vw,54px);padding:6px 0}
+.logos img{height:34px;width:auto;object-fit:contain;opacity:.55;filter:grayscale(1);
+  transition:opacity .2s ease-out,filter .2s ease-out}
+.logos img:hover{opacity:1;filter:none}
+.logos.clients img{height:42px}
+.p-practice .hero .logos img{opacity:.8;filter:grayscale(1) invert(1)}
+
+.certs{display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,28px);align-items:center;justify-content:center}
+.certs figure{margin:0}
+.certs img{height:88px;width:auto;object-fit:contain;opacity:.92}
+
+.founder{display:flex;gap:22px;align-items:center;margin:34px 0 0;padding:22px 26px;border-radius:14px}
+.founder img{width:92px;height:92px;border-radius:50%;object-fit:cover;object-position:top center;flex:none}
+.founder b{display:block;font-family:var(--display);font-size:17px;font-weight:800;margin-bottom:4px}
+.founder p{margin:0 0 12px;font-size:14px}
+.founder .fbtn{display:inline-flex;padding:11px 20px;border-radius:8px;background:var(--flame);
+  color:#fff;font-size:14px;font-weight:700}
+.p-signal .founder{border:1px solid var(--line);background:var(--panel);color:var(--fg)}
+.p-signal .founder p{color:var(--fg-2)}
+.p-operator .founder{border:1px solid #E6E9ED;background:#fff;color:#0D1520}
+.p-operator .founder p{color:#5A6675}
+.p-practice .founder{border:2px solid #E6E9ED;background:#fff;color:#111A22}
+.p-practice .founder p{color:#5A6673}
+
+@media (max-width:1000px){ .ind{grid-template-columns:1fr 1fr} .certs img{height:74px} }
+@media (max-width:720px){
+  .ind{grid-template-columns:1fr}
+  .logos{gap:26px} .logos img{height:28px} .logos.clients img{height:34px}
+  .certs img{height:64px}
+  .founder{flex-direction:column;align-items:flex-start;text-align:left}
+}
+
+/* ============================================================
    PICKER — verbatim from ~/.claude/skills/prototype/PICKER.md
    ============================================================ */
 .proto-picker{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
@@ -632,6 +693,76 @@ const faqHTML=()=>FAQS.map(f=>'<details><summary>'+f.q+'</summary><p>'+f.a+'</p>
 const areasHTML=()=>AREAS.map(a=>'<div class="area"><b>'+a.s+'</b><span>'+a.c.join(' &middot; ')+'</span></div>').join('');
 const quoteHTML=()=>'<blockquote class="quote-b"><p>&ldquo;'+TESTIMONIAL.q+'&rdquo;</p><cite>'+TESTIMONIAL.n+'</cite></blockquote>';
 
+/* =============================================================
+   IMAGERY — every file below was downloaded from
+   infintechdesigns.com, validated as a real JPEG/PNG (not an
+   HTML error page) and viewed before use.
+   NOTE: the site's "Multi Location Business" industry image is
+   BROKEN at source — every URL encoding of
+   "multi-location -business-industries-served-img.jpg" (it has a
+   literal space in the filename) returns the homepage HTML with
+   content-type text/html. It renders a typographic tile instead;
+   a duplicate photo would read as a bug, not a fallback.
+   ============================================================= */
+const IND_IMG={
+  'Lawyers':'img/ind-lawyers.jpg',
+  'Dentists':'img/ind-dentists.jpg',
+  'Medical':'img/ind-medical.jpg',
+  'Home Services':'img/ind-home-services.jpg',
+  'Small Businesses':'img/ind-small-businesses.jpg',
+  'Restaurants':'img/ind-restaurants.jpg',
+  'Multi Location Business':null,
+  'Enterprise':'img/ind-enterprise.jpg',
+  'School &amp; Universities':'img/ind-school-universities.jpg'
+};
+const PRESS=[
+  ['img/press-entrepreneur.png','Entrepreneur'],
+  ['img/press-huffpost.png','HuffPost'],
+  ['img/press-buzzfeed.png','BuzzFeed'],
+  ['img/press-nba.png','NBA']
+];
+const CLIENTS=[
+  ['img/cl-gcj-law.png','GCJ Law'],
+  ['img/cl-phillips.png','Phillips Law Group'],
+  ['img/cl-gifted.png','Gifted Healthcare'],
+  ['img/cl-nola-auto.png','NOLA Automotive'],
+  ['img/cl-walkons.png','Walk-On&rsquo;s'],
+  ['img/cl-50floor.png','50Floor'],
+  ['img/cl-tofer.png','Tofer Law'],
+  ['img/cl-teleleaf.jpg','Teleleaf']
+];
+const CERTS=[
+  ['img/cert-search-marketing-specialist.png','Search Marketing Specialist'],
+  ['img/cert-content-marketing-specialist.png','Content Marketing Specialist'],
+  ['img/cert-email-marketing-specialist.png','Email Marketing Specialist'],
+  ['img/cert-customer-acquisition.png','Customer Acquisition Specialist'],
+  ['img/cert-analytics-data-specialist.png','Analytics & Data Specialist'],
+  ['img/cert-optimization-and-testing-specialist.png','Optimization & Testing Specialist']
+];
+
+const industriesHTML=rev=>'<div class="ind">'+INDUSTRIES.map(i=>{
+  const src=IND_IMG[i], cls='ind-card'+(rev?' rev':'');
+  return '<a class="'+cls+'" href="#">'+
+    (src ? '<span class="ph"><img src="'+src+'" alt="'+i.replace(/&amp;/g,'and')+'" loading="lazy" width="284" height="243"></span>'
+         : '<span class="ph ph-none"><b>'+i.split(' ')[0]+'</b></span>')+
+    '<span class="nm">'+i+'<i>&rarr;</i></span></a>';
+}).join('')+'</div>';
+
+const pressHTML=rev=>'<div class="logos press'+(rev?' rev':'')+'">'+
+  PRESS.map(p=>'<img src="'+p[0]+'" alt="'+p[1]+'" loading="lazy">').join('')+'</div>';
+
+const clientsHTML=rev=>'<div class="logos clients'+(rev?' rev':'')+'">'+
+  CLIENTS.map(c=>'<img src="'+c[0]+'" alt="'+c[1]+'" loading="lazy">').join('')+'</div>';
+
+const certsHTML=rev=>'<div class="certs'+(rev?' rev':'')+'">'+
+  CERTS.map(c=>'<figure><img src="'+c[0]+'" alt="'+c[1]+'" loading="lazy"></figure>').join('')+'</div>';
+
+const founderHTML=rev=>'<div class="founder'+(rev?' rev':'')+'">'+
+  '<img src="img/brian-hong.png" alt="Brian Hong, Founder and CEO of Infintech Designs" width="290" height="299">'+
+  '<div><b>FREE Initial Consultation With Founder &amp; CEO Brian Hong</b>'+
+  '<p>Over 26 Years Experience In SEO And Web Design</p>'+
+  '<a class="fbtn" href="'+TELH+'">Call '+TEL+'</a></div></div>';
+
 /* ===================== DIRECTION 1 — SIGNAL ===================== */
 function renderSignal(){
   return '<div class="p-signal">'+
@@ -668,6 +799,7 @@ function renderSignal(){
       '</div></div>'+
     '</div>'+
 
+    '<section class="tight"><div class="wrap"><p class="kicker rev">As Seen On</p>'+pressHTML(true)+'</div></section>'+
     '<section><div class="wrap">'+
       '<p class="kicker rev">AI Automation Services</p>'+
       '<h2 class="rev">'+AI_H2+'</h2>'+
@@ -699,13 +831,15 @@ function renderSignal(){
 
     '<section><div class="wrap">'+
       '<p class="kicker rev">Industries Served</p><h2 class="rev">'+INDUSTRIES_SUB+'</h2>'+
-      '<div class="svc">'+INDUSTRIES.map(i=>'<a class="rev" href="#"><span>'+i+'</span><i>&rarr;</i></a>').join('')+'</div>'+
+      industriesHTML(true)+
     '</div></section>'+
 
     '<section><div class="wrap">'+
       '<p class="kicker rev">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
-      '<h2 class="rev">Awards &amp; Recognitions</h2>'+bullets(AWARDS,'ticks rev')+
+      '<h2 class="rev">Awards &amp; Recognitions</h2>'+bullets(AWARDS,'ticks rev')+founderHTML(true)+
       '<div class="rev">'+quoteHTML()+'</div>'+
+      '<p class="kicker rev" style="margin-top:44px">Trusted By</p>'+clientsHTML(true)+
+      '<p class="kicker rev" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML(true)+
     '</div></section>'+
 
     '<section><div class="wrap"><p class="kicker rev">Service Areas</p><h2 class="rev">Where we work</h2>'+
@@ -745,6 +879,7 @@ function renderOperator(){
       '<div style="display:flex;justify-content:center;margin-top:28px">'+gp()+'</div>'+
     '</div></div>'+
 
+    '<section class="tight"><div class="wrap"><p class="kicker">As Seen On</p>'+pressHTML()+'</div></section>'+
     '<section><div class="wrap">'+
       '<p class="kicker">AI Automation Services</p><h2>'+AI_H2+'</h2>'+
       '<p class="sec-lede">'+AI_WHAT+'</p>'+bullets(AI_OUTCOMES)+
@@ -765,7 +900,7 @@ function renderOperator(){
 
     '<section><div class="wrap">'+
       '<p class="kicker">Industries Served</p><h2>'+INDUSTRIES_SUB+'</h2>'+
-      '<div class="svc">'+INDUSTRIES.map(i=>'<a href="#"><span>'+i+'</span><i>&rarr;</i></a>').join('')+'</div>'+
+      industriesHTML(false)+
     '</div></section>'+
 
     '<section><div class="wrap">'+
@@ -778,7 +913,9 @@ function renderOperator(){
 
     '<section><div class="wrap">'+
       '<p class="kicker">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
-      '<h2>Awards &amp; Recognitions</h2>'+bullets(AWARDS)+quoteHTML()+
+      '<h2>Awards &amp; Recognitions</h2>'+bullets(AWARDS)+founderHTML()+quoteHTML()+
+      '<p class="kicker" style="margin-top:44px">Trusted By</p>'+clientsHTML()+
+      '<p class="kicker" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML()+
     '</div></section>'+
 
     '<section><div class="wrap"><p class="kicker">Service Areas</p><h2>Where we work</h2>'+
@@ -822,6 +959,7 @@ function renderPractice(){
       '</div>'+
     '</div></div>'+
 
+    '<section class="tight"><div class="wrap"><p class="kicker">As Seen On</p>'+pressHTML()+'</div></section>'+
     '<section><div class="wrap">'+
       '<p class="kicker">Real-World AI Automation Solutions by Industry</p>'+
       '<h2>'+AI_H2+'</h2><p class="sec-lede">'+AI_WHAT+'</p>'+
@@ -846,12 +984,14 @@ function renderPractice(){
 
     '<section class="alt"><div class="wrap">'+
       '<p class="kicker">Industries Served</p><h2>'+INDUSTRIES_SUB+'</h2>'+
-      '<div class="svc">'+INDUSTRIES.map(i=>'<a href="#"><span>'+i+'</span><i>&rarr;</i></a>').join('')+'</div>'+
+      industriesHTML(false)+
     '</div></section>'+
 
     '<section><div class="wrap">'+
       '<p class="kicker">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
-      '<h2>Awards &amp; Recognitions</h2>'+bullets(AWARDS)+quoteHTML()+
+      '<h2>Awards &amp; Recognitions</h2>'+bullets(AWARDS)+founderHTML()+quoteHTML()+
+      '<p class="kicker" style="margin-top:44px">Trusted By</p>'+clientsHTML()+
+      '<p class="kicker" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML()+
     '</div></section>'+
 
     '<section class="alt"><div class="wrap"><p class="kicker">Service Areas</p><h2>Where we work</h2>'+
