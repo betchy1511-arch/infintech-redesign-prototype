@@ -21,7 +21,9 @@
    deliberate additions that carry the automation identity.
    ============================================================ */
 :root{
-  --flame:#EA4517; --flame-dk:#C4380F; --amber:#ED9924;
+  --flame:#EA4517;      /* brand accent: borders, dots, graph packets */
+  --flame-ink:#C4380F;  /* same hue, AA-safe as text / button ground */
+  --flame-dk:#A82D08; --amber:#ED9924;
   --slate:#273A47; --ink:#121212;
   --bg:#0B0F14; --bg-2:#0E141B; --panel:#111922; --line:#1E2A36;
   --fg:#E8EDF2; --fg-2:#9FB0C0; --fg-3:#63788A;
@@ -45,7 +47,7 @@ a{text-decoration:none}
    Dark, product-grade. The hero runs a live automation graph:
    jobs entering, routing, and clearing. The ONLY animated one.
    ============================================================ */
-.p-signal{--bg:#F4F7F9;--bg-2:#EAEFF3;--panel:#FFFFFF;--line:#DCE4EA;--fg:#0E1820;--fg-2:#4C5C6A;--fg-3:#7B8B99;background:var(--bg);color:var(--fg);font-size:16px}
+.p-signal{--bg:#F4F7F9;--bg-2:#EAEFF3;--panel:#FFFFFF;--line:#DCE4EA;--fg:#0E1820;--fg-2:#4C5C6A;--fg-3:#5E6E7C;background:var(--bg);color:var(--fg);font-size:16px}
 .p-signal .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
 .p-signal .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
   background:radial-gradient(80% 70% at 76% 40%,rgba(39,58,71,.10) 0%,rgba(244,247,249,0) 62%),
@@ -65,7 +67,7 @@ a{text-decoration:none}
 .p-signal .nav .links{display:flex;gap:24px;margin-left:auto}
 .p-signal .nav .links a{color:var(--fg-2);font-size:13.5px;font-weight:600}
 .p-signal .nav .links a:hover{color:var(--fg)}
-.p-signal .nav .tel{padding:10px 18px;border-radius:8px;background:var(--flame);color:#fff;
+.p-signal .nav .tel{padding:10px 18px;border-radius:8px;background:var(--flame-ink);color:#fff;
   font-size:13.5px;font-weight:700}
 
 .p-signal .hero-in{display:grid;grid-template-columns:1.12fr .88fr;gap:34px;
@@ -83,7 +85,7 @@ a{text-decoration:none}
   max-width:56ch;margin:0 0 24px}
 .p-signal .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
 .p-signal .b1{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:9px;
-  background:var(--flame);color:#fff;font-size:15px;font-weight:700;
+  background:var(--flame-ink);color:#fff;font-size:15px;font-weight:700;
   box-shadow:0 8px 24px rgba(234,69,23,.3);transition:transform .16s cubic-bezier(.23,1,.32,1)}
 .p-signal .b1:hover{transform:translateY(-2px)}
 .p-signal .b2{display:inline-flex;align-items:center;padding:14px 24px;border-radius:9px;
@@ -111,21 +113,21 @@ a{text-decoration:none}
 .p-signal .console li:last-child{border-bottom:0}
 .p-signal .console li .k{color:var(--fg-3)}
 .p-signal .console li .s{padding:3px 8px;border-radius:5px;font-size:10.5px;font-weight:700;letter-spacing:.04em}
-.p-signal .console li .ok{background:rgba(62,207,142,.12);color:var(--live)}
-.p-signal .console li .run{background:rgba(237,153,36,.12);color:var(--amber)}
+.p-signal .console li .ok{background:rgba(18,128,90,.12);color:#12805A}
+.p-signal .console li .run{background:rgba(138,90,0,.12);color:#8A5A00}
 
 .p-signal section{padding:clamp(58px,7vw,100px) 0;border-bottom:1px solid var(--line)}
 .p-signal .kicker{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--flame);margin:0 0 14px}
+  text-transform:uppercase;color:var(--flame-ink);margin:0 0 14px}
 .p-signal h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,40px);
-  line-height:1.14;letter-spacing:-.02em;margin:0 0 16px;color:var(--fg);text-wrap:balance;max-width:22ch}
+  line-height:1.14;letter-spacing:-.02em;margin:0 0 16px;color:var(--fg);text-wrap:balance;}
 .p-signal .sec-lede{font-size:16.5px;line-height:1.62;color:var(--fg-2);max-width:60ch;margin:0 0 44px}
 
 .p-signal .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .p-signal .step{padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--panel);
   position:relative;transition:border-color .2s ease-out}
 .p-signal .step:hover{border-color:var(--fg-3)}
-.p-signal .step .n{font-family:var(--mono);font-size:11.5px;color:var(--flame);margin-bottom:14px;display:block}
+.p-signal .step .n{font-family:var(--mono);font-size:11.5px;color:var(--flame-ink);margin-bottom:14px;display:block}
 .p-signal .step h3{font-family:var(--display);font-size:17px;font-weight:700;margin:0 0 8px;color:var(--fg)}
 .p-signal .step p{font-size:14px;line-height:1.6;color:var(--fg-2);margin:0}
 
@@ -184,48 +186,48 @@ a{text-decoration:none}
 .p-operator h1 em{font-style:normal;color:var(--flame)}
 .p-operator .lede{font-size:17.5px;line-height:1.6;color:#5A6675;max-width:60ch;margin:0 auto 30px}
 .p-operator .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
-.p-operator .b1{padding:14px 28px;border-radius:9px;background:var(--flame);color:#fff;
+.p-operator .b1{padding:14px 28px;border-radius:9px;background:var(--flame-ink);color:#fff;
   font-size:15px;font-weight:700;box-shadow:0 8px 22px rgba(234,69,23,.24)}
 .p-operator .b2{padding:14px 26px;border-radius:9px;border:1px solid #D8DDE4;background:#fff;
   color:#0D1520;font-size:15px;font-weight:600}
-.p-operator .fine{font-family:var(--mono);font-size:11.5px;color:#8A94A1}
+.p-operator .fine{font-family:var(--mono);font-size:11.5px;color:#64707E}
 
 /* the workflow board — the product shot, built in CSS */
 .p-operator .board{margin-top:44px;border:1px solid #E2E6EB;border-radius:16px;background:#fff;
   box-shadow:0 24px 60px rgba(13,21,32,.09);overflow:hidden;text-align:left}
 .p-operator .board header{display:flex;align-items:center;gap:8px;padding:13px 18px;
-  border-bottom:1px solid #EDF0F3;background:#FAFBFC;font-family:var(--mono);font-size:11.5px;color:#8A94A1}
+  border-bottom:1px solid #EDF0F3;background:#FAFBFC;font-family:var(--mono);font-size:11.5px;color:#64707E}
 .p-operator .board header i{width:9px;height:9px;border-radius:50%;background:#E2E6EB;font-style:normal}
 .p-operator .board header i:nth-of-type(2){background:#EDEFF2}
 .p-operator .board header b{margin-left:8px;color:#5A6675;font-weight:500}
 .p-operator .lanes{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
 .p-operator .lane{border-right:1px solid #EDF0F3;padding:16px}
 .p-operator .lane:last-child{border-right:0}
-.p-operator .lane h4{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  color:#8A94A1;margin:0 0 14px;display:flex;align-items:center;gap:7px}
+.p-operator .lane .lane-h{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:#64707E;margin:0 0 14px;display:flex;align-items:center;gap:7px}
 .p-operator .lane h4 s{width:6px;height:6px;border-radius:50%;background:var(--flame);text-decoration:none}
 .p-operator .lane:nth-child(2) h4 s{background:var(--amber)}
 .p-operator .lane:nth-child(3) h4 s{background:#5B9BD5}
 .p-operator .lane:nth-child(4) h4 s{background:var(--live)}
 .p-operator .job{border:1px solid #E8ECF0;border-radius:9px;padding:12px;margin-bottom:9px;background:#fff}
 .p-operator .job b{display:block;font-size:13.5px;font-weight:700;margin-bottom:5px;color:#0D1520}
-.p-operator .job span{display:block;font-family:var(--mono);font-size:11px;color:#8A94A1}
+.p-operator .job span{display:block;font-family:var(--mono);font-size:11px;color:#64707E}
 
 .p-operator section{padding:clamp(54px,6.5vw,88px) 0;border-bottom:1px solid #E6E9ED}
 .p-operator .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--flame);margin:0 0 12px}
+  color:var(--flame-ink);margin:0 0 12px}
 .p-operator h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,38px);
-  line-height:1.14;letter-spacing:-.022em;margin:0 0 14px;max-width:22ch;text-wrap:balance}
+  line-height:1.14;letter-spacing:-.022em;margin:0 0 14px;text-wrap:balance}
 .p-operator .sec-lede{font-size:16.5px;line-height:1.6;color:#5A6675;max-width:60ch;margin:0 0 40px}
 .p-operator .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .p-operator .step{padding:22px;border:1px solid #E6E9ED;border-radius:12px;background:#fff}
-.p-operator .step .n{font-family:var(--mono);font-size:11.5px;color:var(--flame);display:block;margin-bottom:12px}
+.p-operator .step .n{font-family:var(--mono);font-size:11.5px;color:var(--flame-ink);display:block;margin-bottom:12px}
 .p-operator .step h3{font-family:var(--display);font-size:17px;font-weight:700;margin:0 0 8px}
 .p-operator .step p{font-size:14px;line-height:1.58;color:#5A6675;margin:0}
 .p-operator .pains{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .p-operator .pain{padding:24px;border:1px solid #E6E9ED;border-radius:12px;background:#fff}
 .p-operator .pain .v{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  color:#8A94A1;margin:0 0 12px}
+  color:#64707E;margin:0 0 12px}
 .p-operator .pain h3{font-family:var(--display);font-size:18px;font-weight:700;margin:0 0 10px}
 .p-operator .pain p{font-size:14.5px;line-height:1.58;color:#5A6675;margin:0 0 14px}
 .p-operator .pain .fix{display:flex;gap:9px;padding-top:13px;border-top:1px solid #EDF0F3;
@@ -244,7 +246,7 @@ a{text-decoration:none}
 .p-operator .faq summary::after{content:'+';margin-left:auto;color:var(--flame);font-size:20px;font-weight:400}
 .p-operator .faq details[open] summary::after{content:'\2212'}
 .p-operator .faq p{margin:0 0 20px;font-size:15px;line-height:1.68;color:#5A6675;max-width:74ch}
-.p-operator footer{padding:36px 0;color:#8A94A1;font-size:13.5px;display:flex;flex-wrap:wrap;gap:14px}
+.p-operator footer{padding:36px 0;color:#64707E;font-size:13.5px;display:flex;flex-wrap:wrap;gap:14px}
 .p-operator footer a{color:#5A6675}
 
 /* ============================================================
@@ -257,7 +259,7 @@ a{text-decoration:none}
 .p-practice .mark{display:block;flex:none}
 .p-practice .nav .links{display:flex;gap:22px;margin-left:auto}
 .p-practice .nav .links a{color:#4E5A66;font-size:13.5px;font-weight:700}
-.p-practice .nav .tel{padding:11px 20px;border-radius:8px;background:var(--flame);color:#fff;
+.p-practice .nav .tel{padding:11px 20px;border-radius:8px;background:var(--flame-ink);color:#fff;
   font-size:14px;font-weight:800}
 .p-practice .hero{background:#0E1620;color:#fff;padding:clamp(46px,6vw,80px) 0}
 .p-practice .hero .wrap{display:grid;grid-template-columns:1fr .82fr;gap:clamp(28px,4vw,56px);align-items:center}
@@ -269,25 +271,25 @@ a{text-decoration:none}
 .p-practice h1 em{font-style:normal;color:var(--amber)}
 .p-practice .lede{font-size:16.5px;line-height:1.6;color:#B7C4D0;max-width:50ch;margin:0 0 26px}
 .p-practice .cta{display:flex;flex-wrap:wrap;gap:12px}
-.p-practice .b1{padding:15px 28px;border-radius:8px;background:var(--flame);color:#fff;font-size:15.5px;font-weight:800}
+.p-practice .b1{padding:15px 28px;border-radius:8px;background:var(--flame-ink);color:#fff;font-size:15.5px;font-weight:800}
 .p-practice .b2{padding:15px 26px;border-radius:8px;border:1px solid rgba(255,255,255,.28);color:#fff;
   font-size:15.5px;font-weight:700}
 .p-practice .picker{background:#fff;color:#111A22;border-radius:12px;padding:22px;
   box-shadow:0 20px 50px rgba(0,0,0,.3)}
-.p-practice .picker h3{font-family:var(--display);font-size:18px;font-weight:800;margin:0 0 4px}
+.p-practice .picker .picker-h{font-family:var(--display);font-size:18px;font-weight:800;margin:0 0 4px}
 .p-practice .picker p{font-size:13.5px;color:#5A6673;margin:0 0 16px;line-height:1.5}
 .p-practice .picker a{display:flex;align-items:center;justify-content:space-between;gap:12px;
   padding:14px 16px;border:1px solid #E6E9ED;border-radius:9px;margin-bottom:9px;color:#111A22;
   font-size:14.5px;font-weight:700;transition:border-color .16s ease-out,background .16s ease-out}
 .p-practice .picker a:hover{border-color:var(--flame);background:#FFF6F3}
-.p-practice .picker a span{font-family:var(--mono);font-size:11px;color:#8A94A1;font-weight:400}
+.p-practice .picker a span{font-family:var(--mono);font-size:11px;color:#64707E;font-weight:400}
 
 .p-practice section{padding:clamp(50px,6vw,84px) 0}
 .p-practice .alt{background:#F5F7F9}
 .p-practice .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--flame);margin:0 0 12px}
+  color:var(--flame-ink);margin:0 0 12px}
 .p-practice h2{font-family:var(--display);font-weight:900;font-size:clamp(25px,3.3vw,40px);
-  line-height:1.12;letter-spacing:-.022em;margin:0 0 14px;max-width:22ch;text-wrap:balance}
+  line-height:1.12;letter-spacing:-.022em;margin:0 0 14px;text-wrap:balance}
 .p-practice .sec-lede{font-size:16.5px;line-height:1.6;color:#5A6673;max-width:60ch;margin:0 0 40px}
 .p-practice .verticals{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .p-practice .vert{border:2px solid #E6E9ED;border-radius:14px;overflow:hidden;background:#fff}
@@ -302,7 +304,7 @@ a{text-decoration:none}
 .p-practice .vert .row span i{color:var(--live);font-style:normal;font-weight:800}
 .p-practice .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .p-practice .step{padding:22px;border:2px solid #E6E9ED;border-radius:12px;background:#fff}
-.p-practice .step .n{font-family:var(--mono);font-size:11.5px;color:var(--flame);display:block;margin-bottom:12px}
+.p-practice .step .n{font-family:var(--mono);font-size:11.5px;color:var(--flame-ink);display:block;margin-bottom:12px}
 .p-practice .step h3{font-family:var(--display);font-size:17px;font-weight:800;margin:0 0 8px}
 .p-practice .step p{font-size:14px;line-height:1.58;color:#5A6673;margin:0}
 .p-practice .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -363,10 +365,10 @@ a{text-decoration:none}
 .ticks{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:8px}
 .ticks li{display:flex;gap:11px;align-items:flex-start;font-size:14.8px;line-height:1.45}
 .ticks i{font-style:normal;font-weight:900;flex:none;line-height:1.45}
-.p-signal .ticks li{color:var(--fg)} .p-signal .ticks i{color:#1E9E68}
+.p-signal .ticks li{color:var(--fg)} .p-signal .ticks i{color:#12764C}
 .p-operator .ticks{max-width:64ch;margin-inline:auto;text-align:left}
-.p-operator .ticks li{color:#3C4757} .p-operator .ticks i{color:#1E9E68}
-.p-practice .ticks li{color:#2B3946} .p-practice .ticks i{color:#1E9E68}
+.p-operator .ticks li{color:#3C4757} .p-operator .ticks i{color:#12764C}
+.p-practice .ticks li{color:#2B3946} .p-practice .ticks i{color:#12764C}
 .p-practice .hero .ticks li{color:#C7D4DE} .p-practice .hero .ticks i{color:var(--amber)}
 
 .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -384,25 +386,25 @@ a{text-decoration:none}
 .quote-b p{margin:0 0 12px;font-size:17px;line-height:1.6;font-style:italic}
 .quote-b cite{font-style:normal;font-family:var(--display);font-weight:800;font-size:14px}
 .p-signal .quote-b{border:1px solid var(--line);background:var(--panel);color:var(--fg)}
-.p-signal .quote-b cite{color:var(--flame)}
+.p-signal .quote-b cite{color:var(--flame-ink)}
 .p-operator .quote-b{border:1px solid #E6E9ED;background:#fff;color:#0D1520}
-.p-operator .quote-b cite{color:var(--flame)}
+.p-operator .quote-b cite{color:var(--flame-ink)}
 .p-practice .quote-b{border:2px solid #E6E9ED;background:#fff;color:#111A22}
-.p-practice .quote-b cite{color:var(--flame)}
+.p-practice .quote-b cite{color:var(--flame-ink)}
 
 .cmp{border:1px solid #E6E9ED;border-radius:12px;overflow:hidden;background:#fff}
 .cmp-row{display:grid;grid-template-columns:1fr 1.5fr 1.2fr;gap:16px;padding:15px 20px;
   border-bottom:1px solid #EDF0F3;font-size:14.5px;align-items:start}
 .cmp-row:last-child{border-bottom:0}
 .cmp-head{background:#F7F8FA;font-family:var(--display);font-weight:800;font-size:12.5px;
-  letter-spacing:.1em;text-transform:uppercase;color:#8A94A1}
+  letter-spacing:.1em;text-transform:uppercase;color:#64707E}
 .cmp-row .f{font-weight:700;color:#0D1520}
 .cmp-row .us{color:#2B3946;display:flex;gap:9px;align-items:flex-start}
-.cmp-row .us i{font-style:normal;color:#1E9E68;font-weight:900;flex:none}
-.cmp-row .them{color:#8A94A1}
+.cmp-row .us i{font-style:normal;color:#12764C;font-weight:900;flex:none}
+.cmp-row .them{color:#64707E}
 
 .p-operator .job.res{border-color:#CFE8DA;background:#F4FBF7}
-.p-operator .job.res span{color:#1E9E68;font-weight:700;font-family:var(--sans);font-size:13px}
+.p-operator .job.res span{color:#12764C;font-weight:700;font-family:var(--sans);font-size:13px}
 
 @media (max-width:1000px){ .areas{grid-template-columns:1fr 1fr} }
 @media (max-width:720px){
@@ -413,10 +415,33 @@ a{text-decoration:none}
 }
 
 /* ============================================================
+   SECTION HEADS — fill the row.
+   A heading that wraps inside a narrow column leaves a dead block
+   beside it. Kicker + h2 sit left, the supporting line sits right
+   and bottom-aligned, so the row is occupied rather than centred
+   or collapsed. With no supporting line the heading spans instead.
+   ============================================================ */
+section > .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  column-gap:clamp(26px,4vw,64px)}
+section > .wrap > *{grid-column:1/-1;min-width:0}
+section > .wrap > .kicker{grid-column:1;grid-row:1}
+section > .wrap > h2{grid-column:1;grid-row:2;margin-bottom:40px}
+section > .wrap > .sec-lede{grid-column:2;grid-row:1/3;align-self:end;
+  margin-bottom:40px;max-width:46ch}
+/* no supporting line: let the heading occupy the row */
+section > .wrap:not(:has(> .sec-lede)) > h2{grid-column:1/-1;max-width:38ch}
+section > .wrap:not(:has(> .kicker)) > h2{grid-row:1}
+@media (max-width:860px){
+  section > .wrap{grid-template-columns:1fr}
+  section > .wrap > .kicker,section > .wrap > h2,section > .wrap > .sec-lede{grid-column:1/-1;grid-row:auto}
+  section > .wrap > h2{margin-bottom:14px}
+  section > .wrap > .sec-lede{margin-bottom:32px}
+}
+
+/* ============================================================
    Imagery components: industry photo grid, press/client logo
    walls, certification badges, founder card
    ============================================================ */
-section.tight{padding-top:34px !important;padding-bottom:34px !important}
 
 .ind{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .ind-card{display:block;border-radius:14px;overflow:hidden;text-decoration:none;
@@ -440,13 +465,32 @@ section.tight{padding-top:34px !important;padding-bottom:34px !important}
 .p-practice .ind-card{border:2px solid #E6E9ED;background:#fff;color:#111A22}
 .p-practice .ind-card:hover{border-color:var(--flame);box-shadow:0 14px 34px rgba(17,26,34,.10)}
 
-.logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
-  gap:clamp(22px,4vw,54px);padding:6px 0}
-.logos img{height:34px;width:auto;object-fit:contain;opacity:.55;filter:grayscale(1);
-  transition:opacity .2s ease-out,filter .2s ease-out}
-.logos img:hover{opacity:1;filter:none}
-.logos.clients img{height:42px}
-.p-practice .hero .logos img{opacity:.8;filter:grayscale(1) invert(1)}
+/* As Seen On — the site's own treatment: #273A47 band, logos whitened
+   with brightness(0) invert(1). Without the filter, Inc. and HuffPost are
+   near-black artwork and vanish on the band; BuzzFeed is white artwork and
+   vanished on a light one. The filter is what makes the mixed set read. */
+.seen{background:var(--slate);padding:34px 0}
+.seen .wrap{display:block}
+.seen-h{margin:0 0 20px;text-align:center;font-family:var(--display);font-weight:800;
+  font-size:clamp(17px,1.7vw,22px);color:#fff;letter-spacing:-.01em}
+.logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-evenly;
+  gap:clamp(20px,3.5vw,44px);padding:0}
+.logos.press img{height:clamp(28px,3vw,44px);width:auto;object-fit:contain;
+  filter:brightness(0) invert(1);opacity:.92;
+  transition:opacity .2s ease-out,transform .2s ease-out}
+.logos.press img:hover{opacity:1;transform:translateY(-2px)}
+/* client wall sits on light backgrounds and keeps its own colour */
+.logos.clients{justify-content:center}
+.logos.clients img{height:46px;width:auto;object-fit:contain;opacity:1;filter:none;
+  transition:transform .2s ease-out}
+.logos.clients img:hover{transform:translateY(-2px)}
+
+/* awards row: list left, founder card right */
+.proof2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(24px,4vw,48px);align-items:start}
+.proof2 .ticks{margin-bottom:0}
+.proof2 .founder{margin-top:0}
+@media (max-width:860px){ .proof2{grid-template-columns:1fr} }
 
 .certs{display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,28px);align-items:center;justify-content:center}
 .certs figure{margin:0}
@@ -715,11 +759,16 @@ const IND_IMG={
   'Enterprise':'img/ind-enterprise.jpg',
   'School &amp; Universities':'img/ind-school-universities.jpg'
 };
+/* Exact set and order taken from the live DOM (the strip is JS-rendered,
+   so it is absent from the static HTML). The site shows them on a #273A47
+   band with filter: brightness(0) invert(1), which is why mixed-colour
+   artwork all reads as white. Replicated rather than invented. */
 const PRESS=[
-  ['img/press-entrepreneur.png','Entrepreneur'],
-  ['img/press-huffpost.png','HuffPost'],
   ['img/press-buzzfeed.png','BuzzFeed'],
-  ['img/press-nba.png','NBA']
+  ['img/press-entrepreneur.png','Entrepreneur'],
+  ['img/press-inc.png','Inc.'],
+  ['img/press-huffpost.png','HuffPost'],
+  ['img/press-sme.png','Social Media Explorer']
 ];
 const CLIENTS=[
   ['img/cl-gcj-law.png','GCJ Law'],
@@ -748,8 +797,9 @@ const industriesHTML=rev=>'<div class="ind">'+INDUSTRIES.map(i=>{
     '<span class="nm">'+i+'<i>&rarr;</i></span></a>';
 }).join('')+'</div>';
 
-const pressHTML=rev=>'<div class="logos press'+(rev?' rev':'')+'">'+
-  PRESS.map(p=>'<img src="'+p[0]+'" alt="'+p[1]+'" loading="lazy">').join('')+'</div>';
+const pressHTML=()=>'<div class="seen"><div class="wrap">'+
+  '<p class="seen-h">As Seen On</p><div class="logos press">'+
+  PRESS.map(p=>'<img src="'+p[0]+'" alt="'+p[1]+'" loading="lazy">').join('')+'</div></div></div>';
 
 const clientsHTML=rev=>'<div class="logos clients'+(rev?' rev':'')+'">'+
   CLIENTS.map(c=>'<img src="'+c[0]+'" alt="'+c[1]+'" loading="lazy">').join('')+'</div>';
@@ -799,7 +849,7 @@ function renderSignal(){
       '</div></div>'+
     '</div>'+
 
-    '<section class="tight"><div class="wrap"><p class="kicker rev">As Seen On</p>'+pressHTML(true)+'</div></section>'+
+    pressHTML()+
     '<section><div class="wrap">'+
       '<p class="kicker rev">AI Automation Services</p>'+
       '<h2 class="rev">'+AI_H2+'</h2>'+
@@ -830,13 +880,13 @@ function renderSignal(){
     '</div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker rev">Industries Served</p><h2 class="rev">'+INDUSTRIES_SUB+'</h2>'+
+      '<h2 class="rev">Industries Served</h2><p class="sec-lede rev">'+INDUSTRIES_SUB+'</p>'+
       industriesHTML(true)+
     '</div></section>'+
 
     '<section><div class="wrap">'+
       '<p class="kicker rev">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
-      '<h2 class="rev">Awards &amp; Recognitions</h2>'+bullets(AWARDS,'ticks rev')+founderHTML(true)+
+      '<h2 class="rev">Awards &amp; Recognitions</h2>'+'<div class="proof2 rev">'+bullets(AWARDS,'ticks')+founderHTML()+'</div>'+
       '<div class="rev">'+quoteHTML()+'</div>'+
       '<p class="kicker rev" style="margin-top:44px">Trusted By</p>'+clientsHTML(true)+
       '<p class="kicker rev" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML(true)+
@@ -871,7 +921,7 @@ function renderOperator(){
       '<div class="board">'+
         '<header><i></i><i></i><b>ai automation / what it replaces</b></header>'+
         '<div class="lanes">'+CASES.slice(0,4).map(c=>'<div class="lane">'+
-          '<h4><s></s>'+c.h+'</h4>'+
+          '<p class="lane-h"><s></s>'+c.h+'</p>'+
           c.after.slice(0,3).map(a=>'<div class="job"><b>'+a+'</b></div>').join('')+
           '<div class="job res"><span>'+c.result+'</span></div>'+
         '</div>').join('')+'</div>'+
@@ -879,7 +929,7 @@ function renderOperator(){
       '<div style="display:flex;justify-content:center;margin-top:28px">'+gp()+'</div>'+
     '</div></div>'+
 
-    '<section class="tight"><div class="wrap"><p class="kicker">As Seen On</p>'+pressHTML()+'</div></section>'+
+    pressHTML()+
     '<section><div class="wrap">'+
       '<p class="kicker">AI Automation Services</p><h2>'+AI_H2+'</h2>'+
       '<p class="sec-lede">'+AI_WHAT+'</p>'+bullets(AI_OUTCOMES)+
@@ -899,7 +949,7 @@ function renderOperator(){
     '</div></section>'+
 
     '<section><div class="wrap">'+
-      '<p class="kicker">Industries Served</p><h2>'+INDUSTRIES_SUB+'</h2>'+
+      '<h2>Industries Served</h2><p class="sec-lede">'+INDUSTRIES_SUB+'</p>'+
       industriesHTML(false)+
     '</div></section>'+
 
@@ -913,7 +963,7 @@ function renderOperator(){
 
     '<section><div class="wrap">'+
       '<p class="kicker">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
-      '<h2>Awards &amp; Recognitions</h2>'+bullets(AWARDS)+founderHTML()+quoteHTML()+
+      '<h2>Awards &amp; Recognitions</h2>'+'<div class="proof2">'+bullets(AWARDS)+founderHTML()+'</div>'+quoteHTML()+
       '<p class="kicker" style="margin-top:44px">Trusted By</p>'+clientsHTML()+
       '<p class="kicker" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML()+
     '</div></section>'+
@@ -952,14 +1002,14 @@ function renderPractice(){
         '<div style="margin-top:26px">'+gp()+'</div>'+
       '</div>'+
       '<div class="picker">'+
-        '<h3>Real-World AI Automation by Industry</h3>'+
+        '<p class="picker-h">Real-World AI Automation by Industry</p>'+
         '<p>'+AI_INTRO+'</p>'+
         groups.map(g=>'<a href="#"><span style="font-weight:800;color:#111A22">'+g.h+'</span>'+
           '<span>'+g.rows.length+' automations &rarr;</span></a>').join('')+
       '</div>'+
     '</div></div>'+
 
-    '<section class="tight"><div class="wrap"><p class="kicker">As Seen On</p>'+pressHTML()+'</div></section>'+
+    pressHTML()+
     '<section><div class="wrap">'+
       '<p class="kicker">Real-World AI Automation Solutions by Industry</p>'+
       '<h2>'+AI_H2+'</h2><p class="sec-lede">'+AI_WHAT+'</p>'+
@@ -983,13 +1033,13 @@ function renderPractice(){
     '</div></section>'+
 
     '<section class="alt"><div class="wrap">'+
-      '<p class="kicker">Industries Served</p><h2>'+INDUSTRIES_SUB+'</h2>'+
+      '<h2>Industries Served</h2><p class="sec-lede">'+INDUSTRIES_SUB+'</p>'+
       industriesHTML(false)+
     '</div></section>'+
 
     '<section><div class="wrap">'+
       '<p class="kicker">Top Reasons Infintech Designs Should Be Your First Choice</p>'+
-      '<h2>Awards &amp; Recognitions</h2>'+bullets(AWARDS)+founderHTML()+quoteHTML()+
+      '<h2>Awards &amp; Recognitions</h2>'+'<div class="proof2">'+bullets(AWARDS)+founderHTML()+'</div>'+quoteHTML()+
       '<p class="kicker" style="margin-top:44px">Trusted By</p>'+clientsHTML()+
       '<p class="kicker" style="margin-top:36px">Digital Marketer Certifications</p>'+certsHTML()+
     '</div></section>'+
@@ -1042,6 +1092,17 @@ function attachSignalMotion(root){
 
   const MAXP=26;
   let packets=[], pulses=[];
+
+  // one cached glow sprite; createRadialGradient per packet per frame was
+  // the single biggest cost in this loop
+  const GLOW=(()=>{
+    const s=document.createElement('canvas'); s.width=s.height=24;
+    const c=s.getContext('2d');
+    const g=c.createRadialGradient(12,12,0,12,12,12);
+    g.addColorStop(0,'rgba(234,69,23,0.30)'); g.addColorStop(1,'rgba(234,69,23,0)');
+    c.fillStyle=g; c.fillRect(0,0,24,24);
+    return s;
+  })();
   // Full-bleed schematic. It previously occupied the right 56%, which put the
   // console panel straight through the middle of the graph and made it read as
   // random noise. Spanning the hero and dropping the alpha reads as intent.
@@ -1114,9 +1175,7 @@ function attachSignalMotion(root){
       const x1=px(a),y1=py(a),x2=px(b),y2=py(b),mx=(x1+x2)/2,t=p.t,u=1-t;
       const x=u*u*u*x1+3*u*u*t*mx+3*u*t*t*mx+t*t*t*x2;
       const y=u*u*u*y1+3*u*u*t*y1+3*u*t*t*y2+t*t*t*y2;
-      const g=ctx.createRadialGradient(x,y,0,x,y,9);
-      g.addColorStop(0,'rgba(234,69,23,0.30)'); g.addColorStop(1,'rgba(234,69,23,0)');
-      ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,9,0,Math.PI*2); ctx.fill();
+      ctx.drawImage(GLOW,x-12,y-12);
       ctx.fillStyle='rgba(214,55,12,0.95)'; ctx.beginPath(); ctx.arc(x,y,2,0,Math.PI*2); ctx.fill();
     });
   }
@@ -1158,11 +1217,18 @@ function moveHighlight(){const el=items[current];
   highlight.style.width=el.offsetWidth+'px';
   highlight.style.transform='translateX('+el.offsetLeft+'px)';}
 
+let mountGen=0;
 function mount(i){
   if(teardown){teardown();teardown=null;}
+  const gen=++mountGen;                       // generation guard
   stage.innerHTML=''; window.scrollTo(0,0);
-  requestAnimationFrame(()=>{ stage.innerHTML=variants[i].render();
-    teardown=variants[i].motion?variants[i].motion(stage):null; });
+  requestAnimationFrame(()=>{
+    // a newer mount already ran: abandon this one rather than starting a
+    // second set of loops and clobbering the live teardown reference
+    if(gen!==mountGen) return;
+    stage.innerHTML=variants[i].render();
+    teardown=variants[i].motion?variants[i].motion(stage):null;
+  });
 }
 function setActive(i){
   if(i<0||i>=variants.length) return;
